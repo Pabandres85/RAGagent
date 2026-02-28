@@ -1,0 +1,42 @@
+# Datos crudos (documentos normativos originales — no van en la imagen)
+data/raw/
+
+# Modelos y pesos (se descargan en tiempo de ejecución via Ollama)
+*.bin
+*.gguf
+*.safetensors
+*.pt
+
+# Índices FAISS (se generan con ingest.py)
+artifacts/faiss/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/
+
+# Git
+.git/
+.gitignore
+
+# Documentación y PDF del anteproyecto
+docs/
+*.pdf
+
+# Variables de entorno locales
+.env
+
+# Resultados de evaluación (opcionales, generados en runtime)
+artifacts/eval_runs/
+eval/user_eval/

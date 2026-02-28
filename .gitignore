@@ -1,0 +1,22 @@
+# Artifacts generados dinámicamente
+artifacts/
+
+# Modelos y pesos
+*.bin
+*.gguf
+*.safetensors
+
+# Entornos virtuales
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Datos sensibles
+data/raw/
