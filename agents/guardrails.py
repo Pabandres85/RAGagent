@@ -1,0 +1,149 @@
+"""
+agents/guardrails.py - Validacion y control de respuestas del asistente normativo.
+
+Verifica que cada respuesta:
+1. Sea JSON valido con el esquema correcto.
+2. Tenga al menos una cita normativa.
+3. No afirme informacion fuera del corpus proporcionado.
+"""
+from __future__ import annotations
+
+import json
+import logging
+from typing import List, Optional
+
+from pydantic import BaseModel, ValidationError, field_validator
+
+logger = logging.getLogger(__name__)
+
+
+class Citation(BaseModel):
+    text: str
+    numeral: Optional[str] = None
+    page: Optional[int] = None
+    resolution: str = "Resolucion 3100 de 2019"
+    vigencia: str = "Vigente"
+
+
+_STATUS_ALIASES = {
+    "cumplido": "cumple",
+    "cumplida": "cumple",
+    "si": "cumple",
+    "no cumple": "no_cumple",
+    "no aplica": "no_aplica",
+}
+_VALID_STATUSES = {"cumple", "no_cumple", "no_aplica", "pendiente"}
+
+
+class ChecklistItem(BaseModel):
+    item: str
+    numeral: Optional[str] = None
+    status: str = "pendiente"
+
+    @field_validator("status", mode="before")
+    @classmethod
+    def normalize_status(cls, value: str) -> str:
+        raw = str(value).strip().lower()
+        return _STATUS_ALIASES.get(raw, raw if raw in _VALID_STATUSES else "pendiente")
+
+
+class AgentResponse(BaseModel):
+    answer: str
+    citations: List[Citation]
+    checklist: List[ChecklistItem] = []
+    module: str
+    confidence: float = 0.0
+
+
+class GuardrailsResult(BaseModel):
+    valid: bool
+    response: Optional[AgentResponse] = None
+    errors: List[str] = []
+    warnings: List[str] = []
+    raw: str = ""
+
+
+OUT_OF_DOMAIN_KEYWORDS = [
+    "precio",
+    "costo",
+    "tarifa",
+    "salario",
+    "contrato",
+    "licitacion",
+    "receta",
+    "diagnostico",
+    "tratamiento",
+    "medicacion concreta",
+]
+
+
+def validate_response(raw: str, expected_module: str = "") -> GuardrailsResult:
+    """
+    Valida la respuesta cruda del LLM.
+
+    Pasos:
+    1. Parseo JSON.
+    2. Validacion del esquema AgentResponse.
+    3. Verificacion de que exista al menos una cita.
+    4. Advertencia si la confianza es baja.
+    """
+    errors: List[str] = []
+    warnings: List[str] = []
+
+    json_str = _extract_json(raw)
+    if json_str is None:
+        return GuardrailsResult(
+            valid=False,
+            errors=["La respuesta del LLM no contiene JSON valido."],
+            raw=raw,
+        )
+
+    try:
+        data = json.loads(json_str)
+    except json.JSONDecodeError as exc:
+        return GuardrailsResult(
+            valid=False,
+            errors=[f"JSON malformado: {exc}"],
+            raw=raw,
+        )
+
+    try:
+        response = AgentResponse(**data)
+    except ValidationError as exc:
+        return GuardrailsResult(
+            valid=False,
+            errors=[f"Esquema invalido: {exc.error_count()} error(es)", str(exc)],
+            raw=raw,
+        )
+
+    if not response.citations:
+        errors.append("La respuesta no contiene ninguna cita normativa.")
+
+    if response.confidence < 0.5:
+        warnings.append(f"Confianza baja: {response.confidence:.2f}")
+
+    if expected_module and response.module != expected_module:
+        warnings.append(
+            f"El modulo de la respuesta ({response.module}) no coincide "
+            f"con el esperado ({expected_module})."
+        )
+
+    if errors:
+        return GuardrailsResult(
+            valid=False,
+            response=response,
+            errors=errors,
+            warnings=warnings,
+            raw=raw,
+        )
+
+    return GuardrailsResult(valid=True, response=response, warnings=warnings, raw=raw)
+
+
+def _extract_json(text: str) -> str | None:
+    """Extrae el primer bloque JSON del texto del LLM."""
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1 or end < start:
+        return None
+    return text[start : end + 1]

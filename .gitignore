@@ -1,4 +1,4 @@
-# Artifacts generados dinámicamente
+# Artifacts generados dinamicamente
 artifacts/
 
 # Modelos y pesos
@@ -8,6 +8,8 @@ artifacts/
 
 # Entornos virtuales
 venv/
+.venv/
+env/
 .env
 
 # Python
@@ -20,3 +22,8 @@ __pycache__/
 
 # Datos sensibles
 data/raw/
+data/processed/
+data/metadata/
+
+# Temporales
+scripts/test_write.txt

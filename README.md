@@ -1,226 +1,145 @@
-# Sistema Multi-Agente RAG Local — Habilitación en Salud (Resolución 3100 de 2019)
+# Sistema Multi-Agente RAG Local - Habilitacion en Salud
 
-Asistente normativo inteligente que responde preguntas y genera checklists citadas por
-numeral para el proceso de Habilitación de Servicios de Salud en Colombia, usando una
-arquitectura **Agentic RAG local multi-agente** desplegada completamente on-premise.
+Asistente normativo local para consultas sobre la Resolucion 3100 de 2019 del Sistema Unico de Habilitacion en Colombia.
 
-**Autor:** Pablo Andrés Muñoz Martínez
-**Director:** Dr. Juan Diego Pulgarín
-**Programa:** Maestría en Inteligencia Artificial — Universidad Autónoma de Occidente
-**Año:** 2025
+El proyecto implementa una arquitectura RAG multi-agente con:
 
----
+- Un orquestador central.
+- Siete agentes especialistas, uno por modulo normativo.
+- Indices FAISS por modulo y un indice global para baseline mono-agente.
+- Backend LLM local compatible con LM Studio y Ollama.
 
-## Descripción del Proyecto
+## Alcance
 
-Las IPS deben demostrar el cumplimiento de los requisitos del Sistema Único de Habilitación,
-pero la normatividad se encuentra dispersa en resoluciones, anexos y guías con formatos
-heterogéneos. Este sistema implementa un pipeline RAG local con **siete agentes especialistas**
-(uno por módulo de la Resolución 3100) coordinados por un **orquestador central**, sin uso
-de APIs externas ni datos sensibles.
+El sistema responde preguntas normativas y devuelve:
 
-### Módulos cubiertos (Resolución 3100 de 2019)
+- Respuesta sustentada en fragmentos recuperados.
+- Citas con numeral, pagina y vigencia.
+- Checklist de verificacion cuando aplica.
 
-| Agente especialista | Módulo normativo |
-|---|---|
-| `talento_humano` | Talento Humano |
-| `infraestructura` | Infraestructura |
-| `dotacion` | Dotación |
-| `medicamentos_dispositivos` | Medicamentos y Dispositivos Médicos |
-| `procesos_prioritarios` | Procesos Prioritarios |
-| `historia_clinica` | Historia Clínica y Registros |
-| `interdependencia` | Interdependencia de Servicios |
+## Modulos cubiertos
 
----
+- `talento_humano`
+- `infraestructura`
+- `dotacion`
+- `medicamentos_dispositivos`
+- `procesos_prioritarios`
+- `historia_clinica`
+- `interdependencia`
 
 ## Arquitectura
 
-```
+```text
 Consulta del usuario
-        │
-        ▼
-┌─────────────────┐
-│   Orquestador   │  ← ruteo semántico + guardrails
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │ Agente  │  (uno de los 7 especialistas)
-    │especial.│
-    └────┬────┘
-         │
-┌────────▼────────┐
-│  FAISS Index    │  ← índice vectorial por módulo
-│  (embeddings)   │
-└────────┬────────┘
-         │
-┌────────▼────────┐
-│   LLM Local     │  ← Llama 3 8B / Mistral 7B via Ollama
-│   (Ollama)      │
-└────────┬────────┘
-         │
-  Respuesta citada
-  (numeral + página + vigencia)
+    |
+    v
+Orchestrator
+    |
+    +--> Agente especialista
+             |
+             +--> Retriever FAISS por modulo
+             +--> Reranker opcional
+             +--> LLM local (LM Studio u Ollama)
+             +--> Guardrails
+
+Baseline alterno:
+Consulta -> MonoAgent -> Indice global FAISS -> LLM local
 ```
 
----
+## Requisitos
 
-## Requisitos del Sistema
+- Python 3.11 recomendado
+- Docker Desktop (opcional para despliegue)
+- LM Studio o Ollama
 
-### Hardware mínimo
-- **CPU:** Intel Core 10a gen+ / AMD Ryzen
-- **GPU:** NVIDIA con CUDA, mínimo 8 GB VRAM (para modelos cuantizados 4-bit/8-bit)
-- **RAM:** 32 GB mínimo
-- **Almacenamiento:** 50 GB SSD libre
+## Configuracion
 
-### Software
-- Python 3.10+
-- Docker y Docker Compose
-- [Ollama](https://ollama.ai) instalado localmente
+1. Copiar `\.env.example` a `\.env`.
+2. Ajustar `LLM_PROVIDER`.
+3. Configurar la URL, API key y modelo del backend LLM elegido.
 
----
+Ejemplo con LM Studio:
 
-## Instalación y Ejecución
-
-### 1. Clonar el repositorio
-
-```bash
-git clone <url-del-repositorio>
-cd proyecto_grado_rag
+```env
+LLM_PROVIDER=lmstudio
+LM_STUDIO_BASE_URL=http://localhost:1234/v1
+LM_STUDIO_API_KEY=tu_token_local
+LM_STUDIO_MODEL=qwen2.5-7b-instruct-1m
 ```
 
-### 2. Configurar variables de entorno
+## Instalacion
 
 ```bash
-cp .env.example .env
-# Editar .env con los valores correspondientes al entorno local
-```
-
-### 3. Instalar dependencias
-
-```bash
-python -m venv venv
-source venv/bin/activate        # Linux/Mac
-# venv\Scripts\activate         # Windows
-
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Descargar modelo en Ollama
+## Flujo de uso
 
-```bash
-ollama pull llama3:8b
-# o alternativamente:
-ollama pull mistral:7b
-```
-
-### 5. Ejecutar ingesta del corpus normativo
-
-Coloque los documentos PDF de la Resolución 3100 y sus anexos en `data/raw/`.
+1. Colocar los PDFs normativos en `data/raw/`.
+2. Ejecutar la ingesta:
 
 ```bash
 python scripts/ingest.py
 ```
 
-### 6. Levantar con Docker Compose
+3. Verificar conectividad con el LLM:
 
 ```bash
-docker compose up --build
+python main.py --ping
 ```
 
-La API estará disponible en `http://localhost:8000`
-La interfaz de usuario en `http://localhost:8501`
+4. Levantar la API:
 
----
-
-## Estructura del Proyecto
-
+```bash
+python main.py
 ```
+
+5. Probar la UI:
+
+```bash
+streamlit run ui/app.py
+```
+
+## Evaluacion
+
+El proyecto incluye:
+
+- Generacion de gold set: `scripts/build_goldset.py`
+- Metricas base: `eval/metrics.py`
+- Runner offline: `eval/run_eval.py`
+
+Ejemplo:
+
+```bash
+python scripts/build_goldset.py --n-per-module 5
+python eval/run_eval.py
+```
+
+## Estructura
+
+```text
 proyecto_grado_rag/
-├── agents/                     # Orquestador y 7 agentes especialistas
-│   ├── orchestrator.py
-│   ├── base_specialist.py
-│   ├── baseline_mono_agent.py  # Agente mono para comparación
-│   ├── guardrails.py
-│   ├── prompts.py
-│   └── specialists/            # Un agente por módulo Res. 3100
-├── api/                        # API REST (FastAPI)
-├── artifacts/
-│   ├── faiss/                  # Índices vectoriales generados
-│   └── eval_runs/              # Resultados de evaluaciones
-├── core/                       # Infraestructura transversal
-│   ├── config.py
-│   ├── embeddings.py
-│   ├── llm_client.py
-│   └── metadata_store.py
-├── data/
-│   ├── raw/                    # Documentos normativos originales (no versionados)
-│   ├── processed/              # Chunks normalizados
-│   └── metadata/               # Metadatos: servicio, numeral, vigencia, página
-├── docs/                       # Documentación técnica y decisiones de arquitectura
-├── eval/
-│   ├── datasets/               # Gold set: 210 preguntas Q&A
-│   ├── metrics.py              # Recall@10, MRR, EM, F1, Faithfulness
-│   ├── run_eval.py             # Runner offline multi-agente vs mono-agente
-│   └── user_eval/              # Evaluación con usuarios (SUS, tiempos, entrevistas)
-├── notebooks/                  # Exploración y análisis
-├── rag/                        # Pipeline RAG
-│   ├── retriever.py
-│   ├── reranker.py
-│   └── citations.py
-├── scripts/
-│   ├── ingest.py               # Ingesta y construcción de índices FAISS
-│   └── build_goldset.py        # Construcción del gold set de evaluación
-├── tests/                      # Pruebas unitarias
-├── ui/                         # Interfaz de usuario (Streamlit)
-├── main.py
-├── Dockerfile
-├── docker-compose.yml
-└── .env.example
+|-- agents/
+|-- api/
+|-- artifacts/
+|-- core/
+|-- data/
+|-- docs/
+|-- eval/
+|-- notebooks/
+|-- rag/
+|-- scripts/
+|-- tests/
+|-- ui/
+|-- main.py
+|-- requirements.txt
+|-- .env.example
 ```
 
----
+## Notas
 
-## Evaluación
-
-El sistema se evalúa contra un **gold set de 210 preguntas** (30 por módulo) con las
-siguientes métricas:
-
-| Categoría | Métricas |
-|---|---|
-| Recuperación | Recall@10, MRR |
-| Generación | Exact Match, F1, Faithfulness |
-| Orquestación | Precisión de ruteo entre agentes |
-
-Para ejecutar la evaluación offline:
-
-```bash
-python eval/run_eval.py --config configs/eval_config.json
-```
-
----
-
-## Corpus Normativo
-
-Los documentos utilizados son de **dominio público** y se obtienen del portal oficial del
-Ministerio de Salud y Protección Social de Colombia:
-
-- Resolución 3100 de 2019
-- Anexos técnicos por servicio
-- Guías de verificación oficiales
-
-> Los archivos no están incluidos en el repositorio. Ver instrucciones en `docs/architecture.md`.
-
----
-
-## Licencia
-
-Este proyecto es de carácter académico. El corpus normativo utilizado es de dominio público.
-El código fuente se distribuye bajo licencia MIT.
-
----
-
-## Referencia
-
-> Muñoz Martínez, P.A. (2025). *Sistema Multi-Agente Basado en RAG Local para la Consulta
-> Normativa de Habilitación en Salud (Resolución 3100 de 2019)*. Anteproyecto de Maestría
-> en Inteligencia Artificial. Universidad Autónoma de Occidente. Santiago de Cali, Colombia.
+- `artifacts/`, `data/raw/`, `data/metadata/` y los entornos virtuales no deben subirse al repositorio.
+- El corpus normativo es publico, pero no se incluye en el repo.
+- El sistema esta orientado a uso academico y validacion de tesis.

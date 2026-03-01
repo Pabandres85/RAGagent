@@ -1,8 +1,4 @@
-"""
-Siete agentes especialistas correspondientes a los módulos
-de la Resolución 3100 de 2019 (Sistema Único de Habilitación).
-"""
-
+"""agents/specialists — Paquete de agentes especialistas."""
 from agents.specialists.talento_humano import TalentoHumanoAgent
 from agents.specialists.infraestructura import InfraestructuraAgent
 from agents.specialists.dotacion import DotacionAgent
