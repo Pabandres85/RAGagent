@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import logging
+import unicodedata
 from typing import List, Optional
 
 from pydantic import BaseModel, ValidationError, field_validator
@@ -61,6 +62,7 @@ class GuardrailsResult(BaseModel):
     errors: List[str] = []
     warnings: List[str] = []
     raw: str = ""
+    no_evidence: bool = False
 
 
 OUT_OF_DOMAIN_KEYWORDS = [
@@ -75,6 +77,8 @@ OUT_OF_DOMAIN_KEYWORDS = [
     "tratamiento",
     "medicacion concreta",
 ]
+
+NO_EVIDENCE_PREFIX = "la informacion solicitada no se encuentra en los fragmentos recuperados"
 
 
 def validate_response(raw: str, expected_module: str = "") -> GuardrailsResult:
@@ -117,6 +121,15 @@ def validate_response(raw: str, expected_module: str = "") -> GuardrailsResult:
         )
 
     if not response.citations:
+        if _is_no_evidence_response(response):
+            warnings.append("Sin evidencia recuperada para este modulo.")
+            return GuardrailsResult(
+                valid=True,
+                response=response,
+                warnings=warnings,
+                raw=raw,
+                no_evidence=True,
+            )
         errors.append("La respuesta no contiene ninguna cita normativa.")
 
     if response.confidence < 0.5:
@@ -138,6 +151,17 @@ def validate_response(raw: str, expected_module: str = "") -> GuardrailsResult:
         )
 
     return GuardrailsResult(valid=True, response=response, warnings=warnings, raw=raw)
+
+
+def _is_no_evidence_response(response: AgentResponse) -> bool:
+    answer = _normalize_text(response.answer)
+    return answer.startswith(NO_EVIDENCE_PREFIX)
+
+
+def _normalize_text(value: str) -> str:
+    text = unicodedata.normalize("NFKD", value)
+    text = "".join(char for char in text if not unicodedata.combining(char))
+    return text.strip().lower()
 
 
 def _extract_json(text: str) -> str | None:
