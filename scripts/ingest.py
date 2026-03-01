@@ -16,6 +16,7 @@ import hashlib
 import logging
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -75,12 +76,39 @@ SERVICE_HEADER_RE = re.compile(
 )
 NUMERAL_RE = re.compile(r"\b(\d{1,2}\.\d{1,2}(?:\.\d{1,2})?)\b")
 
+# Elimina la linea "Pagina N de NNN" del encabezado repetitivo del PDF.
+# El PDF de la Resolucion 3100 incluye en cada pagina una cabecera con el
+# numero de pagina (ej. "Pagina 72 de 230") que contamina los embeddings con
+# texto variable (el numero cambia en cada pagina).
+# No se intenta eliminar las otras lineas del encabezado (RESOLUCION NUMERO,
+# fecha, etc.) porque PyMuPDF puede extraerlas en orden variable segun la
+# pagina; intentar consumirlas con contexto elimina encabezados de modulo.
+PAGE_HEADER_RE = re.compile(
+    r"[Pp].{0,5}gina\s+\d+\s+de\s+\d+[^\n]*\n",
+    re.IGNORECASE,
+)
+
+
+def clean_page_text(text: str) -> str:
+    """Elimina el encabezado repetitivo de cada pagina del PDF."""
+    return PAGE_HEADER_RE.sub("", text)
+
+
+def _strip_accents(s: str) -> str:
+    """Elimina diacriticos para comparacion robusta (DOTACION == DOTACION)."""
+    return "".join(
+        c for c in unicodedata.normalize("NFKD", s)
+        if not unicodedata.combining(c)
+    )
+
 
 def detect_module(text: str, current_module: Optional[str] = None) -> Optional[str]:
-    text_upper = text.upper()
+    # Normalizar acentos en el texto extraido del PDF (que puede tener variantes
+    # garbled como DOTACION vs DOTACION, HISTORIA CLINICA vs HISTORIA CLINICA)
+    text_normalized = _strip_accents(text).upper()
     for module, patterns in MODULE_PATTERNS.items():
         for pattern in patterns:
-            if pattern.upper() in text_upper:
+            if _strip_accents(pattern).upper() in text_normalized:
                 return module
     return current_module
 
@@ -129,6 +157,7 @@ def build_chunks(
     global_index = 0
 
     for page_number, page_text in tqdm(pages, desc="Procesando paginas"):
+        page_text = clean_page_text(page_text)
         current_module = detect_module(page_text, current_module)
         service = extract_service(page_text)
         if service:
