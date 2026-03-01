@@ -26,6 +26,13 @@ class Citation(BaseModel):
     resolution: str = "Resolucion 3100 de 2019"
     vigencia: str = "Vigente"
 
+    @field_validator("numeral", mode="before")
+    @classmethod
+    def coerce_numeral(cls, value):
+        if isinstance(value, list):
+            return ", ".join(str(v) for v in value) if value else None
+        return value
+
     @field_validator("page", mode="before")
     @classmethod
     def coerce_page(cls, value):
@@ -48,6 +55,13 @@ class ChecklistItem(BaseModel):
     item: str
     numeral: Optional[str] = None
     status: str = "pendiente"
+
+    @field_validator("numeral", mode="before")
+    @classmethod
+    def coerce_numeral(cls, value):
+        if isinstance(value, list):
+            return ", ".join(str(v) for v in value) if value else None
+        return value
 
     @field_validator("status", mode="before")
     @classmethod

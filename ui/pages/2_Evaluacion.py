@@ -159,12 +159,12 @@ def main() -> None:
     with col1: st.metric("Items Evaluados", summary.get("count", len(results)))
     with col2: st.metric("✅ Validez Estructural (Multi)", f"{summary.get('multi_valid_rate', 0.0):.1%}")
     with col3: st.metric("✅ Validez Estructural (Mono)", f"{summary.get('mono_valid_rate', 0.0):.1%}")
-    with col4: st.metric("🎯 Ruteo Any-Hit (Multi)", f"{summary.get('routing_hit_rate_any', 0.0):.1%}")
+    with col4: st.metric("🎯 Ruteo Any-Hit Específicos", f"{summary.get('routing_hit_rate_any_specific', 0.0):.1%}")
 
     col5, col6, col7, col8 = st.columns(4)
     with col5: st.metric("🥇 F1-Score (Multi)", f"{summary.get('multi_f1_avg', 0.0):.3f}")
     with col6: st.metric("🥈 F1-Score (Mono)", f"{summary.get('mono_f1_avg', 0.0):.3f}")
-    with col7: st.metric("🎯 Ruteo Top-1 (Multi)", f"{summary.get('routing_accuracy_top1', 0.0):.1%}")
+    with col7: st.metric("🎯 Ruteo Top-1 Específicos", f"{summary.get('routing_accuracy_top1_specific', 0.0):.1%}")
     with col8: st.metric("🥇 Exact Match (Multi)", f"{summary.get('multi_em_avg', 0.0):.3f}")
 
     st.divider()

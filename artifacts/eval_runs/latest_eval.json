@@ -13,9 +13,9 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.3132530120481928,
+    "multi_f1": 0.3010752688172043,
     "mono_f1": 0.0,
-    "multi_answer": "De acuerdo con los fragmentos normativos proporcionados, cuando se realiza una telexperticia entre personal de salud no profesional y un profesional de la salud en la modalidad telexperticia, el prestador remisor debe contar con un técnico, tecnólogo o auxiliar que atiende presencialmente al usuario. Este requisito está especificado en varios fragmentos del estándar de Talento Humano de la Resolución 3100 de 2019.",
+    "multi_answer": "De acuerdo con los fragmentos normativos proporcionados, cuando se realiza una telexperticia entre personal de salud no profesional y un profesional de la salud, el prestador remisor debe contar con un técnico, tecnólogo o auxiliar que atiende presencialmente al usuario. Este requisito está especificado en varios fragmentos, como el numeral 4.2 del Servicio Farmacéutico (Numeral 4.2, Página 101) y el numeral 5.2 del Servicio de Consulta Externa General (Numeral 5.2, Página 80).",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
     "multi_errors": [],
     "multi_warnings": [],
@@ -40,9 +40,9 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.7407407407407408,
+    "multi_f1": 0.7169811320754716,
     "mono_f1": 0.0,
-    "multi_answer": "El equipo de hemodiálisis debe contar con un inyector de sangre variable - (bomba de sangre) con inyector de volumen, conforme al numeral 11.2.5 del estándar de dotación.",
+    "multi_answer": "El equipo de hemodiálisis debe contar con un inyector de sangre variable (bomba de sangre) con inyector de volumen, conforme al numeral 11.2.5 del estándar de dotación.",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
     "multi_errors": [],
     "multi_warnings": [
@@ -1724,18 +1724,19 @@
       "dotacion"
     ],
     "routing_is_transversal": true,
-    "multi_valid": true,
+    "multi_valid": false,
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.35211267605633806,
+    "multi_f1": 0.125,
     "mono_f1": 0.06557377049180327,
-    "multi_answer": "Los requisitos específicos para el suministro de oxígeno medicinal no están directamente mencionados en los numerales 12.18, 12.19 ni 14 de los fragmentos proporcionados. Sin embargo, se pueden encontrar referencias relevantes en otros numerales como 27.7 y 27.8 del numeral 27 para el servicio de transporte asistencial (Resolución 3100 de 2019). Estos indican que el sistema de oxígeno medicinal debe estar asegurado con arnés a la estructura de la aeronave o en el interior de la camilla, y debe contar con un sistema de conexión rápida y manómetro visible y regulable.",
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
-    "multi_errors": [],
+    "multi_errors": [
+      "[infraestructura] La respuesta no contiene ninguna cita normativa."
+    ],
     "multi_warnings": [
-      "Sin evidencia directa en: procesos_prioritarios, dotacion.",
-      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+      "Sin evidencia directa en: procesos_prioritarios, dotacion."
     ],
     "mono_errors": [],
     "mono_warnings": [
@@ -1812,9 +1813,9 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.5833333333333334,
+    "multi_f1": 0.5882352941176471,
     "mono_f1": 0.26,
-    "multi_answer": "El prestador remisor de ambulancias terrestres, fluviales, marítimas o aéreas debe tener documentada información sobre el manejo de urgencias (Numeral 41.1, Página 221), la remisión que incluya traslado de niños y personas en abandono o sin acompañante, atención en salud para pacientes con problemas y trastornos en salud mental o consumo de sustancias psicoactivas, así como rutinas permanentes de mantenimiento preventivo y correctivo del vehículo, y aseo, limpieza y desinfección de la ambulancia (Numeral 41.5, Página 221).",
+    "multi_answer": "El prestador remisor de ambulancias terrestres, fluviales, marítimas o aéreas debe tener documentada información sobre el manejo de urgencias (Numeral 41.1, Página 221), la remisión que incluya traslado de niños y personas en abandono o sin acompañante, atención en salud para pacientes con problemas y trastornos en salud mental o consumo de sustancias psicoactivas, rutinas permanentes de mantenimiento preventivo y correctivo del vehículo, así como aseo, limpieza y desinfección de la ambulancia (Numeral 41.5, Página 221).",
     "mono_answer": "La información documentada debe incluir: \n- Detección de intoxicación/abstinencia.\n- Condiciones médicas que entre otras contemple como mínimo VIH/SIDA, hepatitis viral, sífilis, tuberculosis y usuarios de drogas inyectadas.\n- Condiciones emocionales, cognitivas, comportamentales, y trastornos concurrentes, comorbilidad o patología dual.\n- Disposición para el cambio de comportamiento.\n- Análisis de problemas potenciales del uso continuado y recaídas.",
     "multi_errors": [],
     "multi_warnings": [],
@@ -1978,7 +1979,7 @@
     "mono_em": 0.0,
     "multi_f1": 0.12765957446808512,
     "mono_f1": 0.0,
-    "multi_answer": "Sí, el prestador debe contar con catéteres para vena umbilical y oxígeno medicinal según lo establecido en el numeral 25.1 del estándar de Procesos Prioritarios, correspondiente a los servicios de De Transporte Asistencial. [Numeral 25.1, Página 229]",
+    "multi_answer": "Sí, el prestador debe contar con catéteres para vena umbilical y oxígeno medicinal según lo establecido en el numeral 25.1 del estándar de Procesos Prioritarios, correspondiente a los servicios de De Transporte Asistencial. [Numeral 25.1, Página 229].",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
     "multi_errors": [],
     "multi_warnings": [],
@@ -2109,18 +2110,16 @@
       "procesos_prioritarios"
     ],
     "routing_is_transversal": false,
-    "multi_valid": false,
+    "multi_valid": true,
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.21276595744680854,
+    "multi_f1": 0.2682926829268293,
     "mono_f1": 0.21428571428571427,
-    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "multi_answer": "Según el numeral 34.1 del artículo citado en el fragmento [FRAGMENTO 1], el kit para recolección de evidencia forense y el kit de profilaxis post exposición para VIH, ITS y anticoncepción de emergencia deben estar disponibles según lo definido en la resolución 459 de 2012 o cualquier norma que la modifique, adicione o sustituya. Sin embargo, no se especifican elementos específicos en este fragmento.",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
     "multi_errors": [],
-    "multi_warnings": [
-      "Sin evidencia directa en: procesos_prioritarios."
-    ],
+    "multi_warnings": [],
     "mono_errors": [],
     "mono_warnings": [
       "Sin evidencia recuperada para este modulo."
@@ -2138,18 +2137,19 @@
       "historia_clinica"
     ],
     "routing_is_transversal": true,
-    "multi_valid": true,
+    "multi_valid": false,
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.4901960784313726,
+    "multi_f1": 0.16666666666666666,
     "mono_f1": 0.07547169811320754,
-    "multi_answer": "Los requisitos específicos que debe cumplir un prestador de servicios médicos en modalidad intramural o telemedicina cuando actúa como remisor, según el numeral 20.1 del módulo 20 de la Resolución 3100 de 2019, no se encuentran explícitamente mencionados en los fragmentos proporcionados. Sin embargo, se indica que debe cumplir con los criterios aplicables a todos los servicios (Numeral 20.1).",
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
-    "multi_errors": [],
+    "multi_errors": [
+      "[historia_clinica] La respuesta no contiene ninguna cita normativa."
+    ],
     "multi_warnings": [
-      "Sin evidencia directa en: interdependencia, talento_humano.",
-      "Consulta transversal parcial: solo hubo respuesta util desde 'historia_clinica'."
+      "Sin evidencia directa en: interdependencia, talento_humano."
     ],
     "mono_errors": [],
     "mono_warnings": [
@@ -2754,7 +2754,7 @@
     "mono_em": 0.0,
     "multi_f1": 0.1764705882352941,
     "mono_f1": 0.0,
-    "multi_answer": "Para un establecimiento que ofrece hospitalización de alta complejidad con cirugía, según el numeral 55 del fragmento normativo proporcionado, se requieren los siguientes servicios adicionales: \n\n- Servicio de cuidado intensivo adulto o pediátrico, según la oferta del establecimiento (Numeral 55.1, Página 154).\n- Servicio de patología (Numeral 55.2, Página 154).",
+    "multi_answer": "Para un establecimiento que ofrece hospitalización de alta complejidad con cirugía, según el numeral 55 del fragmento normativo proporcionado, se requieren los siguientes servicios adicionales: \n\n- Servicio de cuidado intensivo adulto o pediátrico, según la oferta del servicio. [Numeral 55.1, Página 154]\n- Servicio de patología. [Numeral 55.2, Página 154]",
     "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
     "multi_errors": [],
     "multi_warnings": [
@@ -2832,9 +2832,9 @@
     "mono_valid": false,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.24096385542168672,
+    "multi_f1": 0.44067796610169496,
     "mono_f1": 0.0,
-    "multi_answer": "Según el numeral 51.4, para un servicio de interdependencia de servicios con modalidad extramural domiciliaria y complejidad mediana deben estar disponibles: \n\n- Servicio farmacéutico.\n\nEsto se encuentra en el siguiente fragmento normativo:\n\n[FRAGMENTO 2] Fuente: (Resolución 3100 de 2019 | Estandar: Interdependencia de Servicios | Servicio: Resolución Número | Numeral 51.4 | Pagina 154 | Vigencia: Vigente)\n\n51.4. Servicio farmacéutico.",
+    "multi_answer": "De acuerdo con el numeral 51.4, para un servicio de interdependencia de servicios con modalidad extramural domiciliaria y complejidad mediana deben estar disponibles: \n\n- Servicio de laboratorio clínico.\n- Servicio de imágenes diagnósticas.\n- Servicio farmacéutico.",
     "mono_answer": "",
     "multi_errors": [],
     "multi_warnings": [],
@@ -2858,9 +2858,9 @@
     "multi_em": 0.0,
     "mono_em": 0.0,
     "multi_f1": 0.38235294117647056,
-    "mono_f1": 0.35789473684210527,
+    "mono_f1": 0.38636363636363635,
     "multi_answer": "Para habilitar una Institución Prestadora de Servicios (IPS) es necesario cumplir con las siguientes condiciones técnicas y administrativas según el artículo 3.1 del numeral 3.1, página 2, de la Resolución 3100 de 2019:\n\n- Capacidad técnico-administrativa (Artículo 3.1).\n- Suficiencia patrimonial y financiera (Artículo 3.2).\n- Capacidad tecnológica y científica (Artículo 3.3). Estos requisitos están definidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud, que forma parte integral de la presente resolución.",
-    "mono_answer": "Las condiciones técnicas-administrativas deben cumplirse según el numeral 3.1 del Capítulo 11, Artículo 5 del Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud, que forma parte integral de la Resolución 3100 de 2019.",
+    "mono_answer": "Las condiciones técnicas-administrativas deben cumplirse según lo establecido en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud, que forma parte integral de la presente resolución.",
     "multi_errors": [],
     "multi_warnings": [],
     "mono_errors": [],
@@ -2909,16 +2909,18 @@
     "mono_valid": false,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.28758169934640526,
-    "mono_f1": 0.0,
-    "multi_answer": "[talento_humano] Los estándares que se deben validar para abrir un servicio de salud según el fragmento normativo proporcionado incluyen:\n\n- Medicamentos, dispositivos médicos e insumas.\n- Procesos Prioritarios.\n- Historia Clínica y Registros.\n- Interdependencia.\nEstos estándares se encuentran detallados en los criterios de habilitación establecidos para cada servicio de salud. Sin embargo, el fragmento no especifica un número exacto de estándares que deben ser validados.\n\n[historia_clinica] Para abrir un servicio de salud, se deben cumplir varios estándares según la Resolución 3100 de 2019. Los requisitos incluyen disponibilidad de servicios específicos y registros necesarios dependiendo del tipo de servicio. Por ejemplo, para servicios de imágenes diagnósticas (Numeral 41.1), se requiere el servicio de imágenes diagnósticas excepto en zonas especiales de dispersión geográfica; para laboratorio clínico (Numeral 41.2) y hospitalización (Numeral 41.3), también es obligatorio cumplir con estos servicios. Además, los servicios deben contar con registros específicos como el número de exposiciones e imágenes tomadas que incluya el nombre del paciente y el estudio realizado (Numeral 18.1).\n\n[interdependencia] Para abrir un servicio de salud, según el fragmento proporcionado, se deben cumplir con varios estándares relacionados con la interdependencia de servicios. Estos incluyen:\n\n- Servicio de laboratorio clínico (Numeral 51.1, Página 154).\n- Servicio de imágenes diagnósticas (Numeral 51.2, Página 154).\n- Servicio de transporte asistencial (Numeral 51.3, Página 154).\n- Servicio farmacéutico (Numeral 51.4, Página 154).\n- Servicios de apoyo (alimentación, lavandería y vigilancia) (Numeral 51.5, Página 154).",
-    "mono_answer": "",
+    "multi_f1": 0.2596685082872928,
+    "mono_f1": 0.2736842105263158,
+    "multi_answer": "[talento_humano] Los estándares que se deben validar para abrir un servicio de salud, según el fragmento proporcionado, incluyen condiciones indispensables relacionadas con la seguridad del usuario y la dignidad. Estos estánndares abarcan: talento humano, historia clínica y registros, procesos prioritarios, medicamentos, dispositivos médicos e insumas. [Numeral 9,1,2, Página 37; Numeral 4, Página 8]. Sin embargo, no se especifica un número exacto de estándares que deben validarse.\n\n[historia_clinica] Para abrir un servicio de salud, se deben cumplir varios estándares según la Resolución 3100 de 2019. Los requisitos incluyen disponibilidad de servicios específicos y registros necesarios dependiendo del tipo de servicio. Por ejemplo, para servicios de imágenes diagnósticas (Numeral 41.1), se requiere el servicio de imágenes diagnósticas excepto en zonas especiales de dispersión geográfica; para laboratorio clínico (Numeral 41.2) y hospitalización (Numeral 41.3), también es obligatorio cumplir con estos servicios. Además, los servicios deben contar con registros específicos como el número de exposiciones e imágenes tomadas que incluya el nombre del paciente y del estudio realizado (Numeral 18.1).\n\n[interdependencia] Para abrir un servicio de salud según el estándar de Interdependencia de Servicios establecido en la Resolución 3100 de 2019, se deben cumplir los siguientes requisitos: \n\n- Disponibilidad del servicio de laboratorio clínico (Numeral 51.1, Página 154).\n- Disponibilidad del servicio de imágenes diagnósticas (Numeral 51.2, Página 154).\n- Disponibilidad del servicio de transporte asistencial (Numeral 51.3, Página 154).\n- Disponibilidad del servicio farmacéutico (Numeral 51.4, Página 154).\n- Disponibilidad de servicios de apoyo como alimentación, lavandería y vigilancia (Numeral 51.5, Página 154).\n\nAdemás, es necesario establecer por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios, incluyendo la fecha de inicio y terminación, servicios a prestar, entre otros (Fragmento 2).",
+    "mono_answer": "Para abrir un servicio de salud, se deben validar varios estándares según los fragmentos proporcionados, pero no se especifica el número exacto en los fragmentos dados.",
     "multi_errors": [],
     "multi_warnings": [],
     "mono_errors": [
-      "JSON malformado: Expecting property name enclosed in double quotes: line 5 column 6 (char 806)"
+      "La respuesta no contiene ninguna cita normativa."
     ],
-    "mono_warnings": []
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
   },
   {
     "index": 109,
@@ -2937,9 +2939,9 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.08029197080291971,
+    "multi_f1": 0.0777027027027027,
     "mono_f1": 0.27272727272727276,
-    "multi_answer": "[infraestructura] Las definiciones generales para tener en cuenta en la habilitación de un servicio de salud se encuentran en los siguientes fragmentos normativos:\n\n- 'GRUPO' representa el conjunto de servicios de salud que están relacionados entre sí y comparten similitudes en la forma de prestación, estándares y criterios a cumplir (Numeral 1.1, Página 19).\n- Un 'SERVICIO DE SALUD' es la unidad básica habilitable del Sistema Único de Habilitación, conformado por procesos, procedimientos, actividades, recursos humanos, físicos, tecnológicos y de información (Numeral 1.2, Página 19).\n- La modalidad de prestación de servicios de salud incluye intramural, extramural y telemedicina, siendo la forma de prestar un servicio en condiciones particulares (Numeral 1.3, Página 19).\n\n[dotacion] Para la habilitación de un servicio de salud, se deben cumplir los criterios establecidos en el numeral 7 del fragmento 4 y otros requisitos específicos según la complejidad y modalidades del servicio. Por ejemplo, para servicios de baja complejidad como el farmacéutico, se debe cumplir con los criterios definidos para ese servicio y las normas adicionales aplicables (Numeral 1.2.2, Página 99). Además, para servicios que involucren medicamentos o dispositivos médicos, es necesario contar con la autorización correspondiente y documentación de programas de farmacovigilancia, tecnovigilancia y reactivovigilancia (Numeral 5, Página 72).\n\n[talento_humano] Las definiciones generales que deben considerarse en la habilitación de un servicio de salud, según los fragmentos proporcionados, incluyen:\n\n- **Sede del prestador**: Es el establecimiento abierto por el prestador de servicios de salud donde se desarrollan las actividades administrativas o asistenciales. [FRAGMENTO 5, Numeral 4.2, Página 24]\n\n- **Procedimiento**: Conjunto de acciones que se realizan de la misma forma, con una serie común de pasos definidos y una secuencia lógica en cualquiera de las fases de atención (promoción, prevención, diagnóstico, tratamiento, rehabilitación y paliación). [FRAGMENTO 5, Numeral 4.2, Página 24]\n\n- **Acciones de formación continua**: Actividades de capacitación del talento humano autorizado para ejercer una ocupación o profesión. [FRAGMENTO 5, Numeral 4.2, Página 24]\n\n[interdependencia] Las definiciones generales para tener en cuenta en la habilitación de un servicio de salud, según los fragmentos proporcionados, incluyen:\n\n- **Servicio de hospitalización paciente crónico (Numeral 11.4.2, Página 154):** Es el servicio que presta atención en salud al paciente con patología crónica con y sin ventilación, requiere valoraciones y cuidados por personal de salud a través de un plan individualizado de atención buscando mantener al paciente en su entorno, mantener funciones, prevenir el deterioro, con la máxima comodidad y alivio de síntomas posibles, garantizando su seguridad.\n\n- **Servicios de apoyo (Numeral 4.8, Página 29):** Son los servicios de soporte a la prestación servicios de salud que corresponden a alimentación, lavandería y vigilancia.\n\n- **Sistema de Información Clínico:** Es todo sistema utilizado para generar, enviar, recibir, archivar o procesar de cualquier forma mensajes de datos y que haya sido creado para la producción, recepción, distribución, consulta, organización, custodia, conservación, recuperación y disposición final de cualquier elemento constitutivo de la Historia Clínica (Numeral 4.8, Página 29).\n\n- **Complejidad baja con modafídad intramural:** Incluye servicios como laboratorio cínico, imágenes diagnósticas, transporte asistencial y servicios farmacéuticos (Numeral 51.1, Página 154).",
+    "multi_answer": "[infraestructura] Las definiciones generales para tener en cuenta en la habilitación de un servicio de salud se encuentran en los siguientes fragmentos normativos:\n\n- 'GRUPO': Representa el conjunto de servicios de salud que se encuentran relacionados entre sí y que comparten similitudes en la forma de prestación, en los estándares y criterios que deben cumplir. [Numeral 1.1, Página 19]\n\n- 'SERVICIO DE SALUD': Para efectos del presente manual, el servicio de salud es la unidad básica habilitable del Sistema Único de Habilitación, conformado por procesos, procedimientos, actividades, recursos humanos, físicos, tecnológicos y de información con un alcance definido. Su alcance no incluye los servicios de educación, vivienda, protección, alimentación ni apoyo a la justicia. [Numeral 1.2, Página 19]\n\n- La modalidad se refiere a la forma de prestar un servicio de salud en condiciones particulares y puede ser intramural, extramural o telemedicina. [Numeral 1.3, Página 19]\n\n[dotacion] Para la habilitación de un servicio de salud, se deben cumplir los criterios establecidos en el numeral 7 del fragmento 4 y otros requisitos específicos según la complejidad y modalidades del servicio. Por ejemplo, para servicios de baja complejidad como el farmacéutico, se debe cumplir con los criterios definidos para ese servicio y las normas adicionales aplicables (Numeral 1.2.2, Página 99). Además, para servicios que involucren medicamentos o dispositivos médicos, es necesario contar con la autorización correspondiente expedida por el Fondo Nacional de Estupefacientes (Numeral 5, Página 72).\n\n[talento_humano] Las definiciones generales que deben considerarse en la habilitación de un servicio de salud, según los fragmentos proporcionados, incluyen:\n\n- **Sede del prestador**: Es el establecimiento abierto por el prestador de servicios de salud donde se desarrollan las actividades administrativas o asistenciales. [FRAGMENTO 5, Numeral 4.2]\n\n- **Procedimiento**: Conjunto de acciones que se realizan de la misma forma con una serie común de pasos definidos y una secuencia lógica en cualquiera de las fases de atención (promoción, prevención, diagnóstico, tratamiento, rehabilitación y paliación). [FRAGMENTO 5, Numeral 4.2]\n\n- **Acciones de formación continua**: Actividades de capacitación del talento humano autorizado para ejercer una ocupación o profesión. [FRAGMENTO 5, Numeral 4.2]\n\n[interdependencia] Las definiciones generales para tener en cuenta en la habilitación de un servicio de salud, según los fragmentos proporcionados, incluyen:\n\n- **Servicio de hospitalización paciente crónico (Numeral 11.4.2, Página 154):** Es el servicio que presta atención en salud al paciente con patología crónica con y sin ventilación, requiere valoraciones y cuidados por personal de salud a través de un plan individualizado de atención buscando mantener al paciente en su entorno, mantener funciones, prevenir el deterioro, con la máxima comodidad y alivio de síntomas posibles, garantizando su seguridad cuando su condición clínica lo amerite.\n\n- **Servicios de apoyo (Numeral 4.8, Página 29):** Son los servicios de soporte a la prestación servicios de salud que corresponden a alimentación, lavandería y vigilancia.\n\n- **Sistema de Información Clínico:** Es todo sistema utilizado para generar, enviar, recibir, archivar o procesar de cualquier forma mensajes de datos y que haya sido creado para la producción, recepción, distribución, consulta, organización, custodia, conservación, recuperación y disposición final de cualquier elemento constitutivo de la Historia Clínica (Numeral 4.8, Página 29).\n\n- **Complejidad baja (Numeral 51.1, Página 154):** Incluye servicios como laboratorio cínico, imágenes diagnósticas, transporte asistencial y servicios farmacéuticos.\n\nLa información solicitada no se encuentra en los fragmentos recuperados del estándar de Interdependencia de Servicios.",
     "mono_answer": "Las definiciones generales incluyen 'Autoevaluación', que es el registro que realiza el prestador de servicios de salud en el REPS después de haber realizado la autoevaluación.",
     "multi_errors": [],
     "multi_warnings": [],
@@ -2963,9 +2965,9 @@
     "multi_em": 0.0,
     "mono_em": 0.0,
     "multi_f1": 0.15584415584415587,
-    "mono_f1": 0.6605504587155964,
+    "mono_f1": 0.75,
     "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
-    "mono_answer": "El transporte especial de pacientes se refiere al servicio de transporte asistencial de pacientes en ambulancias aéreas, fluviales o marítimas que habilitará el prestador del servicio en el departamento o distrito donde esté ubicada la sede que hayan definido. Esta habilitación producirá efectos en todo el territorio nacional, sin que se requiera realizar una nueva solicitud de habilitación para otros departamentos.",
+    "mono_answer": "El transporte especial de pacientes se refiere al servicio de transporte asistencial de pacientes en ambulancias aéreas, fluviales o marítimas que habilitará el prestador del servicio en el departamento o distrito donde esté ubicada la sede que hayan definido. Esta habilitación producirá efectos en todo el territorio nacional.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: interdependencia."
@@ -2990,17 +2992,16 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.1699346405228758,
+    "multi_f1": 0.12709030100334448,
     "mono_f1": 0.430939226519337,
-    "multi_answer": "[infraestructura] Para habilitar un servicio de salud se deben cumplir los siguientes criterios según la Resolución 3100 de 2019, Estandar: Infraestructura:\n\n- Debe cumplir con los criterios que le sean aplicables a todos los servicios y contar con profesional en salud según la oferta definida por el prestador de servicios de salud (Numeral 3, Página 92).\n- Debe cumplir con los criterios definidos del servicio de consulta externa para consultorio donde se realiza examen físico (Numeral 4, Página 92).\n- Debe cumplir con los criterios que le sean aplicables a todos los servicios y debe estar estructurado sobre la organización de los servicios de salud, incluyendo procesos, procedimientos, actividades, recursos humanos, físicos, tecnológicos y de información (Numeral 5, Página 19).\n- Debe cumplir con los criterios establecidos en el presente manual para la habilitación de prestadores y servicios de salud (Numeral 3.3, Página 19).\n\n[talento_humano] Las condiciones generales para habilitar un servicio de salud incluyen la inscripción en el REPS, la presentación de soportes correspondientes al Manual de Inscripción y Habilitación de Prestadores, así como cumplir con las condiciones de capacidad técnica administrativa, suficiencia patrimonial y financiera y tecnológica según sea el caso. Además, se requiere que el prestador cuente con un plan hospitalario para emergencias y un plan de mantenimiento de la planta física que incluya el equipamiento fijo. Estas condiciones deben ser verificadas por las secretarías departamentales o distritales de salud o la entidad competente.\n\n[interdependencia] Para habilitar un servicio de salud, según los fragmentos normativos proporcionados, se deben cumplir ciertas condiciones generales. Estas incluyen:\n\n- **Acuerdo o contrato escrito**: Debe haberse establecido por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios (FRAGMENTO 1, numeral 51.1, página 29).\n- **Solicitud autorización**: La IPS debe solicitar autorización mediante comunicación escrita, con un mínimo de quince días de antelación, ante la secretaria de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias (FRAGMENTO 1, numeral 51.1, página 29).\n- **Información en la solicitud**: La solicitud debe incluir información como la fecha de inicio y terminación del acuerdo, los servicios a prestar, actividades que se desarrollarán, población a atender y mecanismo de supervisión (FRAGMENTO 1, numeral 51.1, página 29).\n- **Criterios médicos**: La atención puede tener carácter prioritario en el marco de la autonomía médica (FRAGMENTO 2, numeral 51.1, página 79).",
+    "multi_answer": "[infraestructura] Para habilitar un servicio de salud se deben cumplir los siguientes criterios según la Resolución 3100 de 2019, Estandar: Infraestructura:\n\n- Debe cumplir con los criterios que le sean aplicables a todos los servicios y contar con profesional en salud según la oferta definida por el prestador de servicios de salud (Numeral 3, Página 92).\n- Debe cumplir con los criterios establecidos para la modalidad de prestación del servicio de salud, que incluye intramural, extramural y telemedicina (Numeral 1.3, Página 19).\n- El servicio debe estar estructurado sobre la organización de los servicios de salud, con procesos, procedimientos, actividades, recursos humanos, físicos, tecnológicos y de información que satisfacen las necesidades en salud (Párrafo general, Página 19).\n- Debe cumplir con los estándares de dotación para la infraestructura física y tecnológica adecuada según la complejidad del servicio (Numeral 5, Página 92).\n\n[dotacion] Para habilitar un servicio de salud según el estándar de Dotación de la Resolución 3100 de 2019, se deben cumplir los criterios aplicables a cada tipo de servicio y adicionalmente, algunas condiciones generales que se detallan en los fragmentos proporcionados. Estas incluyen:\n\n- **Vacunación segura** (Numeral 9.1, Página 90).\n- **Camas hospitalarias**, según la oferta del servicio (Numeral 25.1 y Numeral 35.1, Paginas 150 y 159).\n- **Carro de paro** en cada piso o nivel si el servicio está distribuido en varios niveles (Numeral 25.2 y Numeral 35.2, Paginas 150 y 159).\n- **Bomba de infusión**, **Glucómetro**, **Silla de ruedas**, **Tensiómetro** para adulto o pediátrico según la oferta del servicio (Numeral 26.1 a Numeral 26.5, Página 150).\n- **Procedimientos para realización de exámenes diagnósticos** y **instrucciones sobre preparación de los pacientes**, cuando sea necesario (Numeral 13.1 y Numeral 13.2, Página 111).\n- **Verificación de la calidad de imagen en exámenes diagnósticos que requieran medidas preventivas o correctivas** (Numeral 13.3, Página 111).\n\n[talento_humano] Las condiciones generales para habilitar un servicio de salud incluyen la inscripción en el REPS, la verificación de los soportes entregados y cumplimiento de las condiciones técnicas administrativas, financieras y tecnológicas según corresponda. Además, se requiere que el prestador cuente con un plan hospitalario para emergencias y un plan de mantenimiento de la planta física que incluya el equipamiento fijo (Numeral 8.1, Página 4; Numeral 9.1,2, Página 37; Numeral 5.1, Página 223).\n\n[interdependencia] Para habilitar un servicio de salud, según los fragmentos normativos proporcionados, se deben cumplir ciertas condiciones generales. Estas incluyen:\n\n- **Acuerdo o contrato escrito**: Debe haberse establecido por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios (FRAGMENTO 1, numeral 51.1, página 29).\n- **Solicitud autorización**: La IPS debe solicitar autorización mediante comunicación escrita, con un mínimo de quince días de antelación, ante la secretaria de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias (FRAGMENTO 1, numeral 51.1, página 29).\n- **Información en la solicitud**: La solicitud debe incluir información como la fecha de inicio y terminación del acuerdo, los servicios a prestar, actividades que se desarrollarán, población a atender y mecanismo de supervisión (FRAGMENTO 1, numeral 51.1, página 29).\n- **Criterios médicos**: La atención puede tener carácter prioritario en el marco de la autonomía médica (FRAGMENTO 2, numeral 51.1, página 79).",
     "mono_answer": "Para habilitar un servicio de salud se deben cumplir varias condiciones, entre ellas: \n\n1. Ingresar el formulario de inscripción con los soportes establecidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud a la página web de la secretaría de salud departamental o distrital o entidad competente (8.1, Página 4).\n2. Verificar que los soportes entregados correspondan a los previstos en el Manual de Inscripción (8.2, Página 4).\n3. Cumplir con las condiciones técnicas administrativas, de suficiencia patrimonial y financiera y tecnológicas y científicas de habilitación que se exigen (52.1, Página 162; 52.4, Página 162).\n4. Para prestadores en edificaciones construidas antes de mayo de 2005, contar con el certificado de conformidad de instalaciones eléctricas (44, Página 44).",
-    "multi_errors": [
-      "[dotacion] Esquema invalido: 2 error(es)",
-      "[dotacion] 2 validation errors for AgentResponse\ncitations.4.page\n  Input should be a valid integer [type=int_type, input_value=[150, 159], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/int_type\ncitations.5.page\n  Input should be a valid integer [type=int_type, input_value=[150, 159], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/int_type"
-    ],
+    "multi_errors": [],
     "multi_warnings": [],
     "mono_errors": [],
-    "mono_warnings": []
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
   },
   {
     "index": 112,
@@ -3019,9 +3020,9 @@
     "multi_em": 0.0,
     "mono_em": 0.0,
     "multi_f1": 0.30857142857142855,
-    "mono_f1": 0.6535947712418301,
+    "mono_f1": 0.6447368421052633,
     "multi_answer": "[interdependencia] Los prestadores de servicios de salud no están específicamente clasificados por su naturaleza jurídica en los fragmentos proporcionados. Sin embargo, el requisito para iniciar nuevamente el proceso ante la secretaría de salud departamental o distrital se refiere a instituciones que ya tienen competencias relacionadas con prestación de servicios de salud (FRAGMENTO 1).\n\n[medicamentos_dispositivos] Los prestadores de servicios de salud no pueden habilitar el servicio farmacéutico como único servicio en su portafolio. Además, para otros servicios como terapias y cuidado intermedio pediátrico, se requiere cumplir con criterios específicos que varían según la categoría del servicio (telexperticia, telemonitoreo, etc.).",
-    "mono_answer": "Los prestadores de servicios de salud se clasifican según su naturaleza jurídica en las siguientes categorías: instituciones prestadoras de servicios de salud, profesionales independientes de salud, servicios de transporte especial de pacientes, entidades con objeto social diferente a la prestación de servicios de salud, secretarias de salud departamental o distrital, entidades responsables del pago de servicios de salud y la Superintendencia Nacional de Salud. Los servicios intramurales en establecimientos carcelarios no están sujetos a esta normativa.",
+    "mono_answer": "Los prestadores de servicios de salud se clasifican según su naturaleza jurídica en las siguientes categorías: instituciones prestadoras de servicios de salud, profesionales independientes de salud, servicios de transporte especial de pacientes, entidades con objeto social diferente a la prestación de servicios de salud, secretarias de salud departamental o distrital, entidades responsables del pago de servicios de salud y Superintendencia Nacional de Salud. Los servicios intramurales en establecimientos carcelarios no están sujetos a esta normativa.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: historia_clinica."
@@ -3047,10 +3048,10 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.3586206896551724,
-    "mono_f1": 0.43749999999999994,
-    "multi_answer": "Para evaluar la capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud, se deben considerar los estados financieros certificados por el revisor fiscal o el contador. Estos estados financieros deben ser del año inmediatamente anterior al registro en el Registro Especial de Prestadores de Servicios de Salud -REPS. Si la institución no cuenta con personería jurídica, se presentarán los estados financieros consolidados certificados o dictaminados de la entidad a la cual pertenece. Además, si la institución está en procesos de reestructuración de pasivos o concordatarios, deberá demostrar las condiciones de suficiencia una vez concluidos estos procesos.",
-    "mono_answer": "Para la suficiencia patrimonial, el prestador de servicios de salud debe demostrar las condiciones de suficiencia patrimonial y financiera una vez culmine el proceso de intervención, reestructuración o concordatario, según lo establece la Ley 550 de 1999 o Código de Comercio. Esto se menciona en el Artículo 4 del mismo documento.",
+    "multi_f1": 0.3825136612021858,
+    "mono_f1": 0.43564356435643564,
+    "multi_answer": "La capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud se evalúa a través del cumplimiento de las condiciones financieras establecidas, que incluyen estados financieros certificados por el revisor fiscal o contador. Para la inscripción en el Registro Especial de Prestadores de Servicios de Salud (REPS), se consideran los estados financieros del año inmediatamente anterior al registro; sin embargo, pueden utilizarse estados financieros de períodos menores a un año cuando estén dictaminados. Además, si la institución no cuenta con personería jurídica y pertenece a otra entidad, presentará los estados financieros consolidados certificados o dictaminados de dicha entidad (Numeral 9.1, Página 33). También se debe tener en cuenta que las instituciones bajo procesos de reestructuración de pasivos o concordatarios deben demostrar su suficiencia patrimonial y financiera una vez concluidos estos procesos (Artículo 4, Página 3).",
+    "mono_answer": "Para la suficiencia patrimonial, el prestador de servicios de salud debe demostrar las condiciones de suficiencia patrimonial y financiera una vez culmine el proceso de intervención, reestructuración o concordatario, según lo establece la Ley 550 de 1999 o Código de Comercio. Esto se menciona en el Artículo 4 del numeral relacionado con la inscripción y habilitación.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: infraestructura, dotacion, interdependencia, historia_clinica.",
@@ -3077,17 +3078,19 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.36470588235294116,
-    "mono_f1": 0.437956204379562,
-    "multi_answer": "Los pasos para la inscripción de los prestadores de servicios de salud en el REPS, según los fragmentos normativos proporcionados, son los siguientes:\n\n1. Ingresar a la página web de la Secretaría de Salud Departamental o Distrital o la entidad que tenga a cargo dichas competencias y ubicar el enlace de inscripción del aplicativo REPS.\n2. Determinar la sede o sedes donde va a funcionar, así como los servicios a habilitar, su complejidad, modalidad y capacidad instalada según lo definido en el REPS.\n3. Diligenciar el formulario de inscripción en el REPS.\n4. Realizar la declaración de autoevaluación por cada uno de los servicios a ofertar.\n\nEstos pasos están detallados en los fragmentos normativos [Numeral 9,1,2.a, Página 37; Numeral 7,1, Página 4; Numeral 9.1, Página 36].",
-    "mono_answer": "Los pasos para la inscripción de los prestadores de servicios de salud en el REPS son: \n1. Ingresar a la página web de la secretaría de salud departamental o distrital o la entidad que tenga a cargo dichas competencias, ubicar y seleccionar el enlace de inscripción de prestadores de servicios de salud del aplicativo REPS.\n2. Determinar la sede o sedes donde va a funcionar,\n3. Determinar los servicios a habilitar, su complejidad, modalidad y capacidad instalada según los servicios definidos en el REPS.\n4. Diligenciar el formulario de inscripción en el REPS.",
+    "multi_f1": 0.3764705882352941,
+    "mono_f1": 0.4460431654676259,
+    "multi_answer": "Los pasos para la inscripción de los prestadores de servicios de salud en el REPS, según los fragmentos normativos proporcionados, son los siguientes:\n\n1. Ingresar a la página web de la Secretaría de Salud Departamental o Distrital o la entidad que tenga a cargo dichas competencias y ubicar el enlace de inscripción del aplicativo REPS.\n2. Determinar la sede o sedes donde va a funcionar, así como los servicios a habilitar, su complejidad, modalidad y capacidad instalada según lo definido en el REPS.\n3. Diligenciar el formulario de inscripción en el REPS.\n4. Realizar la declaración de autoevaluación por cada uno de los servicios a ofertar.\n\nEstos pasos se encuentran detallados en los fragmentos normativos [FRAGMENTO 1, numeral 9,1,2.a], [FRAGMENTO 2, numeral 7.1] y [FRAGMENTO 3].",
+    "mono_answer": "Para la inscripción de los prestadores de servicios de salud en el REPS, deben seguir estos pasos:\n1. Ingresar a la página web de la secretaría de salud departamental o distrital o la entidad que tenga a cargo dichas competencias.\n2. Ubicar y seleccionar el enlace de inscripción de prestadores de servicios de salud del aplicativo REPS.\n3. Determinar la sede o sedes donde va a funcionar.\n4. Determinar los servicios a habilitar, su complejidad, modalidad y capacidad instalada según los servicios definidos en el REPS.\n5. Diligenciar el formulario de inscripción en el REPS.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: historia_clinica, interdependencia.",
       "Consulta transversal parcial: solo hubo respuesta util desde 'talento_humano'."
     ],
     "mono_errors": [],
-    "mono_warnings": []
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
   },
   {
     "index": 115,
@@ -3105,9 +3108,9 @@
     "mono_valid": false,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.18271604938271604,
+    "multi_f1": 0.19499999999999998,
     "mono_f1": 0.0,
-    "multi_answer": "[talento_humano] Los pasos para la habilitación de servicios de salud se describen en los siguientes fragmentos normativos:\n\n1. **Inscripción del prestador de servicios de salud**: El prestador debe ingresar a la página web de la Secretaría de Salud Departamental o Distrital, ubicar y seleccionar el enlace de inscripción de prestadores de servicios de salud del aplicativo REPS, determinar la sede o sedes donde va a funcionar, determinar los servicios a habilitar (complejidad, modalidad y capacidad instalada), diligenciar el formulario de inscripción y la declaración de autoevaluación por cada uno de los servicios a ofertar. [Numeral 9.1.2, Página 37]\n\n2. **Ingreso al REPS**: La secretaría de salud departamental o distrital ingresa el formulario de inscripción diligenciado y verifica que los soportes entregados correspondan a los previstos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud. [Numeral 8.1, Página 4]\n\n3. **Visita y verificación**: La secretaría de salud realiza una visita para verificar que se cumplan las condiciones de habilitación y registra el resultado en el REPS. Una vez cumplidas las condiciones, expide la constancia de habilitación correspondiente. [Numeral 9.3.1, Página 40]\n\n4. **Generación del distintivo**: La autorización del distintivo de habilitación se da una vez que la secretaría de salud haya registrado el cumplimiento de las condiciones en el REPS y expida la constancia de habilitación correspondiente. [Numeral 9.3.1, Página 40]\n\n[interdependencia] Para la habilitación de servicios de salud, según los fragmentos normativos proporcionados, se deben cumplir ciertos requisitos y procedimientos. Primero, es necesario establecer por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios (Numeral 14.9, Página 79). Este acuerdo debe incluir la fecha de inicio y terminación de la prestación de servicios, así como los servicios que se van a prestar (Numeral 14.10, Página 79). Además, es obligatorio solicitar autorización mediante comunicación escrita con al menos quince días de antelación ante la secretaria de salud departamental o distrital, o la entidad competente (Numeral 14.11, Página 79). No obstante, los fragmentos proporcionados no detallan todos los pasos específicos para la habilitación de servicios de salud.",
+    "multi_answer": "[talento_humano] Los pasos para la habilitación de servicios de salud se describen en los siguientes fragmentos normativos:\n\n1. **Inscripción del prestador de servicios de salud**: El prestador debe ingresar a la página web de la Secretaría de Salud Departamental o Distrital, ubicar y seleccionar el enlace de inscripción de prestadores de servicios de salud del aplicativo REPS, determinar la sede o sedes donde va a funcionar, determinar los servicios a habilitar (complejidad, modalidad y capacidad instalada), diligenciar el formulario de inscripción en el REPS y la declaración de autoevaluación por cada uno de los servicios a ofertar. [Numeral 9.1.2, Página 37]\n\n2. **Ingreso al REPS**: La secretaría de salud departamental o distrital ingresa al formulario de inscripción diligenciado por el interesado en el aplicativo REPS. [Numeral 8.1, Página 4]\n\n3. **Verificación de soportes y cumplimiento de condiciones**: La secretaría de salud verifica que los soportes entregados con el formulario correspondan a los previstos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud, y registra el resultado del cumplimiento de las condiciones de habilitación en el REPS. [Numeral 8.2]\n\n4. **Autorización del distintivo**: Una vez verificadas las condiciones, la secretaría de salud autoriza la generación e impresión del correspondiente distintivo de habilitación para cada servicio habilitado. [Numeral 9.3.1, Página 40]\n\n[interdependencia] Para la habilitación de servicios de salud, según los fragmentos normativos proporcionados, se deben cumplir ciertos requisitos y procedimientos. Primero, es necesario establecer por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios (Numeral 14.9, Página 79). Este acuerdo debe incluir la fecha de inicio y terminación de la prestación de servicios, así como los servicios que se van a prestar (Numeral 14.10, Página 79). Además, la IPS debe solicitar autorización mediante comunicación escrita con al menos quince días de antelación ante la secretaria de salud departamental o distrital, o la entidad competente (Fragmento 2). No obstante, los fragmentos proporcionados no detallan todos los pasos específicos para la habilitación. Por lo tanto, se requiere información adicional para completar el proceso.",
     "mono_answer": "",
     "multi_errors": [],
     "multi_warnings": [
@@ -3139,7 +3142,7 @@
     "multi_errors": [],
     "multi_warnings": [],
     "mono_errors": [
-      "JSON malformado: Expecting property name enclosed in double quotes: line 3 column 18 (char 444)"
+      "JSON malformado: Expecting ':' delimiter: line 3 column 549 (char 975)"
     ],
     "mono_warnings": []
   },
@@ -3158,9 +3161,9 @@
     "multi_em": 0.0,
     "mono_em": 0.0,
     "multi_f1": 0.13559322033898305,
-    "mono_f1": 0.27999999999999997,
+    "mono_f1": 0.2456140350877193,
     "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
-    "mono_answer": "Las visitas previas que sean necesarias para garantizar la adecuada atención de la población en su jurisdicción, así como las visitas que surjan en cumplimiento de funciones de inspección, vigilancia y control harán parte del plan de visitas de verificación. Esto se aplica a aquellas instituciones prestadoras de servicios de salud acreditadas durante la vigencia de dicha acreditación, salvo cuando vayan a realizar la apertura de nuevos servicios de urgencias.",
+    "mono_answer": "Las visitas previas que sean necesarias para garantizar la adecuada atención de la población en su jurisdicción harán parte del plan de visitas de verificación. (Fragmento 3)",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: historia_clinica."
@@ -3184,9 +3187,9 @@
     "multi_em": 0.0,
     "mono_em": 0.0,
     "multi_f1": 0.08510638297872342,
-    "mono_f1": 0.5669291338582677,
+    "mono_f1": 0.5468749999999999,
     "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
-    "mono_answer": "Para presentar novedades relacionadas con el cierre del prestador de servicios de salud, se requiere informar a las entidades responsables de pago con los cuales tengan contrato, mínimo veinte (20) días calendario antes de reportar el registro de la novedad de cierre en el formato de novedades. Esto se debe hacer para garantizar la prestación de servicios de salud a los usuarios.",
+    "mono_answer": "Los requisitos para presentar novedades relacionadas con el cierre del prestador de servicios de salud incluyen informar a las entidades responsables de pago con las cuales tengan contrato, mínimo veinte (20) días calendario antes de reportar el registro de la novedad de cierre en el formato de novedades. Esto se debe hacer para garantizar la prestación de servicios de salud a los usuarios.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: historia_clinica, interdependencia."
@@ -3238,9 +3241,9 @@
     "multi_em": 0.0,
     "mono_em": 0.0,
     "multi_f1": 0.21212121212121213,
-    "mono_f1": 0.5142857142857143,
+    "mono_f1": 0.6461538461538462,
     "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
-    "mono_answer": "El requisito para presentar novedades relacionadas con el cambio de datos de contacto está incluido en los estándares de habilitación bajo la sección de Novedades de servicios, específicamente en el numeral 12.3 f.",
+    "mono_answer": "El requisito para presentar novedades relacionadas con el cambio de datos de contacto se encuentra en el numeral 12.3 f. de la Resolución 3100 de 2019, página 6.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: historia_clinica."
@@ -3293,18 +3296,16 @@
     "mono_valid": true,
     "multi_em": 0.0,
     "mono_em": 0.0,
-    "multi_f1": 0.4972972972972973,
-    "mono_f1": 0.26666666666666666,
-    "multi_answer": "Para presentar novedades relacionadas con cierre de sedes, el prestador de servicios de salud debe cumplir con ciertos requisitos según la normativa. Primero, es necesario informar al menos veinte (20) días calendario antes del cierre a las entidades responsables de pago con las cuales tenga contrato. Además, si se trata de un cierre por una intervención forzosa administrativa para liquidar o administrar por parte de la Superintendencia Nacional de Salud, secretaría departamental o distrital, o entidad competente, el prestador que asuma los servicios en el mismo domicilio y sedes debe efectuar el procedimiento de inscripción establecido. También se requiere elaborar un plan para la reubicación y prestación de servicios a los pacientes según sus necesidades médicas (Artículo 13, numeral 14.1, Página 7; Artículo 25, numeral 14.1, Página 10).",
-    "mono_answer": "Los prestadores de servicios de salud que tengan una medida de seguridad que implique el cierre de la totalidad de las sedes en la entidad territorial donde esté funcionando, proferida por la Superintendencia Nacional de Salud o la secretaría de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias, y que durante ja vigencia de la medida se cumpla el término para realizar la autoevaluación, deben reportar el cierre en el formato de novedades.",
+    "multi_f1": 0.3125,
+    "mono_f1": 0.4424778761061947,
+    "multi_answer": "Para presentar novedades relacionadas con cierre de sedes, el prestador de servicios de salud debe cumplir con ciertos requisitos según la normativa. Primero, si se trata de un cierre temporal por intervención forzosa administrativa para liquidar o administrar por parte de la Superintendencia Nacional de Salud, secretaría departamental o distrital, o entidad competente, el prestador que asuma los servicios en el mismo domicilio y sedes debe efectuar el procedimiento de inscripción establecido en el artículo 7 de la Resolución 3100 de 2019. Además, si hay una medida de seguridad que implica el cierre total de las sedes en la entidad territorial, también se requiere cumplir con este procedimiento (Fragmento 3). Sin embargo, no se menciona específicamente un plazo para reportar estas novedades ni requisitos adicionales como visitas de verificación previa para servicios de alta complejidad.",
+    "mono_answer": "Los prestadores de servicios de salud deben reportar el cierre de sedes al menos veinte (20) días calendario antes de reportar el registro de la novedad de cierre en el formato de novedades, con el fin de que las entidades responsables de pago adopten las medidas necesarias para garantizar la prestación de servicios a los usuarios.",
     "multi_errors": [],
     "multi_warnings": [
       "Sin evidencia directa en: historia_clinica, infraestructura.",
       "Consulta transversal parcial: solo hubo respuesta util desde 'talento_humano'."
     ],
     "mono_errors": [],
-    "mono_warnings": [
-      "Confianza baja: 0.00"
-    ]
+    "mono_warnings": []
   }
 ]

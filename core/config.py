@@ -36,7 +36,7 @@ class Settings(BaseSettings):
 
     # ── Parámetros LLM compartidos ────────────────────────────────────────────
     llm_temperature: float = 0.0
-    llm_max_tokens: int = 2048
+    llm_max_tokens: int = 4096
 
     # ── Embeddings ────────────────────────────────────────────────────────────
     embedding_model: str = (

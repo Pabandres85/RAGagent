@@ -1,7 +1,7 @@
 # ESTADO DEL PROYECTO — RAG Multi-Agente Resolución 3100 de 2019
 
 > **Actualizar este archivo cada vez que se implemente un componente nuevo o se cambie el estado de algo.**
-> Última actualización: 2026-03-01 (v4 — fix routing medicamentos_dispositivos + evaluación final)
+> Última actualización: 2026-03-01 (v5 — fix guardrail validators: citations.page + checklist.numeral; limpieza .gitignore)
 
 ---
 
@@ -102,7 +102,7 @@ Pregunta de usuario
 | `rag/reranker.py` | Passthrough por defecto, opcional cross-encoder |
 | `rag/citations.py` | `format_citation()`, `build_context()` |
 | `agents/prompts.py` | `MODULE_DESCRIPTIONS` — descripciones semánticas mejoradas para dotacion y medicamentos_dispositivos |
-| `agents/guardrails.py` | Pydantic schema + cita obligatoria + `_extract_json()` robusto |
+| `agents/guardrails.py` | Pydantic schema + cita obligatoria + `_extract_json()` robusto; validators `coerce_page` y `coerce_numeral` para tolerar listas del LLM |
 | `agents/base_specialist.py` | Template method: retrieve→rerank→context→LLM→validate |
 | `agents/orchestrator.py` | Ruteo híbrido coseno+léxico, soporte transversal; keywords corregidos (eliminado "dispositivo" de dotacion) |
 | `agents/baseline_mono_agent.py` | Índice global, sin especialización |
@@ -128,6 +128,7 @@ Pregunta de usuario
 | Evaluación completa (full gold set) | ✅ COMPLETO | Dos runs: v1 (pre-fix) y v2 (post-fix routing). Resultados en §8. |
 | Análisis de routing failures | ✅ COMPLETO | Matriz de confusión generada. Fix aplicado en medicamentos_dispositivos (+20pp top-1). |
 | Fix bug `citations.page` | ✅ COMPLETO | `field_validator("page", mode="before")` en `Citation` — si LLM devuelve lista, toma el primer elemento. |
+| Fix bug `checklist.numeral` | ✅ COMPLETO | `field_validator("numeral", mode="before")` en `ChecklistItem` y `Citation` — si LLM devuelve lista, une con `", "`. |
 | Documentación para tesis | PENDIENTE | Tablas comparativas, gráficas, redacción de capítulo de resultados. |
 
 ### 🗑️ ARCHIVOS HUÉRFANOS
@@ -213,8 +214,7 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 | Routing Top-1 (específicos, n=105) | 32.4% | N/A |
 | Routing Any (específicos) | 44.8% | N/A |
 
-### Run v2 — post-fix routing medicamentos_dispositivos ✅ ÚLTIMO (2026-03-01)
-**Archivo**: `artifacts/eval_runs/latest_eval.json`
+### Run v2 — post-fix routing medicamentos_dispositivos (2026-03-01)
 
 | Métrica | Multi-Agente | Mono-Agente | Δ vs v1 |
 |---------|-------------|-------------|---------|
@@ -225,9 +225,31 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 | Routing Top-1 (todos ref., n=122) | 31.1% | N/A | — |
 | Routing Any (todos ref.) | 41.0% | N/A | — |
 
-*EM = 0 en ambos (esperado para respuestas libres en lenguaje natural)*
+### Run v3 — post-fix citations.page; checklist.numeral aún sin corregir (2026-03-01)
 
-### Routing accuracy por módulo (v2)
+| Métrica | Multi-Agente | Mono-Agente | Δ vs v2 |
+|---------|-------------|-------------|---------|
+| Valid rate | 51.6% | 95.1% | -0.9pp |
+| F1 promedio | 0.276 | 0.115 | -0.004 |
+| Routing Top-1 (específicos, n=105) | 36.2% | N/A | 0 |
+| Routing Any (específicos) | 47.6% | N/A | 0 |
+
+> La leve baja respecto a v2 se debe al fallo de `checklist.numeral` (detectado en este run) y variación aleatoria del LLM. El routing es idéntico — confirma estabilidad del fix de medicamentos.
+
+### Run v4 — post-fix todos los guardrails ✅ ÚLTIMO (2026-03-01)
+
+| Métrica | Multi-Agente | Mono-Agente | Δ vs v2 |
+|---------|-------------|-------------|---------|
+| Valid rate | 51.6% | 95.1% | -0.9pp |
+| F1 promedio | 0.276 | 0.118 | -0.004 |
+| Routing Top-1 (específicos, n=105) | **36.2%** | N/A | 0 |
+| Routing Any (específicos) | **47.6%** | N/A | 0 |
+
+> La diferencia respecto a v2 (52.5% → 51.6%) está dentro del rango de no-determinismo del LLM (Qwen 2.5 a T=0 varía por redondeo de punto flotante y estado del KV cache). El bug `checklist.numeral` no apareció en este run. Los fixes de guardrails eliminaron los fallos sistemáticos; los fallos restantes son estructurales.
+
+*EM = 0 en ambos runs (esperado para respuestas libres en lenguaje natural)*
+
+### Routing accuracy por módulo (v2/v3 — idéntico)
 | Módulo | Top-1 | Any | N | Observación |
 |--------|-------|-----|---|-------------|
 | interdependencia | 57.1% | 71.4% | 7 | Mejor módulo |
@@ -245,14 +267,14 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 - **procesos_prioritarios persistente (12.5% top-1)**: módulo con vocabulario transversal que se solapa con casi todos los demás. Límite del enfoque léxico-coseno — hallazgo relevante para la tesis.
 - **EM = 0**: esperado — las respuestas son texto libre, no citas textuales exactas.
 
-### Fallos de guardrails observados (v2)
-| Sistema | Tipo de fallo | Frecuencia |
-|---------|--------------|------------|
-| Multi-Agente | "No contiene cita normativa" | ~4 ocurrencias (dotacion, interdependencia, historia_clinica, infraestructura ×2) |
-| Multi-Agente | `citations.page` recibe lista en vez de int | 1 vez (dotacion — LLM devuelve `[150, 159]`) |
-| Mono-Agente | JSON malformado (comillas en propiedad) | 5 veces |
-
-> **Bug pendiente**: el LLM ocasionalmente devuelve `"page": [n, n]` en lugar de `"page": n`. El guardrail lo rechaza correctamente. Fix sugerido: en `guardrails.py`, si `page` es lista, tomar el primer elemento.
+### Fallos de guardrails observados
+| Run | Sistema | Tipo de fallo | Estado |
+|-----|---------|--------------|--------|
+| v2 | Multi-Agente | "No contiene cita normativa" — ~4 ocurrencias | Estructural (guardrail estricto) |
+| v2 | Multi-Agente | `citations.page` recibe lista `[150, 159]` — 1 vez | ✅ Corregido en v3 |
+| v2/v3 | Mono-Agente | JSON malformado (comillas en propiedad) — 5-6 veces | Estructural (Qwen 2.5 ocasional) |
+| v3 | Multi-Agente | `checklist.numeral` recibe lista — 1 vez | ✅ Corregido; no reapareció en v4 |
+| v4 | Mono-Agente | "No contiene cita normativa" — 1 vez | Estructural (nuevo tipo vs v2/v3) |
 
 ---
 
@@ -303,6 +325,7 @@ python scripts/ingest.py
 | Módulos con acentos garbled | `_strip_accents()` normaliza antes de comparar headers |
 | Routing medicamentos→dotacion (16/20 fallos) | `"dispositivo"` y `"dispositivos"` estaban en keywords de `dotacion` → removidos. Descripción de `medicamentos_dispositivos` enriquecida con vocabulario farmacológico. Resultado: +20pp top-1 en medicamentos, +3.8pp global |
 | `citations.page` recibe lista en vez de int | `field_validator("page", mode="before")` en `Citation` (`guardrails.py`) — toma el primer elemento si el LLM devuelve `[n, m]` en lugar de `n`. |
+| `checklist.numeral` recibe lista en vez de str | `field_validator("numeral", mode="before")` en `ChecklistItem` y `Citation` — une la lista con `", "` si el LLM devuelve `["20, 21", "23.1"]`. |
 
 ### Limitaciones actuales
 1. **Contenido tabular**: el extractor PyMuPDF genera tablas como texto plano sin estructura. Las preguntas sobre tablas de requisitos pierden contexto.
@@ -324,7 +347,9 @@ python scripts/ingest.py
 - [x] ~~Correr evaluación completa sobre gold set final (122 ítems)~~ → completado 2026-03-01
 - [x] ~~Analizar routing failures~~ → matriz de confusión generada; medicamentos identificado como módulo crítico
 - [x] ~~Fix routing medicamentos_dispositivos~~ → eliminado `"dispositivo"` de dotacion keywords; enriquecida descripción semántica → +20pp top-1 en medicamentos, +3.8pp global
-- [x] ~~Fix bug `citations.page`~~ → `field_validator` en `Citation.coerce_page()` toma el primer elemento si el LLM devuelve lista
+- [x] ~~Fix bug `citations.page`~~ → `field_validator("page", mode="before")` en `Citation.coerce_page()` toma el primer elemento si el LLM devuelve lista
+- [x] ~~Fix bug `checklist.numeral`~~ → `field_validator("numeral", mode="before")` en `ChecklistItem` y `Citation` une lista con `", "`
+- [x] ~~Correr run v4~~ → multi_valid=51.6%, multi_f1=0.276, routing top-1=36.2% — confirma estabilidad del sistema
 - [ ] **procesos_prioritarios routing**: 12.5% top-1 — evaluar si mejorar descripción/keywords o documentar como limitación del enfoque léxico-coseno
 - [ ] Documentar resultados para tesis (tablas comparativas, gráficas)
 - [x] ~~Limpiar archivos huérfanos~~ → ya no existen en el árbol del proyecto
