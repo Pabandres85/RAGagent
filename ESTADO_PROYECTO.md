@@ -127,7 +127,7 @@ Pregunta de usuario
 | Preguntas generales/admin en gold set | ✅ COMPLETO | 30 preguntas generales agregadas con `add_general_questions.py`. |
 | Evaluación completa (full gold set) | ✅ COMPLETO | Dos runs: v1 (pre-fix) y v2 (post-fix routing). Resultados en §8. |
 | Análisis de routing failures | ✅ COMPLETO | Matriz de confusión generada. Fix aplicado en medicamentos_dispositivos (+20pp top-1). |
-| Fix bug `citations.page` | PENDIENTE | LLM devuelve lista en vez de int → tomar primer elemento en `guardrails.py`. |
+| Fix bug `citations.page` | ✅ COMPLETO | `field_validator("page", mode="before")` en `Citation` — si LLM devuelve lista, toma el primer elemento. |
 | Documentación para tesis | PENDIENTE | Tablas comparativas, gráficas, redacción de capítulo de resultados. |
 
 ### 🗑️ ARCHIVOS HUÉRFANOS
@@ -302,6 +302,7 @@ python scripts/ingest.py
 | Encabezados de página en embeddings | `PAGE_HEADER_RE` filtra "Página N de NNN" en `clean_page_text()` |
 | Módulos con acentos garbled | `_strip_accents()` normaliza antes de comparar headers |
 | Routing medicamentos→dotacion (16/20 fallos) | `"dispositivo"` y `"dispositivos"` estaban en keywords de `dotacion` → removidos. Descripción de `medicamentos_dispositivos` enriquecida con vocabulario farmacológico. Resultado: +20pp top-1 en medicamentos, +3.8pp global |
+| `citations.page` recibe lista en vez de int | `field_validator("page", mode="before")` en `Citation` (`guardrails.py`) — toma el primer elemento si el LLM devuelve `[n, m]` en lugar de `n`. |
 
 ### Limitaciones actuales
 1. **Contenido tabular**: el extractor PyMuPDF genera tablas como texto plano sin estructura. Las preguntas sobre tablas de requisitos pierden contexto.
@@ -323,7 +324,7 @@ python scripts/ingest.py
 - [x] ~~Correr evaluación completa sobre gold set final (122 ítems)~~ → completado 2026-03-01
 - [x] ~~Analizar routing failures~~ → matriz de confusión generada; medicamentos identificado como módulo crítico
 - [x] ~~Fix routing medicamentos_dispositivos~~ → eliminado `"dispositivo"` de dotacion keywords; enriquecida descripción semántica → +20pp top-1 en medicamentos, +3.8pp global
-- [ ] **Fix bug `citations.page`**: cuando el LLM devuelve lista, tomar el primer elemento en `guardrails.py` (afecta dotacion y medicamentos ocasionalmente)
+- [x] ~~Fix bug `citations.page`~~ → `field_validator` en `Citation.coerce_page()` toma el primer elemento si el LLM devuelve lista
 - [ ] **procesos_prioritarios routing**: 12.5% top-1 — evaluar si mejorar descripción/keywords o documentar como limitación del enfoque léxico-coseno
 - [ ] Documentar resultados para tesis (tablas comparativas, gráficas)
 - [x] ~~Limpiar archivos huérfanos~~ → ya no existen en el árbol del proyecto

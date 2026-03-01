@@ -26,6 +26,13 @@ class Citation(BaseModel):
     resolution: str = "Resolucion 3100 de 2019"
     vigencia: str = "Vigente"
 
+    @field_validator("page", mode="before")
+    @classmethod
+    def coerce_page(cls, value):
+        if isinstance(value, list):
+            return value[0] if value else None
+        return value
+
 
 _STATUS_ALIASES = {
     "cumplido": "cumple",
