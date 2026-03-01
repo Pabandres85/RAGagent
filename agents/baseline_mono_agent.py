@@ -9,7 +9,7 @@ from __future__ import annotations
 import logging
 
 from agents.guardrails import GuardrailsResult, validate_response
-from agents.prompts import MONO_AGENT_SYSTEM_PROMPT, SPECIALIST_USER_TEMPLATE
+from agents.prompts import MONO_AGENT_SYSTEM_PROMPT, MONO_AGENT_USER_TEMPLATE
 from core.config import settings
 from core.llm_client import chat_completion
 from rag.citations import build_context
@@ -51,12 +51,14 @@ class MonoAgent:
             {"role": "system", "content": MONO_AGENT_SYSTEM_PROMPT},
             {
                 "role": "user",
-                "content": SPECIALIST_USER_TEMPLATE.format(
+                "content": MONO_AGENT_USER_TEMPLATE.format(
                     context=context, question=question
                 ),
             },
         ]
         raw = chat_completion(messages)
+        if raw.startswith("{{") and raw.endswith("}}"):
+            raw = raw[1:-1]
         result = validate_response(raw, expected_module="global")
 
         if not result.valid:

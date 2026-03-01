@@ -1,0 +1,3310 @@
+[
+  {
+    "index": 1,
+    "question": "¿Qué tipo de profesional debe estar presente cuando se realiza una telexperticia entre personal de salud no profesional y un especialista?",
+    "reference_answer": "El prestador remisor cuenta con técnico, tecnólogo o auxiliar que atiende presencialmente al usuario (RESOLUCIÓN NÚMERO 0003100 DE 2019, numeral 3.2).",
+    "module_expected": "talento_humano",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.3132530120481928,
+    "mono_f1": 0.0,
+    "multi_answer": "De acuerdo con los fragmentos normativos proporcionados, cuando se realiza una telexperticia entre personal de salud no profesional y un profesional de la salud en la modalidad telexperticia, el prestador remisor debe contar con un técnico, tecnólogo o auxiliar que atiende presencialmente al usuario. Este requisito está especificado en varios fragmentos del estándar de Talento Humano de la Resolución 3100 de 2019.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 2,
+    "question": "¿Qué tipo de inyector de sangre debe contar el equipo de hemodiálisis según los requisitos estipulados en el numeral 11.2.5?",
+    "reference_answer": "De acuerdo con el numeral 11.2.5, el equipo de hemodiálisis debe contar con un 'inyector de sangre variable - (bomba de sangre) con inyector de volumen'.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "medicamentos_dispositivos",
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.7407407407407408,
+    "mono_f1": 0.0,
+    "multi_answer": "El equipo de hemodiálisis debe contar con un inyector de sangre variable - (bomba de sangre) con inyector de volumen, conforme al numeral 11.2.5 del estándar de dotación.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: medicamentos_dispositivos, procesos_prioritarios.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'dotacion'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 3,
+    "question": "¿Cuáles registros deben ser mantenidos según los requisitos estipulados en el numeral 9.1 del módulo Dotación de la Resolución 3100 de 2019 y cuál es su contenido?",
+    "reference_answer": "Deben mantenerse los siguientes registros: 9.1 Pacientes y muestras tomadas; 92 Muestras remitidas para su procesamiento; 9.3 Resultados de los análisis con el nombre del laboratorio que realizó el procesamiento o lectura de las muestras y de la persona que los realizó; 9.4 Análisis del control de calidad y de las medidas preventivas y correctivas.",
+    "module_expected": "dotacion",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.11904761904761904,
+    "mono_f1": 0.061538461538461535,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 4,
+    "question": "¿Qué tipo de electrocardiografía neonatal debe estar incluida en el monitor de signos vitales según el numeral 15.10 del documento?",
+    "reference_answer": "El numeral 15.10 establece que el electrocardiografía neonatal con tres derivaciones, que permita su impresión, si no está incluida en el monitor de signos vitales.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.11111111111111112,
+    "mono_f1": 0.11428571428571428,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 5,
+    "question": "¿Cuáles son los elementos que deben estar documentados sobre los reactivos de diagnóstico in vitro requeridos según el numeral 3 del módulo 2.7?",
+    "reference_answer": "Los reactivos de diagnóstico in vitro requieren información documentada que dé cuenta de la verificación y seguimiento del nombre, marca, presentación comercial, Registro sanitario vigente o permiso de comercialización expedido por el Invima, clasificación del riesgo sanitario, vida útil (cuando aplique), fecha de vencimiento y lote.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "medicamentos_dispositivos",
+    "module_predicted_all": [
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4193548387096774,
+    "mono_f1": 0.10714285714285714,
+    "multi_answer": "Los elementos que deben estar documentados sobre los reactivos de diagnóstico in vitro requeridos son: \n\n- Nombre [Numeral 3.1, Página 71]\n- Marca [Numeral 3.2, Página 71]\n- Presentación comercial [Numeral 3.3, Página 71]\n- Registro sanitario vigente o permiso de comercialización expedido por el Invima [Numeral 3.4, Página 71]\n- Clasificación del riesgo sanitario [Numeral 3.5, Página 71]\n- Vida útil, cuando aplique [Numeral 3.6, Página 71]\n- Fecha de vencimiento y lote [Numeral 3.7, Página 71]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 6,
+    "question": "¿Cuáles son los dispositivos médicos específicos mencionados en el numeral 12 del requisito 3100 de 2019 que deben estar disponibles según su modalidad operativa?",
+    "reference_answer": "De acuerdo con el numeral 12.6, 12.7 y 12.8 del requisito 3100 de 2019, los dispositivos médicos específicos mencionados son: marcapaso externo no invasivo (numeral 12.6), oxígeno medicinal portátil (numeral 12.7) y electrocardiógrafo (numeral 12.8).",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.2368421052631579,
+    "mono_f1": 0.08888888888888888,
+    "multi_answer": "Según el numeral 12 no se especifican dispositivos médicos específicos. En cambio, se menciona que debe haber disponibilidad en el servicio de elementos y equipos biomédicos necesarios para los procedimientos definidos en el estándar de procesos prioritarios [Numeral 19.1, Página 177].",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 7,
+    "question": "¿Qué acción debe tomar la autoridad competente si el prestador no puede demostrar que cuenta con certificado de conformidad de las instalaciones eléctricas?",
+    "reference_answer": "La secretaría de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias que realice la visita de reactivación, deberá notificar del hecho a la autoridad competente de vigilar el cumplimiento de éste. (9.3.5)",
+    "module_expected": "talento_humano",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.09090909090909091,
+    "mono_f1": 0.0425531914893617,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 8,
+    "question": "¿Cuál es el requisito específico para el oxímetro con sensor neonatal según el numeral 12.4 del documento?",
+    "reference_answer": "12.4. Oxlmetro con sensor neonatal (cuando no esté incluido en el monitor de signos vitales).",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "procesos_prioritarios",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.13636363636363635,
+    "mono_f1": 0.16,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion, procesos_prioritarios, historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 9,
+    "question": "¿Cuáles son los requisitos específicos establecidos en el numeral 7.1 del estándar de infraestructura según Resolución 3100 de 2019 para el ambiente a manera de filtro en un centro de servicios de salud?",
+    "reference_answer": "De acuerdo con el numeral 7.1, el ambiente a manera de filtro debe estar diseñado para acceso del talento humano en salud y visitantes, incluyendo lavamanos y área de casilleros.",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.10169491525423728,
+    "mono_f1": 0.05,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 10,
+    "question": "¿Qué requisito debe cumplir el técnico en medicina nuclear para estar habilitado según el numeral 1.2 del módulo Talento Humano, página 112?",
+    "reference_answer": "El técnico en medicina nuclear debe contar con constancia de asistencia en las acciones de formación continua en protección radiológica, radiofarmacia y radiofármacos.",
+    "module_expected": "infraestructura",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.7301587301587301,
+    "mono_f1": 0.06060606060606061,
+    "multi_answer": "El técnico en medicina nuclear o tecnólogo en manejo de fuentes no selladas de uso diagnóstico y terapéutico debe contar con constancia de asistencia a las acciones de formación continua en protección radiológica, radiofarmacia y radiofármacos. [Numeral 1.2, Página 112]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 11,
+    "question": "¿Cuáles son las condiciones de almacenamiento requeridas según el numeral 40.3 para las unidades de sangre de cordón umbilical y sangre periférica o médula ósea en función del tiempo transcurrido desde la recolección hasta la infusión?",
+    "reference_answer": "Las unidades de sangre de cordón umbilical deben almacenarse a una temperatura menor o igual a -120 grados centígrados, mientras que las unidades de sangre periférica o médula ósea deben mantenerse en menos -84 grados centígrados si el producto va a ser infundido posterior a 48 horas de recolectado. Si la infusión se realizará dentro de las 48 horas, se almacenan entre 2 y 8 grados centígrados.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.125,
+    "mono_f1": 0.0779220779220779,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 12,
+    "question": "¿Qué elementos biomédicos deben estar disponibles según el numeral 16 cuando se presta atención a pacientes adultos quemados en condiciones críticas?",
+    "reference_answer": "16. Cuando se oferte atención de paciente adulto quemado en condiciones críticas, cuenta con la dotación de los elementos y equipos biomédicos, que se requieran de acuerdo con los procedimientos definidos en el estándar de procesos prioritarios.",
+    "module_expected": "talento_humano",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.0,
+    "mono_f1": 0.1702127659574468,
+    "multi_answer": "",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [
+      "[dotacion] La respuesta no contiene ninguna cita normativa."
+    ],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 13,
+    "question": "¿Qué debe incluirse en la reunión de apertura de la visita según el numeral 9.3.3.1 del requisito 9.3.3?",
+    "reference_answer": "Deben explicarse los objetivos, metodología y distribución de servicios y estándares a verificar, además de cotejar los servicios de salud registrados por el prestador en el REPS con los ofertados y prestados.",
+    "module_expected": "talento_humano",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "infraestructura",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.13114754098360656,
+    "mono_f1": 0.09523809523809523,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, infraestructura, interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 14,
+    "question": "¿Cuáles son las modalidades de prestación de servicio que deben cumplir con el requisito de contar con un auxiliar en enfermería según el numeral 1.1 del módulo Talento Humano?",
+    "reference_answer": "Salud y Protección Social autorice. Tejidos: Tejidos oculares, osteomuscular, cardiovascular, piel y componentes de la piel y los demás que el Ministerio de Salud y Protección Social autorice. Estructura del servicio: Complejidades: Mediana y alta; Modalidades de prestación: Estándar de talento humano; Complejidades mediana y alta; Intramural; Extramural Jornada de Salud y Unidad Móvil - No aplica para trasplantes; Telemedicina - categoría: Telexperticia sincrónica o asincrónica; Entre dos profesionales; Modalidades intramura/, extramural jornada de salud, unidad móvil y telemedicina - prestador remisor Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con 1.1 Auxiliar en enfermería.",
+    "module_expected": "talento_humano",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.24637681159420288,
+    "mono_f1": 0.07142857142857142,
+    "multi_answer": "Según el numeral 1.1 del módulo Talento Humano, para ambulancias terrestres, los que deben cumplir con el requisito de contar con un auxiliar en enfermería son las modalidades extramuraf y telemedicina - prestador remisor. [FRAGMENTO 3]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 15,
+    "question": "¿Cuál es la obligación de la entidad encargada de realizar la visita de reactivación en relación a la notificación del cumplimiento o incumplimiento de las condiciones de habilitación?",
+    "reference_answer": "La secretaría de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias, deberá notificar del hecho a la autoridad competente de vigilar el cumplimiento de éste.",
+    "module_expected": "talento_humano",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.10169491525423728,
+    "mono_f1": 0.05,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 16,
+    "question": "¿Cuál es la descripción del servicio de diagnóstico vascular según el numeral 19.1 y el numeral 11.3.8 de la Resolución 3100 de 2019?",
+    "reference_answer": "Es el servicio que utiliza métodos y procedimientos para el diagnóstico de enfermedades o disfunciones del sistema cardiovascular y vascular periférico (venoso, arterial y linfático), de sus órganos o la.",
+    "module_expected": "talento_humano",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.10169491525423728,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia, procesos_prioritarios."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 17,
+    "question": "¿Cuáles son las condiciones ambientales requeridas según el numeral 53.1 para garantizar la prestación de servicios en telemedicina como prestador de referencia exclusivo?",
+    "reference_answer": "De acuerdo con el numeral 53.1, es necesario contar con un ambiente exclusivo que garantice la privacidad y confidencialidad durante la atención, seguridad de los equipos frente a la extracción no autorizada y condiciones ambientales libres de interferencias visuales y sonoras para su correcto funcionamiento.",
+    "module_expected": "infraestructura",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios",
+      "interdependencia",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.16216216216216217,
+    "mono_f1": 0.1090909090909091,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios, interdependencia, historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 18,
+    "question": "¿Qué tipo de plataformas tecnológicas debe utilizar el proveedor para garantizar la seguridad, privacidad y disponibilidad permanente del servicio de salud según los criterios establecidos en la normatividad?",
+    "reference_answer": "Plataformas tecnológicas que garanticen la seguridad y privacidad de la información y la disponibilidad permanente para prestar los servicios de salud, cumpliendo con los criterios de seguridad, privacidad y protección de datos personales establecidos en la normatividad o lineamientos que regulen la materia (51.2).",
+    "module_expected": "infraestructura",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "historia_clinica",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.16438356164383564,
+    "mono_f1": 0.14814814814814814,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia, historia_clinica, dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 19,
+    "question": "¿Qué requisito debe cumplir el piso del túnel o puente según el numeral 5.2 de la Resolución 3100?",
+    "reference_answer": "El piso del túnel o puente debe ser uniforme y de material antideslizante o con elementos que garantizan esta propiedad en todo su recorrida, con pasamanos a ambos lados y protecciones laterales hacia espacios libres (Resolución 3100 de 2019, numeral 5.2).",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.8192771084337348,
+    "mono_f1": 0.03921568627450981,
+    "multi_answer": "El piso del túnel o puente debe ser uniforme y de material antideslizante o con elementos que garantizan esta propiedad en todo su recorrido, además de contar con pasamanos a ambos lados y protecciones laterales hacia espacios libres. [Numeral 5.2, Página 62]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 20,
+    "question": "¿Cuál es el requisito específico sobre los tomacorrientes en el compartimiento del paciente según el numeral 24.1.3?",
+    "reference_answer": "El numeral 24.1.3 establece que mínimo dos tomacorrientes tipo 'encendedor de cigarrillo' deben estar identificados en el compartimiento del paciente.",
+    "module_expected": "infraestructura",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.08163265306122448,
+    "mono_f1": 0.5714285714285713,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "El requisito específico sobre los tomacorrientes en el compartimiento del paciente es que debe haber mínimo dos tomacorrientes tipo 'encendedor de cigarrillo'.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "El modulo de la respuesta (infraestructura) no coincide con el esperado (global)."
+    ]
+  },
+  {
+    "index": 21,
+    "question": "¿Cuál es el requisito específico sobre la habilitación del servicio quirúrgico requerido para un prestador que realiza procedimientos quirúrgicos en modalidad intramural según el numeral 12.2 del documento?",
+    "reference_answer": "El prestador donde se realicen los procedimientos quirúrgicos en esta modalidad cuenta con la habilitación del servicio quirúrgico (Requisito 14).",
+    "module_expected": "infraestructura",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "historia_clinica",
+      "talento_humano"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.16326530612244897,
+    "mono_f1": 0.26666666666666666,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [
+      "[interdependencia] La respuesta no contiene ninguna cita normativa.",
+      "[historia_clinica] La respuesta no contiene ninguna cita normativa."
+    ],
+    "multi_warnings": [
+      "Sin evidencia directa en: talento_humano."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 22,
+    "question": "¿Cuál es el área mínima requerida por cada cama en una habitación múltiple destinada a pacientes adultos según el requisito 20.4.3 del numeral 20.4?",
+    "reference_answer": "La habitación múltiple para pacientes adultos debe tener una capacidad máxima de 4 camas, con área libre mínima de 7 m2 por cama, separadas con barrera física fija o móvil (Requisito 20.4.3).",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.3448275862068966,
+    "mono_f1": 0.047619047619047616,
+    "multi_answer": "El área mínima requerida por cada cama en una habitación múltiple destinada a pacientes adultos es de 7 m², según el requisito 20.4.3 del numeral 20.4.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 23,
+    "question": "¿Qué requisito debe cumplir el diseño y la construcción de la embarcación según el numeral 17.2 del documento normativo?",
+    "reference_answer": "El diseño y la construcción de la embarcación deben cumplir con la normatividad vigente a la fecha de la construcción, expedida por las autoridades competentes (18.1).",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.9411764705882353,
+    "mono_f1": 0.05555555555555555,
+    "multi_answer": "El diseño y la construcción de la embarcación deben cumplir con la normatividad vigente a la fecha de la construcción, expedida por las autoridades competentes.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 24,
+    "question": "¿Qué tipo de uniones deben existir entre las unidades móviles marítimas o fluviales y tierra firme según el numeral 50.10?",
+    "reference_answer": "50.10. Para unidades móviles marítimas o fluviales, las uniones con tierra firme son continuas, sin desniveles y permiten el flujo de camillas y sillas de ruedas.",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.6875,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 50.10, las uniones con tierra firme para unidades móviles marítimas o fluviales deben ser continuas, sin desniveles y permitir el flujo de camillas y sillas de ruedas.\n\n[Numeral 50.10, Página 67, Resolución 3100 de 2019]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 25,
+    "question": "¿Cuál es el requisito específico sobre iluminación en las instalaciones según el numeral 51.4 del documento normativo?",
+    "reference_answer": "El numeral 51.4 establece que debe haber un nivel de iluminación homogénea con luz fluorescente blanca fría, y no se deben mezclar tipos de iluminación cálida con fría.",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.8615384615384616,
+    "mono_f1": 0.10526315789473682,
+    "multi_answer": "El requisito específico sobre iluminación en las instalaciones según el numeral 51.4 establece que debe haber un nivel de iluminación homogénea con luz fluorescente blanca fría, y no se deben mezclar tipos de iluminación cálida con fría.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 26,
+    "question": "¿Cuál es el requisito específico sobre las puertas de acceso a las habitaciones en relación con su capacidad para permitir el paso y giro de camillas y sillas de ruedas?",
+    "reference_answer": "20.4.8. Las puertas de acceso a las habitaciones deben permitir el paso y giro de camillas y sillas de ruedas.",
+    "module_expected": "infraestructura",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "infraestructura"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.2585034013605442,
+    "mono_f1": 0.0,
+    "multi_answer": "[dotacion] El requisito específico sobre las puertas de acceso a las habitaciones en relación con su capacidad para permitir el paso y giro de camillas y sillas de ruedas se encuentra en el numeral 13.5.6 del servicio Psicoactivas, donde se establece que 'Las puertas de acceso a las habitaciones deben permitir el paso y giro de camillas y sillas de ruedas.' [Numeral 13.5.6, Página 188].\n\n[infraestructura] El requisito específico sobre las puertas de acceso a las habitaciones, en relación con su capacidad para permitir el paso y giro de camillas y sillas de ruedas, se encuentra en el numeral 20.4.8 del estándar de Infraestructura de la Resolución 3100 de 2019. Según este numeral, las puertas deben permitir el paso y giro de camillas y sillas de ruedas.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 27,
+    "question": "¿El revestimiento interno del compartimiento del paciente cumple con los requisitos especificados en el numeral 15.1, incluyendo acabados no rugosos, resistentes a desinfectantes y sin elementos afilados o cortantes?",
+    "reference_answer": "Cuenta con revestimientos interiores del compartimiento del paciente sin elementos afilados o cortantes, de material lavable, con acabados no rugosos y resistentes al deterioro por agentes desinfectantes (artículo 15.1).",
+    "module_expected": "infraestructura",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "infraestructura"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5753424657534246,
+    "mono_f1": 0.05128205128205129,
+    "multi_answer": "Sí, el revestimiento interno del compartimiento del paciente cumple con los requisitos especificados en el numeral 15.1, ya que debe ser de material lavable, con acabados no rugosos y resistentes al deterioro por agentes desinfectantes, además de estar libre de elementos afilados o cortantes.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 28,
+    "question": "¿El laboratorio cuenta con un área adecuada para la recepción de muestras, información y entrega de resultados según el numeral 8.1 del requisito 7 de Resolución 3100?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios (Requisito 7). Cuenta con: Área para recepción de muestras, información y entrega de resultados (Requisito 8.1).",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.3880597014925373,
+    "mono_f1": 0.10526315789473682,
+    "multi_answer": "Sí, el laboratorio cumple con el requisito de contar con una área adecuada para la recepción de muestras, información y entrega de resultados según el numeral 8.1 del requisito 7 de Resolución 3100 de 2019, numeral 8.1, página 133.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 29,
+    "question": "¿Cuáles son los servicios públicos domiciliarios que deben estar garantizados según el numeral 48.1 del requisito 48 del documento normativo?",
+    "reference_answer": "Acueducto, alcantarillado, energía eléctrica y sistema de comunicación.",
+    "module_expected": "infraestructura",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "historia_clinica",
+      "infraestructura"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 48.1 del requisito 48, los servicios públicos domiciliarios que deben estar garantizados son: acueducto, alcantarillado, energía eléctrica y sistema de comunicación.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia, historia_clinica.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 30,
+    "question": "¿El profesional de la salud puede utilizar telexperticia sincrónica o asincrónica entre profesionales de la salud según qué estándar definido por el prestador de servicios de salud?",
+    "reference_answer": "14. El profesional de la salud puede hacer uso de la categoría telexperticia sincrónica o asincrónica entre profesionales de la salud de acuerdo con lo definido por el prestador de servicios de salud en el estándar de procesos prioritarios.",
+    "module_expected": "infraestructura",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.935064935064935,
+    "mono_f1": 0.47887323943661975,
+    "multi_answer": "Sí, el profesional de la salud puede hacer uso de la telexperticia sincrónica o asincrónica entre profesionales de la salud, de acuerdo con lo definido por el prestador de servicios de salud en el estándar de procesos prioritarios.",
+    "mono_answer": "El profesional de la salud puede utilizar telexperticia sincrónica o asincrónica entre profesionales de la salud según los estándares de interdependencia (Numeral 20, Página 100) y procesos prioritarios (Numeral 18, Página 100).",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'talento_humano'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 31,
+    "question": "¿De acuerdo con el numeral 23.5, cuáles deben ser los requisitos específicos para la dotación de equipos biomédicos en una institución que ofrece terapia ocupacional?",
+    "reference_answer": "23.5. Dotación de equipos biomédicos acorde con las modalidades de terapia ocupacional ofertadas.",
+    "module_expected": "infraestructura",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.04761904761904762,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 32,
+    "question": "¿Cuál es el requisito específico del numeral 17.7 relacionado con los tubos endotraqueales que debe cumplir un establecimiento según Resolución 3100 de 2019?",
+    "reference_answer": "Deben contar con tubos endotraqueales de diferentes calibres conforme al numeral 18.2 del artículo 17.7.",
+    "module_expected": "infraestructura",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "procesos_prioritarios",
+      "infraestructura"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.3902439024390244,
+    "mono_f1": 0.0,
+    "multi_answer": "El requisito específico del numeral 17.7 relacionado con los tubos endotraqueales es que deben ser de diferentes calibres, según la oferta disponible. [Numeral 18.2, Página 202]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion, procesos_prioritarios.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 33,
+    "question": "¿Cuáles son las dimensiones mínimas requeridas para el compartimiento destinado al paciente según el numeral 18.2 de la Resolución 3100 de 2019, y cuál es la tolerancia permitida en estas medidas?",
+    "reference_answer": "El compartimiento para el paciente debe tener como mínimo las siguientes dimensiones: largo útil 2.20 metros, ancho útil 2.20 metros, altura interna útil 2.0 metros, con una tolerancia máxima del 15% sobre estas medidas (RESOLUCIÓN NÚMERO C003100 25 NOV 2019).",
+    "module_expected": "infraestructura",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5393258426966292,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 18.2 del artículo citado, las dimensiones mínimas requeridas para el compartimiento destinado al paciente son: largo útil 2.20 metros, ancho útil 2.20 metros y altura interna útil 2.0 metros. La tolerancia permitida en estas medidas es una variación máxima del 15 % sobre las mencionadas dimensiones.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 34,
+    "question": "¿De acuerdo al numeral 15.5, ¿qué tipo de área debe estar disponible para garantizar condiciones de privacidad en el desarrollo de terapias individuales?",
+    "reference_answer": "Área para la realización de terapia individual que garantice condiciones de privacidad, que puede ser el mismo consultorio (Resolución 3100 de 2019, numeral 15.5).",
+    "module_expected": "dotacion",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.11320754716981132,
+    "mono_f1": 0.058823529411764705,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 35,
+    "question": "¿Qué especificaciones técnicas debe cumplir el equipo generador de radiación ionizante según la oferta en modalidades extramurales como unidad móvil o telemedicina?",
+    "reference_answer": "11.1. Equipo generador de radiación ionizante según la oferta, cuyas indicaciones del fabricante refieran que está diseñado para ser instalado y operado y mantenido en una unidad móvil.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4938271604938272,
+    "mono_f1": 0.10526315789473682,
+    "multi_answer": "El equipo generador de radiación ionizante, según la oferta, debe reflejar las indicaciones del fabricante que señalen su diseño para ser instalado y operado en una unidad móvil. [Numeral 11.1, Página 107] Además, la unidad móvil debe estar dotada con señal luminosa o sonora indicando la presencia de radiación. [Numeral 23.2, Página 107]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 36,
+    "question": "¿Qué tipo de oxígeno medicinal portátil por camilla se requiere según el numeral 22.1 del módulo Dotación en la Resolución 3100 de 2019?",
+    "reference_answer": "Debe contar con oxígeno medicinal portátil por camilla para cumplir con la complejidad alta.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1395348837209302,
+    "mono_f1": 0.08333333333333333,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 37,
+    "question": "¿De acuerdo con el numeral 25, cuál es la obligación del prestador en cuanto a la báscula o pesa bebé?",
+    "reference_answer": "El prestador de servicios de salud cuenta con báscula grado médico o pesa bebé, según la oferta del servicio.",
+    "module_expected": "dotacion",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.125,
+    "mono_f1": 0.06896551724137931,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 38,
+    "question": "¿Qué tipo de dispositivos deben estar disponibles según el numeral 20.8 del módulo Dotación en el servicio de atención obstétrica?",
+    "reference_answer": "Deben estar disponibles: Bomba de infusión, báscula para bebé, infantómetro, cinta métrica, oxímetro con sensor neonatal, fonendoscopio, camilla con barandas, ruedas y freno, carro de paro.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.07272727272727274,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 39,
+    "question": "¿Cuál es la obligatoriedad del negatoscopio en los consultorios que realizan examen físico, según el numeral 19.11?",
+    "reference_answer": "El negatoscopio es requerido cuando se requiera o según el sistema de visualización utilizado por el prestador, conforme al numeral 19.11.",
+    "module_expected": "dotacion",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.16,
+    "mono_f1": 0.06451612903225806,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 40,
+    "question": "¿Qué elementos biomédicos deben estar disponibles según el estándar de procesos prioritarios mencionado en el numeral 19 del módulo Dotación?",
+    "reference_answer": "Los elementos y equipos biomédicos que se requieran de acuerdo con los procedimientos definidos en el estándar de procesos prioritarios, incluyen: carro de paro (19.1), glucómetro (19.2), equipo de órganos de los sentidos (19.3), monitor de signos vitales de transporte con accesorios pediátrico (19.4), oxígeno medicinal portátil (19.5), tallímetro (19.6), cinta métrica (19.7), aspirador (19.8), equipo de rayos X portátil (19.9), ventilador de transporte (19.10), electrocardiógrafo (19.11), marcapasos (19.12), ecógrafo (19.13) y monitor de signos vitales con presión invasiva cuando no esté incluido en el monitor de signos vitales de transporte (19.14).",
+    "module_expected": "dotacion",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.08264462809917356,
+    "mono_f1": 0.0784313725490196,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 41,
+    "question": "¿Qué tipo de lámpara debe estar disponible en la aeronave según el numeral 28.3 del requisito?",
+    "reference_answer": "Lámpara que permita su utilización a distancia de la aeronave (Requisito 28.3).",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5142857142857143,
+    "mono_f1": 0.0909090909090909,
+    "multi_answer": "De acuerdo con el numeral 28.3, la aeronave debe contar con una lámpara que permita su utilización a distancia. [Numeral 28.3, Página 219]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'dotacion'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 42,
+    "question": "¿De acuerdo con el numeral 11.2.1 del requisito 10.1, ¿qué características debe tener el monitor de alarma de conductividad en los equipos de hemodiálisis por paciente?",
+    "reference_answer": "El monitor de alarma de conductividad debe incluir alarma de temperatura, alarma de aire en el sistema de sangre, presión en cámara venosa y en cámara arterial, tiempo efectivo en diálisis, volumen de sangre de la bomba y sistema de desinfección de la máquina (Requisito 10.1, numeral 11.2.1).",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.8712871287128713,
+    "mono_f1": 0.06896551724137931,
+    "multi_answer": "El monitor de alarma de conductividad debe incluir las siguientes características según numeral 11.2.1 del requisito 10.1: alarma de temperatura, alarma de aire en el sistema de sangre, presión en cámara venosa y en cámara arterial, tiempo efectivo en diálisis, volumen de sangre de la bomba y sistema de desinfección de la máquina.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 43,
+    "question": "¿Cuál es el requisito específico para la dotación del oxígeno medicinal en servicios domiciliarios según el numeral 26.8?",
+    "reference_answer": "Deberá contar con oxígeno medicinal que puede ser suministrado mediante salida de oxígeno medIcinal o mediante oxígeno medicinal portátil.",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion",
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5925925925925926,
+    "mono_f1": 0.0,
+    "multi_answer": "El requisito específico para la dotación del oxígeno medicinal en servicios domiciliarios según el numeral 26.8 es que puede ser suministrado mediante salida de oxígeno medicinal o mediante oxígeno medicinal portátil. [Numeral 26.8, Página 150]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [
+      "[infraestructura] La respuesta no contiene ninguna cita normativa."
+    ],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'dotacion'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 44,
+    "question": "¿Cuál es el requisito específico sobre la dotación de oxígeno medicinal portátil en una sala de procedimientos según el numeral 8.1 del estándar de dotación?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios y la dotación necesaria y específica para realizar los procedimientos documentados en el estándar de procesos prioritarios y adicionalmente cuenta con: Oxígeno medicinal portátil o salida de oxígeno medicinal cuando lo requiera, de acuerdo con [MODULO: Dotación; NUMERAL: 8.1].",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.24719101123595505,
+    "mono_f1": 0.09836065573770492,
+    "multi_answer": "El requisito específico sobre la dotación de oxígeno medicinal portátil no se encuentra explícitamente mencionado en el numeral 8.1 del fragmento proporcionado. Sin embargo, se refiere a este tipo de oxígeno en otros numerales como 11.2.7 y 17.3.5.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 45,
+    "question": "¿Cuáles son los dispositivos médicos requeridos específicamente para las ambulancias terrestres, fluviales y marítimas prestadoras remísoras según el numeral 31.1 del documento?",
+    "reference_answer": "Deben contar con desfibrilador externo automático, incluyendo electrodos adhesivos para adultos y pediátricos, con fecha de vencimiento vigente (numeral 31.1).",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.23655913978494625,
+    "mono_f1": 0.0,
+    "multi_answer": "Los dispositivos médicos requeridos específicamente para las ambulancias terrestres, fluviales y marítimas prestadoras remísoras son: \n\n- Desfibrilador externo automático con electrodos adhesivos para adultos y pediátricos (Numeral 31.1, Página 219).\n- Fonendoscopio adulto y pediátrico.\n- Tensiómetro adulto y pediátrico.\n- Equipo eléctrico de aspiración de urgencia con manguera de succión y sondas de varios tamaños (Numeral 31.1, Página 219).\n- Aspirador nasal manual.\n- Glucómetro.\n- Torniquetes para el control de hemorragias.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 46,
+    "question": "¿El prestador debe contar con dotación y mobiliario exclusivos y necesarios según los criterios aplicables a cada complejidad del servicio en modalidades intramura, extramura o domiciliaria, incluyendo la telemedicina categoría telexperticia?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con: 9.1 La dotación y mobiliario exclusivos y necesarios para el cumplimiento de los objetivos de los servicios en modalidades intramura, extramura o domiciliaria, telemedicina categoría telexperticia - prestador remisor.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": false,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4271844660194175,
+    "mono_f1": 0.0,
+    "multi_answer": "El prestador debe contar con dotación requerida para realizar los procedimientos según lo documentado en el estándar de procesos prioritarios. Además, debe cumplir con los criterios que le sean aplicables a cada complejidad del servicio y modalidades intramural, extramural o domiciliaria, incluyendo la telemedicina categoría telexperticia (Numeral 15, Página 95; Numeral 8.1, Página 124; Numeral 33, Página 210).",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [
+      "JSON malformado: Expecting property name enclosed in double quotes: line 3 column 18 (char 283)"
+    ],
+    "mono_warnings": []
+  },
+  {
+    "index": 47,
+    "question": "¿Qué requisitos debe cumplir una sala de reanimación adicional ubicada en un piso distinto al acceso directo desde el exterior, según los numerales mencionados en la normativa?",
+    "reference_answer": "La sala de reanimación adicional a la ubicada en el piso o nivel de acceso directo desde el exterior de la edificación, cuenta con la dotación definida para este ambiente en el numeral 27 del servicio de urgencias de baja complejidad (Resolución 3100 de 2019, numeral 30).",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4222222222222222,
+    "mono_f1": 0.07017543859649122,
+    "multi_answer": "La sala de reanimación adicional debe estar conectada mediante ascensor para movilización de pacientes en camilla, de uso exclusivo. Además, debe cumplir con las condiciones establecidas para los servicios de urgencias según el numeral 18.1 del estándar de infraestructura (Resolución 3100 de 2019).",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 48,
+    "question": "¿De acuerdo al numeral 7.7, qué requisitos debe cumplir el área húmeda o de hidroterapia en una entidad que ofrezca este servicio?",
+    "reference_answer": "El área húmeda o de hidroterapia (cuando se oferte) debe garantizar pisos antideslizantes y tomas eléctricas con protección para ambientes húmedos cuando se requiera, según lo documentado en procesos prioritarios.",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.16949152542372883,
+    "mono_f1": 0.1,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 49,
+    "question": "¿Cuál es el requisito específico sobre el ambiente destinado a la extracción de leche materna y preparación de fórmulas artificiales según el numeral 14.1 del documento?",
+    "reference_answer": "Disponibilidad de: 14.1. Ambiente para extracción de leche materna y preparación de fórmulas artificiales.",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.0,
+    "mono_f1": 0.0,
+    "multi_answer": "",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [
+      "[infraestructura] La respuesta no contiene ninguna cita normativa."
+    ],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 50,
+    "question": "¿Qué tipo de mecanismos deben tener los aparatos sanitarios y muebles en las habitaciones pediátricas según el requisito 13.5.5 del numeral dotación?",
+    "reference_answer": "Deben tener la altura adecuada que permita al paciente su facilitada utilización (Requisito 13.5.5).",
+    "module_expected": "dotacion",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4,
+    "mono_f1": 0.08333333333333333,
+    "multi_answer": "Los aparatos sanitarios y muebles en las habitaciones pediátricas deben tener la altura adecuada que permita al paciente su fácil utilización, además de contar con un sistema de seguridad en las ventanas. [Numeral 13.5.5, Página 188]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'dotacion'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 51,
+    "question": "¿Qué tipo de silla de ruedas portátil debe cumplir según el numeral 31.12 del documento normativo?",
+    "reference_answer": "Deberá tener minimo dos cinturones de sujeción para el paciente y para su transporte al interior de la ambulancia.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.125,
+    "mono_f1": 0.06896551724137931,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 52,
+    "question": "¿Qué tipo de equipo de simulación de tratamiento se permite según el numeral 9.1 del módulo de Medicamentos y Dispositivos Médicos en la Resolución 3100 de 2019?",
+    "reference_answer": "Equipo de simulación de tratamiento propio o en convenio (numeral 9.1).",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.15,
+    "mono_f1": 0.09523809523809525,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 53,
+    "question": "¿Cuáles son los equipos médicos que deben cumplir con el requisito de estar en buen estado de funcionamiento según el numeral 10.8 del documento?",
+    "reference_answer": "Deben cumplir con el requisito de estar en buen estado de funcionamiento los fonendoscopios (adulto y pediátrico), tensiómetros (adulto y pediátrico), termómetro clínico, equipo de órganos de los sentidos con baterías de repuesto, glucómetro, lámpara portátil (linterna), tijeras corta todo, guantes desechables y estériles, mascarillas o tapabocas desechables, gafas de bioprotección y baja lenguas.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.12048192771084339,
+    "mono_f1": 0.0625,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 54,
+    "question": "¿Cuáles son los requisitos específicos sobre el material y diseño de las maletas, maletines, gabinetes y otros elementos destinados al transporte de insumos y medicamentos en ambulancias aéreas según el numeral 39.1 y 40.1?",
+    "reference_answer": "Los elementos acondicionados para el transporte de insumas y medicamentos deben ser de material resistente, lisos, lavables, sin bordes agudos o filos cortantes con cierres seguros para evitar la apertura involuntaria y su sujeción a la aeronave está",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "medicamentos_dispositivos",
+    "module_predicted_all": [
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5035971223021584,
+    "mono_f1": 0.08333333333333333,
+    "multi_answer": "Los requisitos específicos sobre el material y diseño de las maletas, maletines, gabinetes y otros elementos destinados al transporte de insumos y medicamentos en ambulancias aéreas según los numerales 39.1 y 40.1 son los siguientes: deben ser de material resistente, lisos, lavables, sin bordes agudos o filos cortantes con cierres seguros para evitar la apertura involuntaria y su sujeción a la aeronave está aprobada por la unidad administrativa especial de la aeronáutica civil - UAEAC. Además, deben llevar el nombre correspondiente y los colores de identificación según su especialidad: azul (sistema respiratorio), rojo (sistema circulatorio), amarillo (pediátrico), verde (quirúrgico y accesorios).",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 55,
+    "question": "¿Qué acciones debe implementar la entidad para garantizar que los dispositivos médicos mantengan su eficacia, desempeño y esterilidad, así como evitar riesgos de infecciones o complicaciones al usuario?",
+    "reference_answer": "Acciones de seguimiento a través de los comités de infecciones, de seguridad del paciente y del programa de tecnovigilancia (16.2).",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1894736842105263,
+    "mono_f1": 0.06666666666666667,
+    "multi_answer": "La entidad debe garantizar el seguimiento al uso de medicamentos, dispositivos médicos (incluidos los sobre medida) y reactivos de diagnóstico in vitro, almacenándolos en condiciones apropiadas según las indicaciones del fabricante. Además, es necesario contar con instrumento para medir humedad relativa y temperatura, evidenciar su registro, control y gestión. También debe asegurarse de que los dispositivos médicos estén disponibles en suficiencia basándose en la frecuencia de uso y el tiempo de esterilización cuando sea necesario.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 56,
+    "question": "¿De acuerdo con el numeral 15 del módulo de medicamentos y dispositivos médicos, cuáles son los servicios adicionales que debe cumplir un establecimiento para ser habilitado bajo modalidades inframural y telemedicina?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con oxígeno medicinal. (Página 167, numeral 15)",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "medicamentos_dispositivos",
+    "module_predicted_all": [
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.35714285714285715,
+    "mono_f1": 0.06250000000000001,
+    "multi_answer": "Según el numeral 15 del módulo de medicamentos y dispositivos médicos en la Resolución 3100 de 2019, un establecimiento debe cumplir con los criterios que le sean aplicables a todos los servicios y además cuenta con el estándar de procesos prioritarios para las modalidades intramural, extramural unidad móvil, jornada de salud y telemedicina. No se menciona específicamente prestadores remisores en este numeral.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 57,
+    "question": "¿Cuáles son los registros adicionales que debe mantener un prestador de referencia en modalidades telemedicina según el numeral 12.6 del documento?",
+    "reference_answer": "Deben mantener los siguientes registros: 14.1 Muestras recibidas, 14.2 Pruebas realizadas y sus resultados, 14.3 Formato para reporte de resultados, y 14.4 Registro y análisis de control de calidad interno y toma de medidas preventivas y correctivas.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.09090909090909091,
+    "mono_f1": 0.0425531914893617,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 58,
+    "question": "¿Cuáles son los requisitos específicos que deben cumplirse según el numeral 4.8 del documento, relacionados con la cadena de frió y el manejo de contingencias?",
+    "reference_answer": "4.8 Control de cadena de fria, Manejo de contingencias con la cadena de fria.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion",
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5581395348837208,
+    "mono_f1": 0.08333333333333333,
+    "multi_answer": "Según el numeral 4.8 del documento, se requiere el control de la cadena de frio y el manejo de contingencias con la cadena de frio. [Numeral 4.8, Página 71]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura, dotacion.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'medicamentos_dispositivos'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 59,
+    "question": "¿El maletín utilizado en esta modalidad extramural debe incluir medicamentos, equipos biomédicos y dispositivos médicos definidos según el estándar de procesos prioritarios, y cuál es la normativa que lo establece?",
+    "reference_answer": "Complejidad baja. Modalidades extramural y telemedicina - prestador remisor: 12.1. Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente, cuenta con: Maletín con medicamentos, equipos biomédicos y dispositivos médicos, definidos con base en la información documentada en el estándar de procesos prioritarios.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": false,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4197530864197531,
+    "mono_f1": 0.0,
+    "multi_answer": "Sí, el maletín utilizado en esta modalidad extramural debe incluir medicamentos, equipos biomédicos y dispositivos médicos definidos según el estándar de procesos prioritarios. Esto se establece en los fragmentos [FRAGMENTO 1] y [FRAGMENTO 3].",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [
+      "JSON malformado: Extra data: line 8 column 1 (char 172)"
+    ],
+    "mono_warnings": []
+  },
+  {
+    "index": 60,
+    "question": "¿Qué elementos e insumas deben especificarse en el plan de actividades de rehabilitación según los requisitos del numeral 20.14?",
+    "reference_answer": "Actividades de rehabilitación: fisioterapia, terapia ocupacional y terapia del lenguaje, que incluya los tipos de elementos e insumas requeridos para cada tipo de actividad, según se requiera.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "infraestructura",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.14285714285714285,
+    "mono_f1": 0.10810810810810811,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion, infraestructura, interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 61,
+    "question": "¿Cuál es el requisito normativo que establece que los prestadores no pueden habilitar el servicio farmacéutico como único servicio en su portafolio?",
+    "reference_answer": "11.3.2. Los prestadores de servicios de salud no pueden habilitar este servicio como único servicio en su portafolio.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "medicamentos_dispositivos",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion",
+      "talento_humano",
+      "medicamentos_dispositivos",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4444444444444444,
+    "mono_f1": 0.21428571428571427,
+    "multi_answer": "El requisito normativo que establece que los prestadores no pueden habilitar el servicio farmacéutico como único servicio en su portafolio se encuentra en el numeral 11.3.2 del Servicio Farmacéutico de la Resolución 3100 de 2019, página 97: 'Los prestadores de servicios de salud no pueden habilitar este servicio como único servicio en su portafolio.'",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura, dotacion, talento_humano, historia_clinica.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'medicamentos_dispositivos'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 62,
+    "question": "¿Cuáles son los requisitos específicos establecidos en el numeral 16 relacionados con el manejo del prematuro y sus complicaciones?",
+    "reference_answer": "Los requisitos específicos incluyen: 16.15 Remisión del prematuro al seguimiento en programa canguro, 16.17 Manejo del prematuro, 16.18 Manejo de síndrome de dificultad respiratoria y 16.21 Prevención de infecciones del torrente sanguíneo asociadas al uso de dispositivos intravasculares.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.08955223880597013,
+    "mono_f1": 0.08333333333333333,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios, historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 63,
+    "question": "¿El prestador remisor debe documentar los criterios de ingreso y egreso al servicio según el numeral 17.5 del Módulo Medicamentos y Dispositivos Médicos, numeral 17?",
+    "reference_answer": "Sí, según el numeral 17.5 del Módulo Medicamentos y Dispositivos Médicos, numeral 17, debe documentar 'Criterios de ingreso y egreso al servicio'.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.0392156862745098,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, medicamentos_dispositivos."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 64,
+    "question": "¿Cuáles son los requisitos específicos para el suministro de oxígeno medicinal según los numerales 12.18, 12.19 y 14 del documento?",
+    "reference_answer": "Según los numerales 12.18, 12.19 y 14, el oxígeno medicinal puede ser suministrado mediante salida de oxígeno medicinal o mediante oxígeno medicinal portátil (12.18-12.19). Además, para cumplir con los criterios aplicables en modalidades intramurales y telemedicina como prestador remisor, el servicio debe contar con oxígeno medicinal adicionalmente a otros servicios (14).",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios",
+      "infraestructura",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.35211267605633806,
+    "mono_f1": 0.06557377049180327,
+    "multi_answer": "Los requisitos específicos para el suministro de oxígeno medicinal no están directamente mencionados en los numerales 12.18, 12.19 ni 14 de los fragmentos proporcionados. Sin embargo, se pueden encontrar referencias relevantes en otros numerales como 27.7 y 27.8 del numeral 27 para el servicio de transporte asistencial (Resolución 3100 de 2019). Estos indican que el sistema de oxígeno medicinal debe estar asegurado con arnés a la estructura de la aeronave o en el interior de la camilla, y debe contar con un sistema de conexión rápida y manómetro visible y regulable.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios, dotacion.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 65,
+    "question": "¿Cuáles son los dispositivos médicos específicos mencionados en el numeral 13 del requisito de habilitación de servicios de salud según la Resolución C003106 de 2019?",
+    "reference_answer": "Los dispositivos médicos específicos mencionados en el numeral 13 son: Monitor de signos vitales de transporte con accesorios pediátrico, Oxígeno medicina portátil, Tallimetro, Cinta métrica, Aspirador, Equipo de rayos x portátil y Ventilador de transporte.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.09375,
+    "mono_f1": 0.08888888888888888,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 66,
+    "question": "¿De acuerdo con el numeral 21.2 del requisito 21, ¿qué elementos debe incluir el servicio para atender pacientes críticamente quemados?",
+    "reference_answer": "Criterios de inclusión al servicio y procedimientos para la atención de los pacientes críticamente quemados, que incluya los equipos biomédicos, medicamentos y dispositivos médicos e insumas requeridos.",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "procesos_prioritarios",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.14285714285714285,
+    "mono_f1": 0.10810810810810811,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia, procesos_prioritarios, dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 67,
+    "question": "¿Qué información documentada debe tener un prestador remisor de ambulancias terrestres, fluviales, marítimas o aéreas según el numeral 41.1 del módulo de Medicamentos y Dispositivos Médicos en la Resolución 3100 de 2019?",
+    "reference_answer": "Deben contar con información documentada sobre manejo de urgencias (41.1), remisión que incluya traslado de niños y personas en abandono o sin acompañante (41.2) y atención en salud de pacientes con problemas y trastornos en salud mental o consumo de sustancias psicoactivas (41.3).",
+    "module_expected": "medicamentos_dispositivos",
+    "module_predicted": "medicamentos_dispositivos",
+    "module_predicted_all": [
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5833333333333334,
+    "mono_f1": 0.26,
+    "multi_answer": "El prestador remisor de ambulancias terrestres, fluviales, marítimas o aéreas debe tener documentada información sobre el manejo de urgencias (Numeral 41.1, Página 221), la remisión que incluya traslado de niños y personas en abandono o sin acompañante, atención en salud para pacientes con problemas y trastornos en salud mental o consumo de sustancias psicoactivas, así como rutinas permanentes de mantenimiento preventivo y correctivo del vehículo, y aseo, limpieza y desinfección de la ambulancia (Numeral 41.5, Página 221).",
+    "mono_answer": "La información documentada debe incluir: \n- Detección de intoxicación/abstinencia.\n- Condiciones médicas que entre otras contemple como mínimo VIH/SIDA, hepatitis viral, sífilis, tuberculosis y usuarios de drogas inyectadas.\n- Condiciones emocionales, cognitivas, comportamentales, y trastornos concurrentes, comorbilidad o patología dual.\n- Disposición para el cambio de comportamiento.\n- Análisis de problemas potenciales del uso continuado y recaídas.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 68,
+    "question": "¿Qué tipo de puertas deben tener los ambientes sanitarios según lo estipula el numeral 36.5?",
+    "reference_answer": "Los baños deben contar con puertas corredizas o con apertura hacia el exterior (numeral 36.5).",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.09090909090909091,
+    "mono_f1": 0.08,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 69,
+    "question": "¿De acuerdo al numeral 24.1, ¿qué equipamiento debe estar disponible en un prestador que ofrezca servicios intramurales o telemedicina y también remito de pacientes?",
+    "reference_answer": "De acuerdo con el numeral 24.1 de la Resolución 3100 de 2019, el prestador debe contar con catéteres para vena umbilical.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.24074074074074073,
+    "mono_f1": 0.06451612903225806,
+    "multi_answer": "Según el numeral 24.1 del fragmento proporcionado, no se especifica directamente qué equipamiento debe estar disponible para un prestador que ofrezca servicios intramurales o telemedicina y también remito de pacientes. Sin embargo, este prestador debe cumplir con los criterios aplicables a todos los servicios y adicionalmente cuenta con un convenio o contrato escrito vigente con un banco de sangre, certificado por la autoridad competente para el suministro de componentes sanguineos y la realización de pruebas transfusionales. Este requisito se encuentra en el numeral 25 del mismo fragmento.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'dotacion'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 70,
+    "question": "¿Cuáles son los profesionales que deben estar disponibles para realizar telexperticia sincrónica según el numeral 11.1 del estándar de procesos prioritarios?",
+    "reference_answer": "Cuenta con: 11.1. Profesional de la medicina o profesional de la medicina especialista en medicina de urgencias o medicina familiar.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.16326530612244897,
+    "mono_f1": 0.13333333333333333,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: talento_humano."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 71,
+    "question": "¿Cuáles son los requisitos específicos establecidos en el numeral 22.13.5 del módulo 22 sobre el análisis de problemas potenciales relacionados con el uso continuado y las recaídas en la atención a pacientes con consumo de sustancias psicoactivas?",
+    "reference_answer": "El numeral 22.13.5 establece: 'Análisis de problemas potenciales del uso continuado y recaídas.'",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "medicamentos_dispositivos",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.04761904761904762,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, medicamentos_dispositivos, interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 72,
+    "question": "¿Qué información documentada debe estar disponible cuando se realice tratamiento de hemodiálisis en modalidad extramural jornada de salud según el numeral 23 del módulo 22?",
+    "reference_answer": "De acuerdo con el numeral 23.1 del módulo 22, debe contar con la información documentada sobre transporte, conexión, funcionalidad y desconexión de la tecnología y normas de bioseguridad.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.07017543859649124,
+    "mono_f1": 0.10526315789473682,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 73,
+    "question": "¿El prestador cuenta con los catéteres para vena umbilical y oxígeno medicinal como requeridos en el numeral 25.1 del estandar de procesos prioritarios?",
+    "reference_answer": "cuenta con: 25.1. Catéteres para vena umbilical. 25.2. Oxigeno medicinal.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.12765957446808512,
+    "mono_f1": 0.0,
+    "multi_answer": "Sí, el prestador debe contar con catéteres para vena umbilical y oxígeno medicinal según lo establecido en el numeral 25.1 del estándar de Procesos Prioritarios, correspondiente a los servicios de De Transporte Asistencial. [Numeral 25.1, Página 229]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 74,
+    "question": "¿Qué tipo de plan hospitalario debe estar disponible según el numeral 36.20 del documento normativo mencionado?",
+    "reference_answer": "Según el numeral 36.20 de la Resolución 3100 de 2019, el prestador debe contar con información documentada sobre el Plan Hospitalario para Emergencias, como parte de los criterios adicionales del estándar de procesos prioritarios en modalidades intramural y telemedicina.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.14705882352941177,
+    "mono_f1": 0.163265306122449,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 75,
+    "question": "¿Cuáles son los requisitos específicos para el área o ambiente destinado al depósito de equipos biomédicos según el numeral 35.4 del módulo 35?",
+    "reference_answer": "El numeral 35.4 establece que es necesario contar con un Área o Ambiente para el depósito de equipos biomédicos, con dimensión variable de acuerdo con las necesidades del servicio.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.13793103448275862,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 76,
+    "question": "¿Cuál es la excepción al requisito de constancia de asistencia a acciones de formación continua del cuidado del paciente trasplantado según el numeral 16.3?",
+    "reference_answer": "Los profesionales especialistas en oncología no cuentan con constancia de asistencia en las acciones de formación continua del cuidado del paciente trasplantado, conforme al numeral 16.3.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.6666666666666666,
+    "mono_f1": 0.16666666666666669,
+    "multi_answer": "La excepción al requisito de constancia de asistencia a acciones de formación continua del cuidado del paciente trasplantado, según el numeral 16.3, es que los profesionales especialistas en oncología no están obligados a contar con esta constancia.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'procesos_prioritarios'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 77,
+    "question": "¿Cuál es el requisito específico que debe cumplir un prestador de servicios de salud para trasplante de tejidos cuando estos provienen de un banco de tejidos?",
+    "reference_answer": "Para trasplante de tejidos, cuenta con certificado vigente de buenas prácticas de bancos de tejidos expedido por la autoridad competente (Resolución 3100 de 2019, numeral 26.1).",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "procesos_prioritarios",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.2095238095238095,
+    "mono_f1": 0.05555555555555555,
+    "multi_answer": "[dotacion] Para trasplantes de tejidos procedentes de un banco de tejidos, no se especifica un requisito adicional en los fragmentos proporcionados. Sin embargo, el prestador debe garantizar la vitalidad del tejido en condiciones controladas de temperatura y humedad (Numeral 22).\n\n[procesos_prioritarios] El prestador de servicios de salud debe contar con registros de temperatura y preservación cuando se realice almacenamiento temporal de tejidos provenientes de bancos de tejidos según las especificaciones del banco que los provee. [Numeral 26.3, Página 204]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 78,
+    "question": "¿Qué elementos debe contar el kit para recolección de evidencia forense y el kit de profilaxis post exposición para VIH, ITS y anticoncepción de emergencia en víctimas de violencia sexual según la Resolución 3100 de 2019?",
+    "reference_answer": "Deben cumplir con los criterios definidos en la resolución 459 de 2012 o la norma que la modifique.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.21276595744680854,
+    "mono_f1": 0.21428571428571427,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 79,
+    "question": "¿Cuáles son los requisitos específicos que debe cumplir un prestador de servicios médicos en modalidad intramural o telemedicina cuando actúa como remisor, según el numeral 20.1 del módulo 20 de la Resolución 3100 de 2019?",
+    "reference_answer": "De acuerdo con el numeral 20.1 del módulo 20 de la Resolución 3100 de 2019, un prestador que actúa en modalidad intramural o telemedicina como remisor debe contar con pruebas POCT rápidas para la detección de sustancias psicoactivas, VIH, hepatitis virales y sífilis.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "talento_humano",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4901960784313726,
+    "mono_f1": 0.07547169811320754,
+    "multi_answer": "Los requisitos específicos que debe cumplir un prestador de servicios médicos en modalidad intramural o telemedicina cuando actúa como remisor, según el numeral 20.1 del módulo 20 de la Resolución 3100 de 2019, no se encuentran explícitamente mencionados en los fragmentos proporcionados. Sin embargo, se indica que debe cumplir con los criterios aplicables a todos los servicios (Numeral 20.1).",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia, talento_humano.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'historia_clinica'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 80,
+    "question": "¿Cómo debe documentarse el tratamiento de infección en el orificio y túnel del catéter peritoneal según los requisitos establecidos en el numeral 22.4 del módulo 21?",
+    "reference_answer": "22.4. Tratamiento de infección del orificio y túnel del catéter peritoneal.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura",
+      "historia_clinica",
+      "dotacion"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.05,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura, historia_clinica, dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 81,
+    "question": "¿Cuáles son los requisitos específicos para la tripulación mínima en ambulancias aéreas según el numeral 7.1 del módulo 7?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con: 7.1. Profesional de la medicina; 7.2. Profesional de la enfermería o tecnólogo(a) en atención prehospitalaria o técnico(a) profesional en atención prehospitalaria; 7.3. Tripulación de vuelo que cuenta con licencia y certificado médico expedido por la unidad.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "talento_humano",
+      "infraestructura"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.14814814814814817,
+    "mono_f1": 0.0967741935483871,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion, talento_humano, infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 82,
+    "question": "¿Cuáles son los servicios incluidos en el Grupo Internacional según el numeral 11.4 de Resolución 3100 de 2019?",
+    "reference_answer": "El Grupo Internacional incluye los siguientes servicios: Servicio de hospitalización, Servicio de hospitalización paciente crónico, Servicio de cuidado básico neonatal, Servicio de cuidado intermedio neonatal, Servicio de cuidado intensivo neo natal, Servicio de cuidado intermedio pediátrico, Servicio de cuidado intensivo pediátrico, Servicio de cuidado intermedio adulto, Servicio de cuidado intensivo adultos, Servicio de hospitalización en salud mental o consumo de sustancias psicoactivas, Servicio de hospitalización parcial y Servicio para el cuidado básico del consumo de sustancias psicoactivas (ver numeral 11.4 de Resolución 3100 de 2019).",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.08771929824561403,
+    "mono_f1": 0.042105263157894736,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 83,
+    "question": "¿Cuáles son los criterios clínicos establecidos en el numeral 36.15 para ubicar y atender pacientes en el ambiente de transición según Resolución 3100 de 2019?",
+    "reference_answer": "El numeral 36.15 de la Resolución 3100 de 2019 establece los criterios clínicos para la ubicación y atención de pacientes en el ambiente de transición.",
+    "module_expected": "procesos_prioritarios",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1851851851851852,
+    "mono_f1": 0.17142857142857143,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 84,
+    "question": "¿Qué información debe incluir el registro de cargas en el proceso de esterilización según el numeral 11.2 del requisito 11?",
+    "reference_answer": "Deben registrarse los resultados del control de calidad conforme al numeral 11.3.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.0816326530612245,
+    "mono_f1": 0.0909090909090909,
+    "multi_answer": "El registro de cargas debe incluir actividades documentadas y realizadas en el procedimiento de reúso de dispositivos médicos acorde con las recomendaciones del fabricante, incluyendo el número de reúsos por cada dispositivo esterilizado. [Numeral 11.2, Página 78]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 85,
+    "question": "¿Qué debe incluir la verificación de calidad de la imagen realizada por el prestador remisor en las radiografías odontológicas tomadas por un técnico no odontólogo?",
+    "reference_answer": "15.4. Realización y supervisión de toma de radiograffas odontológicas cuando no sea realizada por el odontólogo, que incluya como mínimo la calidad de la imagen y radioprotección.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.3050847457627119,
+    "mono_f1": 0.10810810810810811,
+    "multi_answer": "La verificación de la calidad de la imagen, según los fragmentos normativos proporcionados, debe incluir la toma de medidas preventivas y correctivas cuando apliquen. [Numeral 15.4, Página 103; Numeral 16.2, Página 103].",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 86,
+    "question": "¿Qué información documentada debe tener el prestador de servicios de salud en relación con la sala para el manejo de la Enfermedad Respiratoria Aguda (ERA)?",
+    "reference_answer": "Manejo de pacientes con enfermedad respiratoria alta y baja, que incluya ingreso, valoración y seguimiento del estado clínico. (Artículo 36.1, Resolución 3100 de 2019)",
+    "module_expected": "historia_clinica",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.03773584905660377,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 87,
+    "question": "¿Qué servicios deben estar disponibles en un servicio que cumple con los criterios definidos en todos los servicios mencionados del numeral 43?",
+    "reference_answer": "Deben estar disponibles: Servicio de imágenes diagnósticas, Servicio de laboratorio clínico, Servicio de hospitalización, Servicio de cirugía, Servicio farmacéutico.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5238095238095238,
+    "mono_f1": 0.0,
+    "multi_answer": "Los servicios que deben estar disponibles son: Servicio de laboratorio clínico, servicio de imágenes diagnósticas y servicio farmacéutico. [Numeral 43.1, Página no especificada]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 88,
+    "question": "¿De acuerdo con el numeral 20.1, cuáles son los servicios que debe cumplir un establecimiento para ser habilitado bajo las modalidades intramural y telemedicina?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios. Estándar de historia clínica y registros Modalidades intramural y telemedicina - prestador remisor - prestador de referencia",
+    "module_expected": "historia_clinica",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.06896551724137931,
+    "mono_f1": 0.05128205128205129,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 89,
+    "question": "¿Qué registros debe mantener un prestador remisor que presta servicios mediante telemedicina según el numeral 16.2 de la Resolución 3100 de 2019?",
+    "reference_answer": "De acuerdo con el numeral 16.2 del documento, un prestador remisor que presta servicios mediante telemedicina debe mantener los registros especificados en el numeral 18, entre ellos, 'Número de exposiciones y e imágenes tomadas que incluya el nombre del paciente y nombre del estudio realizado'.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1081081081081081,
+    "mono_f1": 0.07272727272727272,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 90,
+    "question": "¿Cuáles servicios deben estar disponibles según el numeral 41.1 del artículo 38, exceptuando las zonas especiales de dispersión geográfica?",
+    "reference_answer": "De acuerdo con el numeral 41.1 del artículo 38, debe estar disponible el servicio de imágenes diagnósticas, a excepción de las zonas especiales de dispersión geográfica.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "infraestructura"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.25225225225225223,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 4.1 del artículo 38, los servicios que deben estar disponibles en la modalidad extramural para diagnóstico vascular son: \n\n- Área para recepción de muestras, información y entrega de resultados.\n- Cubículo para la toma de muestras.\n- Ambiente para la toma de muestras especiales cuando lo oferte, que cuenta con unidad sanitaria y perchero (si el procedimiento lo indica).\n- Lavamanos.\n- Área de preparación, embalaje y remisión de las muestras que cuenta con mesón de trabajo y poceta cuando sea necesario.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'infraestructura'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 91,
+    "question": "¿El establecimiento cuenta con el servicio de urgencias según lo estipulado en el numeral 39.1 del requisito 36 o 38, correspondiente a las modalidades inframurales y extramurales?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente, servicio de urgencias según lo estipulado en el numeral 39.1 del requisito 36 o 38.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1724137931034483,
+    "mono_f1": 0.10256410256410257,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 92,
+    "question": "¿Cuál es el requisito específico sobre las imágenes tomadas que debe incluir el nombre del paciente y del estudio realizado según el numeral 18.1 de la Resolución 3100 de 2019?",
+    "reference_answer": "18.1. Número de exposiciones, e imágenes tomadas que incluya el nombre del paciente, y nombre del estudio realizado.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.6530612244897959,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 18.1 de la Resolución 3100 de 2019, debe incluirse el número de exposiciones, e imágenes tomadas que incluya el nombre del paciente y el nombre del estudio realizado.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 93,
+    "question": "¿El documento debe incluir el nombre y firma del profesional de medicina responsable según lo estipulado en el numeral 16.1.18?",
+    "reference_answer": "Sí, debe incluir el nombre y firma del Profesional de Medicina según establece el numeral 16.1.18.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.044444444444444446,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 94,
+    "question": "¿Qué información debe incluirse en el informe post-transfusional según el numeral 12.5 del artículo 12 del documento normativo?",
+    "reference_answer": "Según el numeral 12.5 de la Resolución 3100 de 2019, el prestador debe contar con el registro de información post-transfusional como parte de los registros obligatorios de hemoterapia del artículo 12, el cual incluye información sobre los componentes sanguíneos (12.1), solicitud (12.2), pruebas pre-transfusionales (12.3-12.4), y seguimiento de las transfusiones en la historia clínica (12.9).",
+    "module_expected": "historia_clinica",
+    "module_predicted": "procesos_prioritarios",
+    "module_predicted_all": [
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.09523809523809523,
+    "mono_f1": 0.12307692307692307,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: procesos_prioritarios."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 95,
+    "question": "¿Cómo debe registrarse el plan de tratamiento en el momento del ingreso según el numeral 14.1 de Resolución 3100 de 2019?",
+    "reference_answer": "Valoración de ingreso con el respectivo plan de tratamiento (numeral 14.1).",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.05,
+    "mono_f1": 0.0,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 96,
+    "question": "¿Cómo debe cumplir el prestador de referencia en relación al estándar de interdependencia cuando se realiza un servicio de imágenes diagnósticas mediante telemedicina?",
+    "reference_answer": "Cumple con los criterios que le sean aplicables de todos los servicios. Estándar de interdependencia (Requisito 20).",
+    "module_expected": "historia_clinica",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.17283950617283952,
+    "mono_f1": 0.07407407407407408,
+    "multi_answer": "El prestador de referencia debe asegurarse de que los eventos y transacciones relacionados con la prestación del servicio de imágenes diagnósticas mediante telemedicina estén documentados y almacenados, formando parte integral de la historia clínica. Además, deben registrarse las atenciones realizadas en esta modalidad. Estos requisitos están establecidos en el numeral 17 (Página 79) del estándar de interdependencia para Ips, según Resolución 3100 de 2019.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 97,
+    "question": "¿Qué información debe proporcionar el establecimiento al paciente, su familia o cuidador acerca del tratamiento requerido según el numeral 14.4 del módulo de Historia Clínica y Registros en la Resolución 3100 de 2019?",
+    "reference_answer": "De acuerdo con el numeral 14.4 del módulo de Historia Clínica y Registros, se debe comunicar al paciente, su familia o cuidador información sobre los medicamentos utilizados, sus efectos, las complicaciones que pueden presentarse, qué hacer cuando se presenten y cómo evitarlas (artículo 14.4). Además, se incluye la condición de almacenamiento y vía de administración de la quimioterapia (artículo 14.4.3).",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.6349206349206349,
+    "mono_f1": 0.1142857142857143,
+    "multi_answer": "Según el numeral 14.4 del módulo de Historia Clínica y Registros en la Resolución 3100 de 2019, el establecimiento debe proporcionar al paciente, su familia o cuidador información sobre el tratamiento requerido que incluye: \n\n- Información de los medicamentos y sus efectos (14.4.1).\n- Complicaciones, qué hacer cuando se presenten y como evitarlas (14.4.2).\n- Condiciones de almacenamiento y vía de administración de la quimioterapia (14.4.3).",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 98,
+    "question": "¿De acuerdo a la Resolución 3100, ¿qué información debe incluir cada número de exposición e imagen tomada en el registro de historias clínicas?",
+    "reference_answer": "De conformidad con el numeral 33.1 del artículo 33 de la Resolución 3100 de 2019, los registros deben incluir el número de exposiciones e imágenes tomadas que contengan el nombre del paciente y el nombre del estudio realizado.",
+    "module_expected": "historia_clinica",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.5294117647058824,
+    "mono_f1": 0.08333333333333333,
+    "multi_answer": "Según el numeral 33.1 del fragmento 4, cada número de exposición e imagen tomada debe incluir el nombre del paciente y el nombre del estudio realizado. [Numeral 33.1, Página 109]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 99,
+    "question": "¿Qué requisito debe cumplir el prestador de servicios de salud cuando se realizan procedimientos bajo sedación y monitorización electroencefalográfica con video y radio fuera de salas de cirugía?",
+    "reference_answer": "De acuerdo con el numeral 1.2 del módulo de interdependencia de servicios en la Resolución 3100 de 2019, el prestador de servicios de salud debe tener disponibilidad del servicio de transporte asistencial.",
+    "module_expected": "interdependencia",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.09836065573770493,
+    "mono_f1": 0.09523809523809523,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 100,
+    "question": "¿Qué elementos deben incluirse en el contrato o acuerdo escrito cuando se contrata un servicio interdependiente que apoya a otro servicio principal según el numeral 11.1.7 del Módulo de Interdependencia de Servicios?",
+    "reference_answer": "Deben incluirse los siguientes elementos: calidad en la entrega de los productos, procedimientos documentados de atención en cada servicio interdependiente y tiempos de entrega de los productos (numeral 11.1.7).",
+    "module_expected": "interdependencia",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.6578947368421053,
+    "mono_f1": 0.15384615384615385,
+    "multi_answer": "Deben incluirse los siguientes elementos en el contrato o acuerdo escrito: \n\n- Calidad en la entrega de los productos (Numeral 11.1.7, Página 79).\n- Procedimientos documentados de atención en cada servicio interdependiente (Numeral 11.1.7, Página 79).\n- Tiempos de entrega de los productos (Numeral 11.1.7, Página 79).",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 101,
+    "question": "¿Qué servicios deben estar disponibles en un servicio con interdependencia de complejidad baja según el numeral 32.1 del Estándar de Interdependencia?",
+    "reference_answer": "Según el numeral 32 de la Resolución 3100 de 2019, los servicios de complejidad baja en modalidad intramural deben contar adicionalmente con disponibilidad de: 32.1 Servicio de laboratorio clínico, 32.2 Servicio de imágenes diagnósticas, 32.3 Servicio de transporte asistencial, 32.4 Servicio farmacéutico, y 32.5 Servicio de vacunación, entre otros servicios de apoyo.",
+    "module_expected": "interdependencia",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4869565217391304,
+    "mono_f1": 0.44155844155844154,
+    "multi_answer": "Según el numeral 32.1 del Estándar de Interdependencia, para un servicio con interdependencia de complejidad baja y modalidades intramurales deben estar disponibles los siguientes servicios: \n\n- Servicio de laboratorio clínico.\n- Servicio de imágenes diagnósticas.\n- Servicio de transporte asistencial.\n- Servicio farmacéutico.\n- Servicios de apoyo (alimentación, lavandería y vigilancia).\nEstos servicios son especificados en el numeral 32.1 del Estándar de Interdependencia.",
+    "mono_answer": "Deben estar disponibles: Servicio de laboratorio clínico, servicio de imágenes diagnósticas, servicio de transporte asistencial, servicio farmacéutico y servicios de apoyo (alimentación, lavandería y vigilancia).",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 102,
+    "question": "¿Cuáles son los servicios adicionales requeridos según el numeral 55 para un establecimiento que ofrece hospitalización de alta complejidad con cirugía?",
+    "reference_answer": "Adicional a lo requerido para hospitalización de mediana complejidad, cuenta con: Servicio de cirugía. (Página 154, numeral 55)",
+    "module_expected": "interdependencia",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "infraestructura",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1764705882352941,
+    "mono_f1": 0.0,
+    "multi_answer": "Para un establecimiento que ofrece hospitalización de alta complejidad con cirugía, según el numeral 55 del fragmento normativo proporcionado, se requieren los siguientes servicios adicionales: \n\n- Servicio de cuidado intensivo adulto o pediátrico, según la oferta del establecimiento (Numeral 55.1, Página 154).\n- Servicio de patología (Numeral 55.2, Página 154).",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: dotacion, infraestructura.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'interdependencia'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 103,
+    "question": "¿Cuáles son los servicios que deben estar disponibles según el numeral 51.1 del requisito de interdependencia de servicios en Resolución 3100 de 2019?",
+    "reference_answer": "Según el numeral 51.1, debe haber disponibilidad de Servicio de laboratorio clínico.",
+    "module_expected": "interdependencia",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.2622950819672131,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 51.1 del requisito de interdependencia de servicios en la Resolución 3100 de 2019, los servicios que deben estar disponibles son: Servicio de laboratorio clínico, servicio de imágenes diagnósticas, servicio de transporte asistencial, servicio farmacéutico y servicios de apoyo (alimentación, lavandería y vigilancia). [Numeral 51.1, Página 154]",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 104,
+    "question": "¿Cuáles son las especificaciones técnicas requeridas para el uso de la firma electrónica o digital según el numeral 15.3 del documento?",
+    "reference_answer": "El método utilizado para el uso de la firma electrónica o digital debe ser conforme a lo definido por el prestador de servicios de salud (numeral 15.3).",
+    "module_expected": "interdependencia",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.17857142857142858,
+    "mono_f1": 0.05405405405405406,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 105,
+    "question": "¿Qué servicios adicionales deben estar disponibles en el servicio de interdependencia de servicios con modalidad extramural domiciliaria y complejidad mediana según los requisitos del numeral 51.4?",
+    "reference_answer": "Deben estar disponibles: Servicio de laboratorio clínico (52.1), Servicio de imágenes diagnósticas (52.2), Servicio farmacéutico (52.3) y Servicio de gestión pre transfusional (53.4).",
+    "module_expected": "interdependencia",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": false,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.24096385542168672,
+    "mono_f1": 0.0,
+    "multi_answer": "Según el numeral 51.4, para un servicio de interdependencia de servicios con modalidad extramural domiciliaria y complejidad mediana deben estar disponibles: \n\n- Servicio farmacéutico.\n\nEsto se encuentra en el siguiente fragmento normativo:\n\n[FRAGMENTO 2] Fuente: (Resolución 3100 de 2019 | Estandar: Interdependencia de Servicios | Servicio: Resolución Número | Numeral 51.4 | Pagina 154 | Vigencia: Vigente)\n\n51.4. Servicio farmacéutico.",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [
+      "JSON malformado: Expecting property name enclosed in double quotes: line 3 column 18 (char 248)"
+    ],
+    "mono_warnings": []
+  },
+  {
+    "index": 106,
+    "question": "¿Cuáles son los requerimientos de las condiciones técnico administrativas que debo cumplir para habilitar una IPS?",
+    "reference_answer": "Deben cumplir con las condiciones técnico-administrativas establecidas en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud (Artículo 3.1). Esto incluye inscribirse en el REPS, realizar la autoevaluación periódica de las condiciones de habilitación (Artículo 5), presentar documentos como contrato con el prestador remisor, certificación de conexión a internet y certificado de instalaciones eléctricas si corresponde.",
+    "module_expected": "general",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.38235294117647056,
+    "mono_f1": 0.35789473684210527,
+    "multi_answer": "Para habilitar una Institución Prestadora de Servicios (IPS) es necesario cumplir con las siguientes condiciones técnicas y administrativas según el artículo 3.1 del numeral 3.1, página 2, de la Resolución 3100 de 2019:\n\n- Capacidad técnico-administrativa (Artículo 3.1).\n- Suficiencia patrimonial y financiera (Artículo 3.2).\n- Capacidad tecnológica y científica (Artículo 3.3). Estos requisitos están definidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud, que forma parte integral de la presente resolución.",
+    "mono_answer": "Las condiciones técnicas-administrativas deben cumplirse según el numeral 3.1 del Capítulo 11, Artículo 5 del Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud, que forma parte integral de la Resolución 3100 de 2019.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 107,
+    "question": "¿Cuáles son los requerimientos de las condiciones técnico administrativas que debo cumplir para habilitar un profesional independiente?",
+    "reference_answer": "Deben cumplir con los criterios que le sean aplicables a todos los servicios, incluyendo los de ingreso y egreso al servicio (43.1), plan individualizado de atención según morbilidad (43.3) y permanencia del talento humano en el domicilio cuando se oferte este servicio en telemedicina (43.4). Además, deben estar inscritos en el Registro Especial de Prestadores de Servicios de Salud -REPS.",
+    "module_expected": "general",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.2923976608187135,
+    "mono_f1": 0.08571428571428572,
+    "multi_answer": "Para habilitar un profesional independiente se deben cumplir con las condiciones técnicas y administrativas definidas en el numeral 2.5.3 del estándar de Talento Humano, según la Resolución 3100 de 2019. Además, debe cumplirse con lo definido en el Decreto 2200 de 2005 compilado en el Decreto 780 de 2016 (Artículo 2.5.3.10.9) y la Resolución 1403 de 2007 (Manual de condiciones esenciales y procedimientos del servicio farmacéutico Título I Capítulo 11 Numerales 3.2, 3.2.1; 3.2.2 Y Capitulo 111 Numeral 1.2), o las normas que los modifiquen, adicionen o sustituyan.\n\nLa información solicitada no se encuentra en los fragmentos recuperados del estándar de Talento Humano sobre condiciones técnicas administrativas específicas para profesionales independientes.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 108,
+    "question": "¿Cuántos y cuáles son los estándares que se deben validar para aperturar un servicio de salud?",
+    "reference_answer": "Para aperturar un servicio de salud se deben validar los estándares definidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud según el tipo de servicio ofrecido: talento humano, infraestructura, dotación, medicamentos y dispositivos médicos, procesos prioritarios, historia clínica y registros, e interdependencia de servicios. Además, se requiere cumplir con criterios técnico-administrativos, financieros y científicos, y obtener certificación de conformidad en instalaciones eléctricas cuando aplique.",
+    "module_expected": "general",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano",
+      "historia_clinica",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": false,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.28758169934640526,
+    "mono_f1": 0.0,
+    "multi_answer": "[talento_humano] Los estándares que se deben validar para abrir un servicio de salud según el fragmento normativo proporcionado incluyen:\n\n- Medicamentos, dispositivos médicos e insumas.\n- Procesos Prioritarios.\n- Historia Clínica y Registros.\n- Interdependencia.\nEstos estándares se encuentran detallados en los criterios de habilitación establecidos para cada servicio de salud. Sin embargo, el fragmento no especifica un número exacto de estándares que deben ser validados.\n\n[historia_clinica] Para abrir un servicio de salud, se deben cumplir varios estándares según la Resolución 3100 de 2019. Los requisitos incluyen disponibilidad de servicios específicos y registros necesarios dependiendo del tipo de servicio. Por ejemplo, para servicios de imágenes diagnósticas (Numeral 41.1), se requiere el servicio de imágenes diagnósticas excepto en zonas especiales de dispersión geográfica; para laboratorio clínico (Numeral 41.2) y hospitalización (Numeral 41.3), también es obligatorio cumplir con estos servicios. Además, los servicios deben contar con registros específicos como el número de exposiciones e imágenes tomadas que incluya el nombre del paciente y el estudio realizado (Numeral 18.1).\n\n[interdependencia] Para abrir un servicio de salud, según el fragmento proporcionado, se deben cumplir con varios estándares relacionados con la interdependencia de servicios. Estos incluyen:\n\n- Servicio de laboratorio clínico (Numeral 51.1, Página 154).\n- Servicio de imágenes diagnósticas (Numeral 51.2, Página 154).\n- Servicio de transporte asistencial (Numeral 51.3, Página 154).\n- Servicio farmacéutico (Numeral 51.4, Página 154).\n- Servicios de apoyo (alimentación, lavandería y vigilancia) (Numeral 51.5, Página 154).",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [
+      "JSON malformado: Expecting property name enclosed in double quotes: line 5 column 6 (char 806)"
+    ],
+    "mono_warnings": []
+  },
+  {
+    "index": 109,
+    "question": "¿Cuáles son las definiciones generales para tener en cuenta en la habilitación de un servicio de salud?",
+    "reference_answer": "Las definiciones generales relevantes para la habilitación de servicios de salud, según Resolución 3100 de 2019, incluyen: autoevaluación ( numeral 4.1), disponibilidad y prestador remisor/prestador referencia ( numeral 1.3.3). Estas definen aspectos esenciales para la verificación y habilitación de servicios.",
+    "module_expected": "general",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion",
+      "talento_humano",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.08029197080291971,
+    "mono_f1": 0.27272727272727276,
+    "multi_answer": "[infraestructura] Las definiciones generales para tener en cuenta en la habilitación de un servicio de salud se encuentran en los siguientes fragmentos normativos:\n\n- 'GRUPO' representa el conjunto de servicios de salud que están relacionados entre sí y comparten similitudes en la forma de prestación, estándares y criterios a cumplir (Numeral 1.1, Página 19).\n- Un 'SERVICIO DE SALUD' es la unidad básica habilitable del Sistema Único de Habilitación, conformado por procesos, procedimientos, actividades, recursos humanos, físicos, tecnológicos y de información (Numeral 1.2, Página 19).\n- La modalidad de prestación de servicios de salud incluye intramural, extramural y telemedicina, siendo la forma de prestar un servicio en condiciones particulares (Numeral 1.3, Página 19).\n\n[dotacion] Para la habilitación de un servicio de salud, se deben cumplir los criterios establecidos en el numeral 7 del fragmento 4 y otros requisitos específicos según la complejidad y modalidades del servicio. Por ejemplo, para servicios de baja complejidad como el farmacéutico, se debe cumplir con los criterios definidos para ese servicio y las normas adicionales aplicables (Numeral 1.2.2, Página 99). Además, para servicios que involucren medicamentos o dispositivos médicos, es necesario contar con la autorización correspondiente y documentación de programas de farmacovigilancia, tecnovigilancia y reactivovigilancia (Numeral 5, Página 72).\n\n[talento_humano] Las definiciones generales que deben considerarse en la habilitación de un servicio de salud, según los fragmentos proporcionados, incluyen:\n\n- **Sede del prestador**: Es el establecimiento abierto por el prestador de servicios de salud donde se desarrollan las actividades administrativas o asistenciales. [FRAGMENTO 5, Numeral 4.2, Página 24]\n\n- **Procedimiento**: Conjunto de acciones que se realizan de la misma forma, con una serie común de pasos definidos y una secuencia lógica en cualquiera de las fases de atención (promoción, prevención, diagnóstico, tratamiento, rehabilitación y paliación). [FRAGMENTO 5, Numeral 4.2, Página 24]\n\n- **Acciones de formación continua**: Actividades de capacitación del talento humano autorizado para ejercer una ocupación o profesión. [FRAGMENTO 5, Numeral 4.2, Página 24]\n\n[interdependencia] Las definiciones generales para tener en cuenta en la habilitación de un servicio de salud, según los fragmentos proporcionados, incluyen:\n\n- **Servicio de hospitalización paciente crónico (Numeral 11.4.2, Página 154):** Es el servicio que presta atención en salud al paciente con patología crónica con y sin ventilación, requiere valoraciones y cuidados por personal de salud a través de un plan individualizado de atención buscando mantener al paciente en su entorno, mantener funciones, prevenir el deterioro, con la máxima comodidad y alivio de síntomas posibles, garantizando su seguridad.\n\n- **Servicios de apoyo (Numeral 4.8, Página 29):** Son los servicios de soporte a la prestación servicios de salud que corresponden a alimentación, lavandería y vigilancia.\n\n- **Sistema de Información Clínico:** Es todo sistema utilizado para generar, enviar, recibir, archivar o procesar de cualquier forma mensajes de datos y que haya sido creado para la producción, recepción, distribución, consulta, organización, custodia, conservación, recuperación y disposición final de cualquier elemento constitutivo de la Historia Clínica (Numeral 4.8, Página 29).\n\n- **Complejidad baja con modafídad intramural:** Incluye servicios como laboratorio cínico, imágenes diagnósticas, transporte asistencial y servicios farmacéuticos (Numeral 51.1, Página 154).",
+    "mono_answer": "Las definiciones generales incluyen 'Autoevaluación', que es el registro que realiza el prestador de servicios de salud en el REPS después de haber realizado la autoevaluación.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 110,
+    "question": "¿Qué es el transporte especial de pacientes según la Resolución 3100 de 2019?",
+    "reference_answer": "El transporte especial de pacientes según la Resolución 3100 de 2019 se refiere al servicio de transporte asistencial de pacientes en ambulancias aéreas, fluviales o marítimas habilitado por el departamento o distrito donde esté ubicada la sede del prestador. Este servicio es habilitable en todo el territorio nacional.",
+    "module_expected": "general",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.15584415584415587,
+    "mono_f1": 0.6605504587155964,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "El transporte especial de pacientes se refiere al servicio de transporte asistencial de pacientes en ambulancias aéreas, fluviales o marítimas que habilitará el prestador del servicio en el departamento o distrito donde esté ubicada la sede que hayan definido. Esta habilitación producirá efectos en todo el territorio nacional, sin que se requiera realizar una nueva solicitud de habilitación para otros departamentos.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 111,
+    "question": "¿Cuáles son las condiciones generales para habilitar un servicio de salud?",
+    "reference_answer": "Las condiciones generales para habilitar un servicio de salud incluyen cumplir con los estándares técnicos, administrativos, financieros y científicos establecidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud. La secretaría de salud departamental o distrital debe verificar estos requisitos mediante una visita previa que incluye la certificación de instalaciones eléctricas y otros insumos necesarios.",
+    "module_expected": "general",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion",
+      "talento_humano",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1699346405228758,
+    "mono_f1": 0.430939226519337,
+    "multi_answer": "[infraestructura] Para habilitar un servicio de salud se deben cumplir los siguientes criterios según la Resolución 3100 de 2019, Estandar: Infraestructura:\n\n- Debe cumplir con los criterios que le sean aplicables a todos los servicios y contar con profesional en salud según la oferta definida por el prestador de servicios de salud (Numeral 3, Página 92).\n- Debe cumplir con los criterios definidos del servicio de consulta externa para consultorio donde se realiza examen físico (Numeral 4, Página 92).\n- Debe cumplir con los criterios que le sean aplicables a todos los servicios y debe estar estructurado sobre la organización de los servicios de salud, incluyendo procesos, procedimientos, actividades, recursos humanos, físicos, tecnológicos y de información (Numeral 5, Página 19).\n- Debe cumplir con los criterios establecidos en el presente manual para la habilitación de prestadores y servicios de salud (Numeral 3.3, Página 19).\n\n[talento_humano] Las condiciones generales para habilitar un servicio de salud incluyen la inscripción en el REPS, la presentación de soportes correspondientes al Manual de Inscripción y Habilitación de Prestadores, así como cumplir con las condiciones de capacidad técnica administrativa, suficiencia patrimonial y financiera y tecnológica según sea el caso. Además, se requiere que el prestador cuente con un plan hospitalario para emergencias y un plan de mantenimiento de la planta física que incluya el equipamiento fijo. Estas condiciones deben ser verificadas por las secretarías departamentales o distritales de salud o la entidad competente.\n\n[interdependencia] Para habilitar un servicio de salud, según los fragmentos normativos proporcionados, se deben cumplir ciertas condiciones generales. Estas incluyen:\n\n- **Acuerdo o contrato escrito**: Debe haberse establecido por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios (FRAGMENTO 1, numeral 51.1, página 29).\n- **Solicitud autorización**: La IPS debe solicitar autorización mediante comunicación escrita, con un mínimo de quince días de antelación, ante la secretaria de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias (FRAGMENTO 1, numeral 51.1, página 29).\n- **Información en la solicitud**: La solicitud debe incluir información como la fecha de inicio y terminación del acuerdo, los servicios a prestar, actividades que se desarrollarán, población a atender y mecanismo de supervisión (FRAGMENTO 1, numeral 51.1, página 29).\n- **Criterios médicos**: La atención puede tener carácter prioritario en el marco de la autonomía médica (FRAGMENTO 2, numeral 51.1, página 79).",
+    "mono_answer": "Para habilitar un servicio de salud se deben cumplir varias condiciones, entre ellas: \n\n1. Ingresar el formulario de inscripción con los soportes establecidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud a la página web de la secretaría de salud departamental o distrital o entidad competente (8.1, Página 4).\n2. Verificar que los soportes entregados correspondan a los previstos en el Manual de Inscripción (8.2, Página 4).\n3. Cumplir con las condiciones técnicas administrativas, de suficiencia patrimonial y financiera y tecnológicas y científicas de habilitación que se exigen (52.1, Página 162; 52.4, Página 162).\n4. Para prestadores en edificaciones construidas antes de mayo de 2005, contar con el certificado de conformidad de instalaciones eléctricas (44, Página 44).",
+    "multi_errors": [
+      "[dotacion] Esquema invalido: 2 error(es)",
+      "[dotacion] 2 validation errors for AgentResponse\ncitations.4.page\n  Input should be a valid integer [type=int_type, input_value=[150, 159], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/int_type\ncitations.5.page\n  Input should be a valid integer [type=int_type, input_value=[150, 159], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/int_type"
+    ],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 112,
+    "question": "¿De acuerdo a su naturaleza jurídica, cómo se clasifican los prestadores de servicios de salud?",
+    "reference_answer": "De acuerdo con la Resolución 3100 de 2019, los prestadores de servicios de salud se clasifican en: 1) Instituciones Prestadoras de Servicios de Salud; 2) Profesionales Independientes de Salud; 3) Servicios de Transporte Especial de Pacientes; 4) Entidades con objeto social diferente a la prestación de servicios de salud; 5) Secretarias de Salud Departamental o Distrital; 6) Entidades Responsables del Pago de Servicios de Salud; y 7) La Superintendencia Nacional de Salud. (Véase numeral 2.1, página 2).",
+    "module_expected": "general",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "interdependencia",
+      "historia_clinica",
+      "medicamentos_dispositivos"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.30857142857142855,
+    "mono_f1": 0.6535947712418301,
+    "multi_answer": "[interdependencia] Los prestadores de servicios de salud no están específicamente clasificados por su naturaleza jurídica en los fragmentos proporcionados. Sin embargo, el requisito para iniciar nuevamente el proceso ante la secretaría de salud departamental o distrital se refiere a instituciones que ya tienen competencias relacionadas con prestación de servicios de salud (FRAGMENTO 1).\n\n[medicamentos_dispositivos] Los prestadores de servicios de salud no pueden habilitar el servicio farmacéutico como único servicio en su portafolio. Además, para otros servicios como terapias y cuidado intermedio pediátrico, se requiere cumplir con criterios específicos que varían según la categoría del servicio (telexperticia, telemonitoreo, etc.).",
+    "mono_answer": "Los prestadores de servicios de salud se clasifican según su naturaleza jurídica en las siguientes categorías: instituciones prestadoras de servicios de salud, profesionales independientes de salud, servicios de transporte especial de pacientes, entidades con objeto social diferente a la prestación de servicios de salud, secretarias de salud departamental o distrital, entidades responsables del pago de servicios de salud y la Superintendencia Nacional de Salud. Los servicios intramurales en establecimientos carcelarios no están sujetos a esta normativa.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 113,
+    "question": "¿Qué se debe tener en cuenta en la capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud?",
+    "reference_answer": "La capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud se evalúa durante las visitas de verificación para certificar condiciones de habilitación (Numeral 9.3.3, Página 41). Debe demostrar estas condiciones una vez concluidos procesos judiciales o concordatarios (Artículo 4, Página 3).",
+    "module_expected": "general",
+    "module_predicted": "interdependencia",
+    "module_predicted_all": [
+      "infraestructura",
+      "dotacion",
+      "talento_humano",
+      "interdependencia",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.3586206896551724,
+    "mono_f1": 0.43749999999999994,
+    "multi_answer": "Para evaluar la capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud, se deben considerar los estados financieros certificados por el revisor fiscal o el contador. Estos estados financieros deben ser del año inmediatamente anterior al registro en el Registro Especial de Prestadores de Servicios de Salud -REPS. Si la institución no cuenta con personería jurídica, se presentarán los estados financieros consolidados certificados o dictaminados de la entidad a la cual pertenece. Además, si la institución está en procesos de reestructuración de pasivos o concordatarios, deberá demostrar las condiciones de suficiencia una vez concluidos estos procesos.",
+    "mono_answer": "Para la suficiencia patrimonial, el prestador de servicios de salud debe demostrar las condiciones de suficiencia patrimonial y financiera una vez culmine el proceso de intervención, reestructuración o concordatario, según lo establece la Ley 550 de 1999 o Código de Comercio. Esto se menciona en el Artículo 4 del mismo documento.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura, dotacion, interdependencia, historia_clinica.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'talento_humano'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 114,
+    "question": "¿Cuáles son los pasos para la inscripción de los prestadores de servicios de salud en el REPS?",
+    "reference_answer": "Para inscribirse como prestador en el REPS, el interesado debe ingresar a la página web de la secretaría departamental o distrital, seleccionar el enlace de inscripción y determinar sede(s), servicio(s) a habilitar, complejidad, modalidad y capacidad instalada. Posteriormente, se diligencia el formulario de inscripción.",
+    "module_expected": "general",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "talento_humano",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.36470588235294116,
+    "mono_f1": 0.437956204379562,
+    "multi_answer": "Los pasos para la inscripción de los prestadores de servicios de salud en el REPS, según los fragmentos normativos proporcionados, son los siguientes:\n\n1. Ingresar a la página web de la Secretaría de Salud Departamental o Distrital o la entidad que tenga a cargo dichas competencias y ubicar el enlace de inscripción del aplicativo REPS.\n2. Determinar la sede o sedes donde va a funcionar, así como los servicios a habilitar, su complejidad, modalidad y capacidad instalada según lo definido en el REPS.\n3. Diligenciar el formulario de inscripción en el REPS.\n4. Realizar la declaración de autoevaluación por cada uno de los servicios a ofertar.\n\nEstos pasos están detallados en los fragmentos normativos [Numeral 9,1,2.a, Página 37; Numeral 7,1, Página 4; Numeral 9.1, Página 36].",
+    "mono_answer": "Los pasos para la inscripción de los prestadores de servicios de salud en el REPS son: \n1. Ingresar a la página web de la secretaría de salud departamental o distrital o la entidad que tenga a cargo dichas competencias, ubicar y seleccionar el enlace de inscripción de prestadores de servicios de salud del aplicativo REPS.\n2. Determinar la sede o sedes donde va a funcionar,\n3. Determinar los servicios a habilitar, su complejidad, modalidad y capacidad instalada según los servicios definidos en el REPS.\n4. Diligenciar el formulario de inscripción en el REPS.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, interdependencia.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'talento_humano'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 115,
+    "question": "¿Cuáles son los pasos para la habilitación de servicios de salud?",
+    "reference_answer": "La habilitación de servicios de salud requiere que la secretaría departamental o distrital verifique los soportes del formulario de inscripción en el REPS ( numeral 8.2, página 4). Además, el prestador debe cumplir con los estándares y criterios definidos para el servicio a habilitar según su naturaleza (numeral 1.3.3, página 20).",
+    "module_expected": "general",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano",
+      "interdependencia",
+      "historia_clinica"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": false,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.18271604938271604,
+    "mono_f1": 0.0,
+    "multi_answer": "[talento_humano] Los pasos para la habilitación de servicios de salud se describen en los siguientes fragmentos normativos:\n\n1. **Inscripción del prestador de servicios de salud**: El prestador debe ingresar a la página web de la Secretaría de Salud Departamental o Distrital, ubicar y seleccionar el enlace de inscripción de prestadores de servicios de salud del aplicativo REPS, determinar la sede o sedes donde va a funcionar, determinar los servicios a habilitar (complejidad, modalidad y capacidad instalada), diligenciar el formulario de inscripción y la declaración de autoevaluación por cada uno de los servicios a ofertar. [Numeral 9.1.2, Página 37]\n\n2. **Ingreso al REPS**: La secretaría de salud departamental o distrital ingresa el formulario de inscripción diligenciado y verifica que los soportes entregados correspondan a los previstos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud. [Numeral 8.1, Página 4]\n\n3. **Visita y verificación**: La secretaría de salud realiza una visita para verificar que se cumplan las condiciones de habilitación y registra el resultado en el REPS. Una vez cumplidas las condiciones, expide la constancia de habilitación correspondiente. [Numeral 9.3.1, Página 40]\n\n4. **Generación del distintivo**: La autorización del distintivo de habilitación se da una vez que la secretaría de salud haya registrado el cumplimiento de las condiciones en el REPS y expida la constancia de habilitación correspondiente. [Numeral 9.3.1, Página 40]\n\n[interdependencia] Para la habilitación de servicios de salud, según los fragmentos normativos proporcionados, se deben cumplir ciertos requisitos y procedimientos. Primero, es necesario establecer por escrito un acuerdo o contrato con una Institución Prestadora de Servicios de Salud del departamento o distrito donde se vayan a prestar los servicios (Numeral 14.9, Página 79). Este acuerdo debe incluir la fecha de inicio y terminación de la prestación de servicios, así como los servicios que se van a prestar (Numeral 14.10, Página 79). Además, es obligatorio solicitar autorización mediante comunicación escrita con al menos quince días de antelación ante la secretaria de salud departamental o distrital, o la entidad competente (Numeral 14.11, Página 79). No obstante, los fragmentos proporcionados no detallan todos los pasos específicos para la habilitación de servicios de salud.",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [
+      "JSON malformado: Expecting property name enclosed in double quotes: line 3 column 18 (char 345)"
+    ],
+    "mono_warnings": []
+  },
+  {
+    "index": 116,
+    "question": "¿Cuáles son las generalidades de las visitas de habilitación?",
+    "reference_answer": "Las visitas de verificación de condiciones de habilitación deben ser comunicadas con un día hábil de antelación y no excluyen las visitas previas ni las que surjan en cumplimiento de funciones de inspección, vigilancia y control (Numeral 17.9, página 9).",
+    "module_expected": "general",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": false,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.43243243243243246,
+    "mono_f1": 0.0,
+    "multi_answer": "Las visitas de verificación de condiciones de habilitación deben ser comunicadas al prestador como mínimo con un (1) día hábil de antelación y por medios físicos o electrónicos. Comunicada la visita, el prestador no podrá presentar novedades mientras esta no haya concluido. Además, las visitas previas tienen como resultado en caso del cumplimiento de las condiciones de habilitación, la constancia de habilitación de los servicios de salud no implica su certificación. Estas visitas pueden ser realizadas por la secretaría departamental o distrital, o la entidad que tenga a cargo dichas competencias y harán parte del plan de visitas de verificación (Numeral 17.9, Página 9; Numeral 3.2, Página 43).",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [
+      "JSON malformado: Expecting property name enclosed in double quotes: line 3 column 18 (char 444)"
+    ],
+    "mono_warnings": []
+  },
+  {
+    "index": 117,
+    "question": "¿Cuáles son los casos en los que se realiza visita previa de habilitación?",
+    "reference_answer": "Según la Resolución 3100 de 2019, se realiza visita previa de habilitación para prestadores que van a realizar la apertura de nuevos servicios de urgencias ( numeral 3.17.9, página 9).",
+    "module_expected": "general",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.13559322033898305,
+    "mono_f1": 0.27999999999999997,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "Las visitas previas que sean necesarias para garantizar la adecuada atención de la población en su jurisdicción, así como las visitas que surjan en cumplimiento de funciones de inspección, vigilancia y control harán parte del plan de visitas de verificación. Esto se aplica a aquellas instituciones prestadoras de servicios de salud acreditadas durante la vigencia de dicha acreditación, salvo cuando vayan a realizar la apertura de nuevos servicios de urgencias.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 118,
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con cierre del prestador de servicios de salud?",
+    "reference_answer": "De acuerdo con el numeral 14.1 del Capítulo IV de Resolución 3100 de 2019, para presentar novedades relacionadas con cierre del prestador de servicios de salud, éste debe reportar el registro de la novedad al menos veinte (20) días calendario antes del cierre. Además, es necesario cumplir con el plan que permita la reubicación y prestación de servicios a los pacientes según sus necesidades médicas.",
+    "module_expected": "general",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "interdependencia"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.08510638297872342,
+    "mono_f1": 0.5669291338582677,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "Para presentar novedades relacionadas con el cierre del prestador de servicios de salud, se requiere informar a las entidades responsables de pago con los cuales tengan contrato, mínimo veinte (20) días calendario antes de reportar el registro de la novedad de cierre en el formato de novedades. Esto se debe hacer para garantizar la prestación de servicios de salud a los usuarios.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, interdependencia."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 119,
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con el cambio de representante legal?",
+    "reference_answer": "Según el numeral 12.1.e de la Resolución 3100 de 2019, para presentar novedades relacionadas con el cambio de representante legal se requiere declarar esta novedad en el sistema RAG.",
+    "module_expected": "general",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.1724137931034483,
+    "mono_f1": 0.15384615384615385,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 120,
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con cambio de datos de contacto?",
+    "reference_answer": "Según numeral 12.3 de Resolución 3100 de 2019, para presentar novedades relacionadas con el cambio de datos de contacto (teléfono y correo electrónico), no se requieren requisitos adicionales específicos distintos a los establecidos en la presente resolución.",
+    "module_expected": "general",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.21212121212121213,
+    "mono_f1": 0.5142857142857143,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "El requisito para presentar novedades relacionadas con el cambio de datos de contacto está incluido en los estándares de habilitación bajo la sección de Novedades de servicios, específicamente en el numeral 12.3 f.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  },
+  {
+    "index": 121,
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con apertura de nueva sede?",
+    "reference_answer": "Los requisitos para presentar novedades relacionadas con apertura de nueva sede incluyen: 1) Documento de Existencia y Representación Legal; 2) Formulario de Novedad.",
+    "module_expected": "general",
+    "module_predicted": "infraestructura",
+    "module_predicted_all": [
+      "infraestructura"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": false,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.11538461538461538,
+    "mono_f1": 0.06060606060606061,
+    "multi_answer": "No se encontro evidencia normativa suficiente en los modulos consultados para construir una respuesta fundamentada. Reformula la pregunta de forma mas especifica o consulta un requisito puntual por estandar.",
+    "mono_answer": "La información solicitada no se encuentra en los fragmentos recuperados.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: infraestructura."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Sin evidencia recuperada para este modulo."
+    ]
+  },
+  {
+    "index": 122,
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con cierre de sedes?",
+    "reference_answer": "Para presentar novedades relacionadas con cierre de sedes, el prestador debe informar al menos veinte (20) días calendario antes al responsable de pago y realizar un plan para la reubicación y prestación de servicios a los pacientes según sus necesidades médicas. Esto se establece en el numeral 14.1 del artículo 13 de la Resolución 3100 de 2019.",
+    "module_expected": "general",
+    "module_predicted": "historia_clinica",
+    "module_predicted_all": [
+      "historia_clinica",
+      "infraestructura",
+      "talento_humano"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": true,
+    "multi_em": 0.0,
+    "mono_em": 0.0,
+    "multi_f1": 0.4972972972972973,
+    "mono_f1": 0.26666666666666666,
+    "multi_answer": "Para presentar novedades relacionadas con cierre de sedes, el prestador de servicios de salud debe cumplir con ciertos requisitos según la normativa. Primero, es necesario informar al menos veinte (20) días calendario antes del cierre a las entidades responsables de pago con las cuales tenga contrato. Además, si se trata de un cierre por una intervención forzosa administrativa para liquidar o administrar por parte de la Superintendencia Nacional de Salud, secretaría departamental o distrital, o entidad competente, el prestador que asuma los servicios en el mismo domicilio y sedes debe efectuar el procedimiento de inscripción establecido. También se requiere elaborar un plan para la reubicación y prestación de servicios a los pacientes según sus necesidades médicas (Artículo 13, numeral 14.1, Página 7; Artículo 25, numeral 14.1, Página 10).",
+    "mono_answer": "Los prestadores de servicios de salud que tengan una medida de seguridad que implique el cierre de la totalidad de las sedes en la entidad territorial donde esté funcionando, proferida por la Superintendencia Nacional de Salud o la secretaría de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias, y que durante ja vigencia de la medida se cumpla el término para realizar la autoevaluación, deben reportar el cierre en el formato de novedades.",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: historia_clinica, infraestructura.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'talento_humano'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": [
+      "Confianza baja: 0.00"
+    ]
+  }
+]

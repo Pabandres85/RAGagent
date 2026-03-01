@@ -1,5 +1,10 @@
 # Artifacts generados dinamicamente
-artifacts/
+artifacts/*
+!artifacts/faiss/
+!artifacts/faiss/*.faiss
+!artifacts/eval_runs/
+!artifacts/eval_runs/*.json
+artifacts/eval_runs/*.partial.json
 
 # Modelos y pesos
 *.bin
@@ -23,7 +28,10 @@ __pycache__/
 # Datos sensibles
 data/raw/
 data/processed/
-data/metadata/
+
+# Backups del gold set (no versionar)
+eval/datasets/*.bak
+eval/datasets/*.backup.json
 
 # Temporales
 scripts/test_write.txt

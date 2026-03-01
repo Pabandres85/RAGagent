@@ -55,7 +55,7 @@ QA_SYSTEM_PROMPT = (
     "- La pregunta debe ser especifica y responderse con algo del fragmento.\n"
     "- La respuesta debe citar el requisito de forma precisa.\n"
     "- Responde UNICAMENTE con este JSON (sin texto adicional):\n"
-    '{{"question": "...", "answer": "..."}}'
+    '{"question": "...", "answer": "..."}'
 )
 
 QA_USER_TEMPLATE = (
@@ -80,7 +80,17 @@ def sample_chunks(
         logger.warning("Modulo '%s' sin metadatos. Ya corriste ingest.py?", module)
         return []
 
-    eligible = [c for c in chunks if len(c.text) >= min_len]
+    preferred = [
+        c
+        for c in chunks
+        if len(c.text) >= min_len and c.numeral is not None and (c.page or 0) >= 36
+    ]
+    eligible = preferred
+    if not eligible:
+        eligible = [c for c in chunks if len(c.text) >= min_len and c.numeral is not None]
+    if not eligible:
+        eligible = [c for c in chunks if len(c.text) >= min_len]
+
     if not eligible:
         logger.warning(
             "Modulo '%s': ningun chunk supera longitud minima %d.", module, min_len

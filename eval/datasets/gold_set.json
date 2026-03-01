@@ -1,0 +1,1100 @@
+[
+  {
+    "question": "¿Qué tipo de profesional debe estar presente cuando se realiza una telexperticia entre personal de salud no profesional y un especialista?",
+    "answer": "El prestador remisor cuenta con técnico, tecnólogo o auxiliar que atiende presencialmente al usuario (RESOLUCIÓN NÚMERO 0003100 DE 2019, numeral 3.2).",
+    "module": "talento_humano",
+    "chunk_id": "5278c8dd51bf",
+    "numeral": "3.1",
+    "page": 86,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de inyector de sangre debe contar el equipo de hemodiálisis según los requisitos estipulados en el numeral 11.2.5?",
+    "answer": "De acuerdo con el numeral 11.2.5, el equipo de hemodiálisis debe contar con un 'inyector de sangre variable - (bomba de sangre) con inyector de volumen'.",
+    "module": "dotacion",
+    "chunk_id": "bfef1a643d99",
+    "numeral": "11.2.5",
+    "page": 144,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles registros deben ser mantenidos según los requisitos estipulados en el numeral 9.1 del módulo Dotación de la Resolución 3100 de 2019 y cuál es su contenido?",
+    "answer": "Deben mantenerse los siguientes registros: 9.1 Pacientes y muestras tomadas; 92 Muestras remitidas para su procesamiento; 9.3 Resultados de los análisis con el nombre del laboratorio que realizó el procesamiento o lectura de las muestras y de la persona que los realizó; 9.4 Análisis del control de calidad y de las medidas preventivas y correctivas.",
+    "module": "dotacion",
+    "chunk_id": "4e1c000e4a9f",
+    "numeral": "9.1",
+    "page": 136,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de electrocardiografía neonatal debe estar incluida en el monitor de signos vitales según el numeral 15.10 del documento?",
+    "answer": "El numeral 15.10 establece que el electrocardiografía neonatal con tres derivaciones, que permita su impresión, si no está incluida en el monitor de signos vitales.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "6c2936de8cf5",
+    "numeral": "15.7",
+    "page": 170,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los elementos que deben estar documentados sobre los reactivos de diagnóstico in vitro requeridos según el numeral 3 del módulo 2.7?",
+    "answer": "Los reactivos de diagnóstico in vitro requieren información documentada que dé cuenta de la verificación y seguimiento del nombre, marca, presentación comercial, Registro sanitario vigente o permiso de comercialización expedido por el Invima, clasificación del riesgo sanitario, vida útil (cuando aplique), fecha de vencimiento y lote.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "5150c01638a3",
+    "numeral": "2.7",
+    "page": 71,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los dispositivos médicos específicos mencionados en el numeral 12 del requisito 3100 de 2019 que deben estar disponibles según su modalidad operativa?",
+    "answer": "De acuerdo con el numeral 12.6, 12.7 y 12.8 del requisito 3100 de 2019, los dispositivos médicos específicos mencionados son: marcapaso externo no invasivo (numeral 12.6), oxígeno medicinal portátil (numeral 12.7) y electrocardiógrafo (numeral 12.8).",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "352668e758b2",
+    "numeral": "12.6",
+    "page": 181,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué acción debe tomar la autoridad competente si el prestador no puede demostrar que cuenta con certificado de conformidad de las instalaciones eléctricas?",
+    "answer": "La secretaría de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias que realice la visita de reactivación, deberá notificar del hecho a la autoridad competente de vigilar el cumplimiento de éste. (9.3.5)",
+    "module": "talento_humano",
+    "chunk_id": "eba9f759df23",
+    "numeral": "9.3.5",
+    "page": 45,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico para el oxímetro con sensor neonatal según el numeral 12.4 del documento?",
+    "answer": "12.4. Oxlmetro con sensor neonatal (cuando no esté incluido en el monitor de signos vitales).",
+    "module": "dotacion",
+    "chunk_id": "bda7e654979c",
+    "numeral": "12.4",
+    "page": 163,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos establecidos en el numeral 7.1 del estándar de infraestructura según Resolución 3100 de 2019 para el ambiente a manera de filtro en un centro de servicios de salud?",
+    "answer": "De acuerdo con el numeral 7.1, el ambiente a manera de filtro debe estar diseñado para acceso del talento humano en salud y visitantes, incluyendo lavamanos y área de casilleros.",
+    "module": "infraestructura",
+    "chunk_id": "d7c4bb7cbc7f",
+    "numeral": "7.1",
+    "page": 180,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué requisito debe cumplir el técnico en medicina nuclear para estar habilitado según el numeral 1.2 del módulo Talento Humano, página 112?",
+    "answer": "El técnico en medicina nuclear debe contar con constancia de asistencia en las acciones de formación continua en protección radiológica, radiofarmacia y radiofármacos.",
+    "module": "infraestructura",
+    "chunk_id": "f8c4bc60c2b0",
+    "numeral": "1.2",
+    "page": 112,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las condiciones de almacenamiento requeridas según el numeral 40.3 para las unidades de sangre de cordón umbilical y sangre periférica o médula ósea en función del tiempo transcurrido desde la recolección hasta la infusión?",
+    "answer": "Las unidades de sangre de cordón umbilical deben almacenarse a una temperatura menor o igual a -120 grados centígrados, mientras que las unidades de sangre periférica o médula ósea deben mantenerse en menos -84 grados centígrados si el producto va a ser infundido posterior a 48 horas de recolectado. Si la infusión se realizará dentro de las 48 horas, se almacenan entre 2 y 8 grados centígrados.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "25eef5b8cc72",
+    "numeral": "40.2",
+    "page": 152,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué elementos biomédicos deben estar disponibles según el numeral 16 cuando se presta atención a pacientes adultos quemados en condiciones críticas?",
+    "answer": "16. Cuando se oferte atención de paciente adulto quemado en condiciones críticas, cuenta con la dotación de los elementos y equipos biomédicos, que se requieran de acuerdo con los procedimientos definidos en el estándar de procesos prioritarios.",
+    "module": "talento_humano",
+    "chunk_id": "5257aa7db16c",
+    "numeral": "14.1.6",
+    "page": 184,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué debe incluirse en la reunión de apertura de la visita según el numeral 9.3.3.1 del requisito 9.3.3?",
+    "answer": "Deben explicarse los objetivos, metodología y distribución de servicios y estándares a verificar, además de cotejar los servicios de salud registrados por el prestador en el REPS con los ofertados y prestados.",
+    "module": "talento_humano",
+    "chunk_id": "2ac6f3fb849d",
+    "numeral": "9.3.3",
+    "page": 42,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las modalidades de prestación de servicio que deben cumplir con el requisito de contar con un auxiliar en enfermería según el numeral 1.1 del módulo Talento Humano?",
+    "answer": "Salud y Protección Social autorice. Tejidos: Tejidos oculares, osteomuscular, cardiovascular, piel y componentes de la piel y los demás que el Ministerio de Salud y Protección Social autorice. Estructura del servicio: Complejidades: Mediana y alta; Modalidades de prestación: Estándar de talento humano; Complejidades mediana y alta; Intramural; Extramural Jornada de Salud y Unidad Móvil - No aplica para trasplantes; Telemedicina - categoría: Telexperticia sincrónica o asincrónica; Entre dos profesionales; Modalidades intramura/, extramural jornada de salud, unidad móvil y telemedicina - prestador remisor Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con 1.1 Auxiliar en enfermería.",
+    "module": "talento_humano",
+    "chunk_id": "9a41497ddd55",
+    "numeral": "1.1",
+    "page": 199,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es la obligación de la entidad encargada de realizar la visita de reactivación en relación a la notificación del cumplimiento o incumplimiento de las condiciones de habilitación?",
+    "answer": "La secretaría de salud departamental o distrital, o la entidad que tenga a cargo dichas competencias, deberá notificar del hecho a la autoridad competente de vigilar el cumplimiento de éste.",
+    "module": "talento_humano",
+    "chunk_id": "e9156d7d56de",
+    "numeral": "9.3.4",
+    "page": 45,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es la descripción del servicio de diagnóstico vascular según el numeral 19.1 y el numeral 11.3.8 de la Resolución 3100 de 2019?",
+    "answer": "Es el servicio que utiliza métodos y procedimientos para el diagnóstico de enfermedades o disfunciones del sistema cardiovascular y vascular periférico (venoso, arterial y linfático), de sus órganos o la.",
+    "module": "talento_humano",
+    "chunk_id": "eb7b7d2b416c",
+    "numeral": "19.1",
+    "page": 123,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las condiciones ambientales requeridas según el numeral 53.1 para garantizar la prestación de servicios en telemedicina como prestador de referencia exclusivo?",
+    "answer": "De acuerdo con el numeral 53.1, es necesario contar con un ambiente exclusivo que garantice la privacidad y confidencialidad durante la atención, seguridad de los equipos frente a la extracción no autorizada y condiciones ambientales libres de interferencias visuales y sonoras para su correcto funcionamiento.",
+    "module": "infraestructura",
+    "chunk_id": "0246736955c3",
+    "numeral": "52.4",
+    "page": 68,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de plataformas tecnológicas debe utilizar el proveedor para garantizar la seguridad, privacidad y disponibilidad permanente del servicio de salud según los criterios establecidos en la normatividad?",
+    "answer": "Plataformas tecnológicas que garanticen la seguridad y privacidad de la información y la disponibilidad permanente para prestar los servicios de salud, cumpliendo con los criterios de seguridad, privacidad y protección de datos personales establecidos en la normatividad o lineamientos que regulen la materia (51.2).",
+    "module": "infraestructura",
+    "chunk_id": "9d75f0225c77",
+    "numeral": "51.2",
+    "page": 67,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué requisito debe cumplir el piso del túnel o puente según el numeral 5.2 de la Resolución 3100?",
+    "answer": "El piso del túnel o puente debe ser uniforme y de material antideslizante o con elementos que garantizan esta propiedad en todo su recorrida, con pasamanos a ambos lados y protecciones laterales hacia espacios libres (Resolución 3100 de 2019, numeral 5.2).",
+    "module": "infraestructura",
+    "chunk_id": "784a9a9a6d99",
+    "numeral": "5.2",
+    "page": 62,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre los tomacorrientes en el compartimiento del paciente según el numeral 24.1.3?",
+    "answer": "El numeral 24.1.3 establece que mínimo dos tomacorrientes tipo 'encendedor de cigarrillo' deben estar identificados en el compartimiento del paciente.",
+    "module": "infraestructura",
+    "chunk_id": "424066072907",
+    "numeral": "24.1.3",
+    "page": 218,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre la habilitación del servicio quirúrgico requerido para un prestador que realiza procedimientos quirúrgicos en modalidad intramural según el numeral 12.2 del documento?",
+    "answer": "El prestador donde se realicen los procedimientos quirúrgicos en esta modalidad cuenta con la habilitación del servicio quirúrgico (Requisito 14).",
+    "module": "infraestructura",
+    "chunk_id": "3751bfceedea",
+    "numeral": "12.2",
+    "page": 202,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el área mínima requerida por cada cama en una habitación múltiple destinada a pacientes adultos según el requisito 20.4.3 del numeral 20.4?",
+    "answer": "La habitación múltiple para pacientes adultos debe tener una capacidad máxima de 4 camas, con área libre mínima de 7 m2 por cama, separadas con barrera física fija o móvil (Requisito 20.4.3).",
+    "module": "infraestructura",
+    "chunk_id": "94d3cf63acfb",
+    "numeral": "20.2",
+    "page": 149,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué requisito debe cumplir el diseño y la construcción de la embarcación según el numeral 17.2 del documento normativo?",
+    "answer": "El diseño y la construcción de la embarcación deben cumplir con la normatividad vigente a la fecha de la construcción, expedida por las autoridades competentes (18.1).",
+    "module": "infraestructura",
+    "chunk_id": "553fadb01b5f",
+    "numeral": "17.2",
+    "page": 216,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de uniones deben existir entre las unidades móviles marítimas o fluviales y tierra firme según el numeral 50.10?",
+    "answer": "50.10. Para unidades móviles marítimas o fluviales, las uniones con tierra firme son continuas, sin desniveles y permiten el flujo de camillas y sillas de ruedas.",
+    "module": "infraestructura",
+    "chunk_id": "be1f31a5ed63",
+    "numeral": "50.8",
+    "page": 67,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre iluminación en las instalaciones según el numeral 51.4 del documento normativo?",
+    "answer": "El numeral 51.4 establece que debe haber un nivel de iluminación homogénea con luz fluorescente blanca fría, y no se deben mezclar tipos de iluminación cálida con fría.",
+    "module": "infraestructura",
+    "chunk_id": "ff619782298b",
+    "numeral": "51.4",
+    "page": 68,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre las puertas de acceso a las habitaciones en relación con su capacidad para permitir el paso y giro de camillas y sillas de ruedas?",
+    "answer": "20.4.8. Las puertas de acceso a las habitaciones deben permitir el paso y giro de camillas y sillas de ruedas.",
+    "module": "infraestructura",
+    "chunk_id": "6f66def3b41d",
+    "numeral": "20.4.8",
+    "page": 149,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El revestimiento interno del compartimiento del paciente cumple con los requisitos especificados en el numeral 15.1, incluyendo acabados no rugosos, resistentes a desinfectantes y sin elementos afilados o cortantes?",
+    "answer": "Cuenta con revestimientos interiores del compartimiento del paciente sin elementos afilados o cortantes, de material lavable, con acabados no rugosos y resistentes al deterioro por agentes desinfectantes (artículo 15.1).",
+    "module": "infraestructura",
+    "chunk_id": "e9957e1c607e",
+    "numeral": "15.1",
+    "page": 216,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El laboratorio cuenta con un área adecuada para la recepción de muestras, información y entrega de resultados según el numeral 8.1 del requisito 7 de Resolución 3100?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios (Requisito 7). Cuenta con: Área para recepción de muestras, información y entrega de resultados (Requisito 8.1).",
+    "module": "infraestructura",
+    "chunk_id": "5fb7d63a5bb1",
+    "numeral": "8.1",
+    "page": 133,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los servicios públicos domiciliarios que deben estar garantizados según el numeral 48.1 del requisito 48 del documento normativo?",
+    "answer": "Acueducto, alcantarillado, energía eléctrica y sistema de comunicación.",
+    "module": "infraestructura",
+    "chunk_id": "fe5dde712a64",
+    "numeral": "48.1",
+    "page": 67,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El profesional de la salud puede utilizar telexperticia sincrónica o asincrónica entre profesionales de la salud según qué estándar definido por el prestador de servicios de salud?",
+    "answer": "14. El profesional de la salud puede hacer uso de la categoría telexperticia sincrónica o asincrónica entre profesionales de la salud de acuerdo con lo definido por el prestador de servicios de salud en el estándar de procesos prioritarios.",
+    "module": "infraestructura",
+    "chunk_id": "c429d794354f",
+    "numeral": "16.1",
+    "page": 208,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo con el numeral 23.5, cuáles deben ser los requisitos específicos para la dotación de equipos biomédicos en una institución que ofrece terapia ocupacional?",
+    "answer": "23.5. Dotación de equipos biomédicos acorde con las modalidades de terapia ocupacional ofertadas.",
+    "module": "infraestructura",
+    "chunk_id": "b15691556124",
+    "numeral": "23.2",
+    "page": 192,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico del numeral 17.7 relacionado con los tubos endotraqueales que debe cumplir un establecimiento según Resolución 3100 de 2019?",
+    "answer": "Deben contar con tubos endotraqueales de diferentes calibres conforme al numeral 18.2 del artículo 17.7.",
+    "module": "infraestructura",
+    "chunk_id": "7f6344bf5a57",
+    "numeral": "17.7",
+    "page": 202,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las dimensiones mínimas requeridas para el compartimiento destinado al paciente según el numeral 18.2 de la Resolución 3100 de 2019, y cuál es la tolerancia permitida en estas medidas?",
+    "answer": "El compartimiento para el paciente debe tener como mínimo las siguientes dimensiones: largo útil 2.20 metros, ancho útil 2.20 metros, altura interna útil 2.0 metros, con una tolerancia máxima del 15% sobre estas medidas (RESOLUCIÓN NÚMERO C003100 25 NOV 2019).",
+    "module": "infraestructura",
+    "chunk_id": "219c2751e060",
+    "numeral": "18.2",
+    "page": 217,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo al numeral 15.5, ¿qué tipo de área debe estar disponible para garantizar condiciones de privacidad en el desarrollo de terapias individuales?",
+    "answer": "Área para la realización de terapia individual que garantice condiciones de privacidad, que puede ser el mismo consultorio (Resolución 3100 de 2019, numeral 15.5).",
+    "module": "dotacion",
+    "chunk_id": "3f358bdc1543",
+    "numeral": "15.5",
+    "page": 197,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué especificaciones técnicas debe cumplir el equipo generador de radiación ionizante según la oferta en modalidades extramurales como unidad móvil o telemedicina?",
+    "answer": "11.1. Equipo generador de radiación ionizante según la oferta, cuyas indicaciones del fabricante refieran que está diseñado para ser instalado y operado y mantenido en una unidad móvil.",
+    "module": "dotacion",
+    "chunk_id": "6df04f6f62d2",
+    "numeral": "10.2.1",
+    "page": 102,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de oxígeno medicinal portátil por camilla se requiere según el numeral 22.1 del módulo Dotación en la Resolución 3100 de 2019?",
+    "answer": "Debe contar con oxígeno medicinal portátil por camilla para cumplir con la complejidad alta.",
+    "module": "dotacion",
+    "chunk_id": "181e0f69b5d9",
+    "numeral": "22.1",
+    "page": 228,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo con el numeral 25, cuál es la obligación del prestador en cuanto a la báscula o pesa bebé?",
+    "answer": "El prestador de servicios de salud cuenta con báscula grado médico o pesa bebé, según la oferta del servicio.",
+    "module": "dotacion",
+    "chunk_id": "ee15a4269f28",
+    "numeral": "24.8",
+    "page": 82,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de dispositivos deben estar disponibles según el numeral 20.8 del módulo Dotación en el servicio de atención obstétrica?",
+    "answer": "Deben estar disponibles: Bomba de infusión, báscula para bebé, infantómetro, cinta métrica, oxímetro con sensor neonatal, fonendoscopio, camilla con barandas, ruedas y freno, carro de paro.",
+    "module": "dotacion",
+    "chunk_id": "b1714e14cb87",
+    "numeral": "20.6",
+    "page": 228,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es la obligatoriedad del negatoscopio en los consultorios que realizan examen físico, según el numeral 19.11?",
+    "answer": "El negatoscopio es requerido cuando se requiera o según el sistema de visualización utilizado por el prestador, conforme al numeral 19.11.",
+    "module": "dotacion",
+    "chunk_id": "fb068e1d66a6",
+    "numeral": "19.5",
+    "page": 82,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué elementos biomédicos deben estar disponibles según el estándar de procesos prioritarios mencionado en el numeral 19 del módulo Dotación?",
+    "answer": "Los elementos y equipos biomédicos que se requieran de acuerdo con los procedimientos definidos en el estándar de procesos prioritarios, incluyen: carro de paro (19.1), glucómetro (19.2), equipo de órganos de los sentidos (19.3), monitor de signos vitales de transporte con accesorios pediátrico (19.4), oxígeno medicinal portátil (19.5), tallímetro (19.6), cinta métrica (19.7), aspirador (19.8), equipo de rayos X portátil (19.9), ventilador de transporte (19.10), electrocardiógrafo (19.11), marcapasos (19.12), ecógrafo (19.13) y monitor de signos vitales con presión invasiva cuando no esté incluido en el monitor de signos vitales de transporte (19.14).",
+    "module": "dotacion",
+    "chunk_id": "38acd4cf2dfe",
+    "numeral": "19.1",
+    "page": 177,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de lámpara debe estar disponible en la aeronave según el numeral 28.3 del requisito?",
+    "answer": "Lámpara que permita su utilización a distancia de la aeronave (Requisito 28.3).",
+    "module": "dotacion",
+    "chunk_id": "1aec83b2da9b",
+    "numeral": "28.3",
+    "page": 219,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo con el numeral 11.2.1 del requisito 10.1, ¿qué características debe tener el monitor de alarma de conductividad en los equipos de hemodiálisis por paciente?",
+    "answer": "El monitor de alarma de conductividad debe incluir alarma de temperatura, alarma de aire en el sistema de sangre, presión en cámara venosa y en cámara arterial, tiempo efectivo en diálisis, volumen de sangre de la bomba y sistema de desinfección de la máquina (Requisito 10.1, numeral 11.2.1).",
+    "module": "dotacion",
+    "chunk_id": "3a0ce22f5f38",
+    "numeral": "10.1",
+    "page": 144,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico para la dotación del oxígeno medicinal en servicios domiciliarios según el numeral 26.8?",
+    "answer": "Deberá contar con oxígeno medicinal que puede ser suministrado mediante salida de oxígeno medIcinal o mediante oxígeno medicinal portátil.",
+    "module": "dotacion",
+    "chunk_id": "8bf7a41dda90",
+    "numeral": "26.5",
+    "page": 150,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre la dotación de oxígeno medicinal portátil en una sala de procedimientos según el numeral 8.1 del estándar de dotación?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios y la dotación necesaria y específica para realizar los procedimientos documentados en el estándar de procesos prioritarios y adicionalmente cuenta con: Oxígeno medicinal portátil o salida de oxígeno medicinal cuando lo requiera, de acuerdo con [MODULO: Dotación; NUMERAL: 8.1].",
+    "module": "dotacion",
+    "chunk_id": "e5e45012d6d5",
+    "numeral": "8.1",
+    "page": 124,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los dispositivos médicos requeridos específicamente para las ambulancias terrestres, fluviales y marítimas prestadoras remísoras según el numeral 31.1 del documento?",
+    "answer": "Deben contar con desfibrilador externo automático, incluyendo electrodos adhesivos para adultos y pediátricos, con fecha de vencimiento vigente (numeral 31.1).",
+    "module": "dotacion",
+    "chunk_id": "fd06c825d494",
+    "numeral": "31.1",
+    "page": 219,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El prestador debe contar con dotación y mobiliario exclusivos y necesarios según los criterios aplicables a cada complejidad del servicio en modalidades intramura, extramura o domiciliaria, incluyendo la telemedicina categoría telexperticia?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con: 9.1 La dotación y mobiliario exclusivos y necesarios para el cumplimiento de los objetivos de los servicios en modalidades intramura, extramura o domiciliaria, telemedicina categoría telexperticia - prestador remisor.",
+    "module": "dotacion",
+    "chunk_id": "190d3ae69c40",
+    "numeral": "1.2.2",
+    "page": 99,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué requisitos debe cumplir una sala de reanimación adicional ubicada en un piso distinto al acceso directo desde el exterior, según los numerales mencionados en la normativa?",
+    "answer": "La sala de reanimación adicional a la ubicada en el piso o nivel de acceso directo desde el exterior de la edificación, cuenta con la dotación definida para este ambiente en el numeral 27 del servicio de urgencias de baja complejidad (Resolución 3100 de 2019, numeral 30).",
+    "module": "dotacion",
+    "chunk_id": "970d59b0ca7e",
+    "numeral": "28.6",
+    "page": 210,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo al numeral 7.7, qué requisitos debe cumplir el área húmeda o de hidroterapia en una entidad que ofrezca este servicio?",
+    "answer": "El área húmeda o de hidroterapia (cuando se oferte) debe garantizar pisos antideslizantes y tomas eléctricas con protección para ambientes húmedos cuando se requiera, según lo documentado en procesos prioritarios.",
+    "module": "dotacion",
+    "chunk_id": "e59bf5bde5cc",
+    "numeral": "7.7",
+    "page": 95,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre el ambiente destinado a la extracción de leche materna y preparación de fórmulas artificiales según el numeral 14.1 del documento?",
+    "answer": "Disponibilidad de: 14.1. Ambiente para extracción de leche materna y preparación de fórmulas artificiales.",
+    "module": "dotacion",
+    "chunk_id": "4121cd8fc005",
+    "numeral": "14.1",
+    "page": 177,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de mecanismos deben tener los aparatos sanitarios y muebles en las habitaciones pediátricas según el requisito 13.5.5 del numeral dotación?",
+    "answer": "Deben tener la altura adecuada que permita al paciente su facilitada utilización (Requisito 13.5.5).",
+    "module": "dotacion",
+    "chunk_id": "31bed2cd7356",
+    "numeral": "13.5.5",
+    "page": 188,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de silla de ruedas portátil debe cumplir según el numeral 31.12 del documento normativo?",
+    "answer": "Deberá tener minimo dos cinturones de sujeción para el paciente y para su transporte al interior de la ambulancia.",
+    "module": "dotacion",
+    "chunk_id": "2190c8a0c46b",
+    "numeral": "31.5",
+    "page": 219,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de equipo de simulación de tratamiento se permite según el numeral 9.1 del módulo de Medicamentos y Dispositivos Médicos en la Resolución 3100 de 2019?",
+    "answer": "Equipo de simulación de tratamiento propio o en convenio (numeral 9.1).",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "c22ff519366a",
+    "numeral": "9.1",
+    "page": 118,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los equipos médicos que deben cumplir con el requisito de estar en buen estado de funcionamiento según el numeral 10.8 del documento?",
+    "answer": "Deben cumplir con el requisito de estar en buen estado de funcionamiento los fonendoscopios (adulto y pediátrico), tensiómetros (adulto y pediátrico), termómetro clínico, equipo de órganos de los sentidos con baterías de repuesto, glucómetro, lámpara portátil (linterna), tijeras corta todo, guantes desechables y estériles, mascarillas o tapabocas desechables, gafas de bioprotección y baja lenguas.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "3cff7f13852a",
+    "numeral": "10.8.1",
+    "page": 224,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos sobre el material y diseño de las maletas, maletines, gabinetes y otros elementos destinados al transporte de insumos y medicamentos en ambulancias aéreas según el numeral 39.1 y 40.1?",
+    "answer": "Los elementos acondicionados para el transporte de insumas y medicamentos deben ser de material resistente, lisos, lavables, sin bordes agudos o filos cortantes con cierres seguros para evitar la apertura involuntaria y su sujeción a la aeronave está",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "2d2e0c9bb5ab",
+    "numeral": "39.1",
+    "page": 221,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué acciones debe implementar la entidad para garantizar que los dispositivos médicos mantengan su eficacia, desempeño y esterilidad, así como evitar riesgos de infecciones o complicaciones al usuario?",
+    "answer": "Acciones de seguimiento a través de los comités de infecciones, de seguridad del paciente y del programa de tecnovigilancia (16.2).",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "1c179316b8cc",
+    "numeral": "16.2",
+    "page": 74,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo con el numeral 15 del módulo de medicamentos y dispositivos médicos, cuáles son los servicios adicionales que debe cumplir un establecimiento para ser habilitado bajo modalidades inframural y telemedicina?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con oxígeno medicinal. (Página 167, numeral 15)",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "7acacf992bb6",
+    "numeral": "13.14",
+    "page": 167,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los registros adicionales que debe mantener un prestador de referencia en modalidades telemedicina según el numeral 12.6 del documento?",
+    "answer": "Deben mantener los siguientes registros: 14.1 Muestras recibidas, 14.2 Pruebas realizadas y sus resultados, 14.3 Formato para reporte de resultados, y 14.4 Registro y análisis de control de calidad interno y toma de medidas preventivas y correctivas.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "80a42862bb57",
+    "numeral": "12.6",
+    "page": 138,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos que deben cumplirse según el numeral 4.8 del documento, relacionados con la cadena de frió y el manejo de contingencias?",
+    "answer": "4.8 Control de cadena de fria, Manejo de contingencias con la cadena de fria.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "f38b6e12756e",
+    "numeral": "4.1",
+    "page": 71,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El maletín utilizado en esta modalidad extramural debe incluir medicamentos, equipos biomédicos y dispositivos médicos definidos según el estándar de procesos prioritarios, y cuál es la normativa que lo establece?",
+    "answer": "Complejidad baja. Modalidades extramural y telemedicina - prestador remisor: 12.1. Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente, cuenta con: Maletín con medicamentos, equipos biomédicos y dispositivos médicos, definidos con base en la información documentada en el estándar de procesos prioritarios.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "bc72522e069f",
+    "numeral": "12.1",
+    "page": 224,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué elementos e insumas deben especificarse en el plan de actividades de rehabilitación según los requisitos del numeral 20.14?",
+    "answer": "Actividades de rehabilitación: fisioterapia, terapia ocupacional y terapia del lenguaje, que incluya los tipos de elementos e insumas requeridos para cada tipo de actividad, según se requiera.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "18f845c57cd4",
+    "numeral": "20.14",
+    "page": 185,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito normativo que establece que los prestadores no pueden habilitar el servicio farmacéutico como único servicio en su portafolio?",
+    "answer": "11.3.2. Los prestadores de servicios de salud no pueden habilitar este servicio como único servicio en su portafolio.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "69eee1c8a466",
+    "numeral": "11.3.2",
+    "page": 97,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos establecidos en el numeral 16 relacionados con el manejo del prematuro y sus complicaciones?",
+    "answer": "Los requisitos específicos incluyen: 16.15 Remisión del prematuro al seguimiento en programa canguro, 16.17 Manejo del prematuro, 16.18 Manejo de síndrome de dificultad respiratoria y 16.21 Prevención de infecciones del torrente sanguíneo asociadas al uso de dispositivos intravasculares.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "db470f5fa62c",
+    "numeral": "16.13",
+    "page": 167,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El prestador remisor debe documentar los criterios de ingreso y egreso al servicio según el numeral 17.5 del Módulo Medicamentos y Dispositivos Médicos, numeral 17?",
+    "answer": "Sí, según el numeral 17.5 del Módulo Medicamentos y Dispositivos Médicos, numeral 17, debe documentar 'Criterios de ingreso y egreso al servicio'.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "8754a2670d28",
+    "numeral": "17.1",
+    "page": 181,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos para el suministro de oxígeno medicinal según los numerales 12.18, 12.19 y 14 del documento?",
+    "answer": "Según los numerales 12.18, 12.19 y 14, el oxígeno medicinal puede ser suministrado mediante salida de oxígeno medicinal o mediante oxígeno medicinal portátil (12.18-12.19). Además, para cumplir con los criterios aplicables en modalidades intramurales y telemedicina como prestador remisor, el servicio debe contar con oxígeno medicinal adicionalmente a otros servicios (14).",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "4ca2f90e14ae",
+    "numeral": "12.18",
+    "page": 164,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los dispositivos médicos específicos mencionados en el numeral 13 del requisito de habilitación de servicios de salud según la Resolución C003106 de 2019?",
+    "answer": "Los dispositivos médicos específicos mencionados en el numeral 13 son: Monitor de signos vitales de transporte con accesorios pediátrico, Oxígeno medicina portátil, Tallimetro, Cinta métrica, Aspirador, Equipo de rayos x portátil y Ventilador de transporte.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "8cd05987e405",
+    "numeral": "13.4",
+    "page": 174,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo con el numeral 21.2 del requisito 21, ¿qué elementos debe incluir el servicio para atender pacientes críticamente quemados?",
+    "answer": "Criterios de inclusión al servicio y procedimientos para la atención de los pacientes críticamente quemados, que incluya los equipos biomédicos, medicamentos y dispositivos médicos e insumas requeridos.",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "9948501087fe",
+    "numeral": "21.1",
+    "page": 185,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué información documentada debe tener un prestador remisor de ambulancias terrestres, fluviales, marítimas o aéreas según el numeral 41.1 del módulo de Medicamentos y Dispositivos Médicos en la Resolución 3100 de 2019?",
+    "answer": "Deben contar con información documentada sobre manejo de urgencias (41.1), remisión que incluya traslado de niños y personas en abandono o sin acompañante (41.2) y atención en salud de pacientes con problemas y trastornos en salud mental o consumo de sustancias psicoactivas (41.3).",
+    "module": "medicamentos_dispositivos",
+    "chunk_id": "47742828a49e",
+    "numeral": "41.1",
+    "page": 221,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de puertas deben tener los ambientes sanitarios según lo estipula el numeral 36.5?",
+    "answer": "Los baños deben contar con puertas corredizas o con apertura hacia el exterior (numeral 36.5).",
+    "module": "procesos_prioritarios",
+    "chunk_id": "8e66729e0b2c",
+    "numeral": "35.6",
+    "page": 66,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo al numeral 24.1, ¿qué equipamiento debe estar disponible en un prestador que ofrezca servicios intramurales o telemedicina y también remito de pacientes?",
+    "answer": "De acuerdo con el numeral 24.1 de la Resolución 3100 de 2019, el prestador debe contar con catéteres para vena umbilical.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "9c94a15d689f",
+    "numeral": "24.1",
+    "page": 229,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los profesionales que deben estar disponibles para realizar telexperticia sincrónica según el numeral 11.1 del estándar de procesos prioritarios?",
+    "answer": "Cuenta con: 11.1. Profesional de la medicina o profesional de la medicina especialista en medicina de urgencias o medicina familiar.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "6107c8e25732",
+    "numeral": "11.1",
+    "page": 207,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos establecidos en el numeral 22.13.5 del módulo 22 sobre el análisis de problemas potenciales relacionados con el uso continuado y las recaídas en la atención a pacientes con consumo de sustancias psicoactivas?",
+    "answer": "El numeral 22.13.5 establece: 'Análisis de problemas potenciales del uso continuado y recaídas.'",
+    "module": "procesos_prioritarios",
+    "chunk_id": "8aec6afde35d",
+    "numeral": "22.13.5",
+    "page": 189,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué información documentada debe estar disponible cuando se realice tratamiento de hemodiálisis en modalidad extramural jornada de salud según el numeral 23 del módulo 22?",
+    "answer": "De acuerdo con el numeral 23.1 del módulo 22, debe contar con la información documentada sobre transporte, conexión, funcionalidad y desconexión de la tecnología y normas de bioseguridad.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "b92ff22c2c33",
+    "numeral": "22.3",
+    "page": 145,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El prestador cuenta con los catéteres para vena umbilical y oxígeno medicinal como requeridos en el numeral 25.1 del estandar de procesos prioritarios?",
+    "answer": "cuenta con: 25.1. Catéteres para vena umbilical. 25.2. Oxigeno medicinal.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "804b232275dd",
+    "numeral": "25.1",
+    "page": 229,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué tipo de plan hospitalario debe estar disponible según el numeral 36.20 del documento normativo mencionado?",
+    "answer": "Según el numeral 36.20 de la Resolución 3100 de 2019, el prestador debe contar con información documentada sobre el Plan Hospitalario para Emergencias, como parte de los criterios adicionales del estándar de procesos prioritarios en modalidades intramural y telemedicina.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "fce4bcc5f7a0",
+    "numeral": "36.19.2",
+    "page": 211,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos para el área o ambiente destinado al depósito de equipos biomédicos según el numeral 35.4 del módulo 35?",
+    "answer": "El numeral 35.4 establece que es necesario contar con un Área o Ambiente para el depósito de equipos biomédicos, con dimensión variable de acuerdo con las necesidades del servicio.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "b8dc81aac1e0",
+    "numeral": "35.4",
+    "page": 66,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es la excepción al requisito de constancia de asistencia a acciones de formación continua del cuidado del paciente trasplantado según el numeral 16.3?",
+    "answer": "Los profesionales especialistas en oncología no cuentan con constancia de asistencia en las acciones de formación continua del cuidado del paciente trasplantado, conforme al numeral 16.3.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "63f722e0447f",
+    "numeral": "16.3",
+    "page": 148,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico que debe cumplir un prestador de servicios de salud para trasplante de tejidos cuando estos provienen de un banco de tejidos?",
+    "answer": "Para trasplante de tejidos, cuenta con certificado vigente de buenas prácticas de bancos de tejidos expedido por la autoridad competente (Resolución 3100 de 2019, numeral 26.1).",
+    "module": "procesos_prioritarios",
+    "chunk_id": "c89b821347ed",
+    "numeral": "26.1",
+    "page": 204,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué elementos debe contar el kit para recolección de evidencia forense y el kit de profilaxis post exposición para VIH, ITS y anticoncepción de emergencia en víctimas de violencia sexual según la Resolución 3100 de 2019?",
+    "answer": "Deben cumplir con los criterios definidos en la resolución 459 de 2012 o la norma que la modifique.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "2c713a3757ad",
+    "numeral": "34.1",
+    "page": 211,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos que debe cumplir un prestador de servicios médicos en modalidad intramural o telemedicina cuando actúa como remisor, según el numeral 20.1 del módulo 20 de la Resolución 3100 de 2019?",
+    "answer": "De acuerdo con el numeral 20.1 del módulo 20 de la Resolución 3100 de 2019, un prestador que actúa en modalidad intramural o telemedicina como remisor debe contar con pruebas POCT rápidas para la detección de sustancias psicoactivas, VIH, hepatitis virales y sífilis.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "1df2a6ba94d0",
+    "numeral": "20.1",
+    "page": 189,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cómo debe documentarse el tratamiento de infección en el orificio y túnel del catéter peritoneal según los requisitos establecidos en el numeral 22.4 del módulo 21?",
+    "answer": "22.4. Tratamiento de infección del orificio y túnel del catéter peritoneal.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "bec51e358641",
+    "numeral": "21.4",
+    "page": 145,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos específicos para la tripulación mínima en ambulancias aéreas según el numeral 7.1 del módulo 7?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente cuenta con: 7.1. Profesional de la medicina; 7.2. Profesional de la enfermería o tecnólogo(a) en atención prehospitalaria o técnico(a) profesional en atención prehospitalaria; 7.3. Tripulación de vuelo que cuenta con licencia y certificado médico expedido por la unidad.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "344cb512727b",
+    "numeral": "7.1",
+    "page": 214,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los servicios incluidos en el Grupo Internacional según el numeral 11.4 de Resolución 3100 de 2019?",
+    "answer": "El Grupo Internacional incluye los siguientes servicios: Servicio de hospitalización, Servicio de hospitalización paciente crónico, Servicio de cuidado básico neonatal, Servicio de cuidado intermedio neonatal, Servicio de cuidado intensivo neo natal, Servicio de cuidado intermedio pediátrico, Servicio de cuidado intensivo pediátrico, Servicio de cuidado intermedio adulto, Servicio de cuidado intensivo adultos, Servicio de hospitalización en salud mental o consumo de sustancias psicoactivas, Servicio de hospitalización parcial y Servicio para el cuidado básico del consumo de sustancias psicoactivas (ver numeral 11.4 de Resolución 3100 de 2019).",
+    "module": "procesos_prioritarios",
+    "chunk_id": "812404c8d7e8",
+    "numeral": "11.4",
+    "page": 146,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los criterios clínicos establecidos en el numeral 36.15 para ubicar y atender pacientes en el ambiente de transición según Resolución 3100 de 2019?",
+    "answer": "El numeral 36.15 de la Resolución 3100 de 2019 establece los criterios clínicos para la ubicación y atención de pacientes en el ambiente de transición.",
+    "module": "procesos_prioritarios",
+    "chunk_id": "26dd39ce70f0",
+    "numeral": "36.15",
+    "page": 211,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué información debe incluir el registro de cargas en el proceso de esterilización según el numeral 11.2 del requisito 11?",
+    "answer": "Deben registrarse los resultados del control de calidad conforme al numeral 11.3.",
+    "module": "historia_clinica",
+    "chunk_id": "4925040dc3b1",
+    "numeral": "11.2",
+    "page": 78,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué debe incluir la verificación de calidad de la imagen realizada por el prestador remisor en las radiografías odontológicas tomadas por un técnico no odontólogo?",
+    "answer": "15.4. Realización y supervisión de toma de radiograffas odontológicas cuando no sea realizada por el odontólogo, que incluya como mínimo la calidad de la imagen y radioprotección.",
+    "module": "historia_clinica",
+    "chunk_id": "bf270a213ecd",
+    "numeral": "15.4",
+    "page": 103,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué información documentada debe tener el prestador de servicios de salud en relación con la sala para el manejo de la Enfermedad Respiratoria Aguda (ERA)?",
+    "answer": "Manejo de pacientes con enfermedad respiratoria alta y baja, que incluya ingreso, valoración y seguimiento del estado clínico. (Artículo 36.1, Resolución 3100 de 2019)",
+    "module": "historia_clinica",
+    "chunk_id": "8516dd65d18b",
+    "numeral": "36.1",
+    "page": 84,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué servicios deben estar disponibles en un servicio que cumple con los criterios definidos en todos los servicios mencionados del numeral 43?",
+    "answer": "Deben estar disponibles: Servicio de imágenes diagnósticas, Servicio de laboratorio clínico, Servicio de hospitalización, Servicio de cirugía, Servicio farmacéutico.",
+    "module": "historia_clinica",
+    "chunk_id": "8440206e3325",
+    "numeral": "41.3",
+    "page": 212,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo con el numeral 20.1, cuáles son los servicios que debe cumplir un establecimiento para ser habilitado bajo las modalidades intramural y telemedicina?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios. Estándar de historia clínica y registros Modalidades intramural y telemedicina - prestador remisor - prestador de referencia",
+    "module": "historia_clinica",
+    "chunk_id": "6035d34fe834",
+    "numeral": "20.1",
+    "page": 182,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué registros debe mantener un prestador remisor que presta servicios mediante telemedicina según el numeral 16.2 de la Resolución 3100 de 2019?",
+    "answer": "De acuerdo con el numeral 16.2 del documento, un prestador remisor que presta servicios mediante telemedicina debe mantener los registros especificados en el numeral 18, entre ellos, 'Número de exposiciones y e imágenes tomadas que incluya el nombre del paciente y nombre del estudio realizado'.",
+    "module": "historia_clinica",
+    "chunk_id": "7e97ddd6a3f4",
+    "numeral": "16.2",
+    "page": 103,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles servicios deben estar disponibles según el numeral 41.1 del artículo 38, exceptuando las zonas especiales de dispersión geográfica?",
+    "answer": "De acuerdo con el numeral 41.1 del artículo 38, debe estar disponible el servicio de imágenes diagnósticas, a excepción de las zonas especiales de dispersión geográfica.",
+    "module": "historia_clinica",
+    "chunk_id": "525951f06565",
+    "numeral": "41.1",
+    "page": 212,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El establecimiento cuenta con el servicio de urgencias según lo estipulado en el numeral 39.1 del requisito 36 o 38, correspondiente a las modalidades inframurales y extramurales?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios y adicionalmente, servicio de urgencias según lo estipulado en el numeral 39.1 del requisito 36 o 38.",
+    "module": "historia_clinica",
+    "chunk_id": "93477bcabb74",
+    "numeral": "39.1",
+    "page": 109,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuál es el requisito específico sobre las imágenes tomadas que debe incluir el nombre del paciente y del estudio realizado según el numeral 18.1 de la Resolución 3100 de 2019?",
+    "answer": "18.1. Número de exposiciones, e imágenes tomadas que incluya el nombre del paciente, y nombre del estudio realizado.",
+    "module": "historia_clinica",
+    "chunk_id": "7209a13c9913",
+    "numeral": "18.1",
+    "page": 103,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿El documento debe incluir el nombre y firma del profesional de medicina responsable según lo estipulado en el numeral 16.1.18?",
+    "answer": "Sí, debe incluir el nombre y firma del Profesional de Medicina según establece el numeral 16.1.18.",
+    "module": "historia_clinica",
+    "chunk_id": "73c908b9761b",
+    "numeral": "16.1.10",
+    "page": 122,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué información debe incluirse en el informe post-transfusional según el numeral 12.5 del artículo 12 del documento normativo?",
+    "answer": "Según el numeral 12.5 de la Resolución 3100 de 2019, el prestador debe contar con el registro de información post-transfusional como parte de los registros obligatorios de hemoterapia del artículo 12, el cual incluye información sobre los componentes sanguíneos (12.1), solicitud (12.2), pruebas pre-transfusionales (12.3-12.4), y seguimiento de las transfusiones en la historia clínica (12.9).",
+    "module": "historia_clinica",
+    "chunk_id": "37ac091c230a",
+    "numeral": "12.1",
+    "page": 78,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cómo debe registrarse el plan de tratamiento en el momento del ingreso según el numeral 14.1 de Resolución 3100 de 2019?",
+    "answer": "Valoración de ingreso con el respectivo plan de tratamiento (numeral 14.1).",
+    "module": "historia_clinica",
+    "chunk_id": "9f1bc8a9133c",
+    "numeral": "14.1",
+    "page": 78,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cómo debe cumplir el prestador de referencia en relación al estándar de interdependencia cuando se realiza un servicio de imágenes diagnósticas mediante telemedicina?",
+    "answer": "Cumple con los criterios que le sean aplicables de todos los servicios. Estándar de interdependencia (Requisito 20).",
+    "module": "historia_clinica",
+    "chunk_id": "31115d7604ee",
+    "numeral": "11.3.4",
+    "page": 103,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué información debe proporcionar el establecimiento al paciente, su familia o cuidador acerca del tratamiento requerido según el numeral 14.4 del módulo de Historia Clínica y Registros en la Resolución 3100 de 2019?",
+    "answer": "De acuerdo con el numeral 14.4 del módulo de Historia Clínica y Registros, se debe comunicar al paciente, su familia o cuidador información sobre los medicamentos utilizados, sus efectos, las complicaciones que pueden presentarse, qué hacer cuando se presenten y cómo evitarlas (artículo 14.4). Además, se incluye la condición de almacenamiento y vía de administración de la quimioterapia (artículo 14.4.3).",
+    "module": "historia_clinica",
+    "chunk_id": "b0ed5e74faf8",
+    "numeral": "14.3",
+    "page": 122,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo a la Resolución 3100, ¿qué información debe incluir cada número de exposición e imagen tomada en el registro de historias clínicas?",
+    "answer": "De conformidad con el numeral 33.1 del artículo 33 de la Resolución 3100 de 2019, los registros deben incluir el número de exposiciones e imágenes tomadas que contengan el nombre del paciente y el nombre del estudio realizado.",
+    "module": "historia_clinica",
+    "chunk_id": "c0b0d0564ed6",
+    "numeral": "33.1",
+    "page": 109,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué requisito debe cumplir el prestador de servicios de salud cuando se realizan procedimientos bajo sedación y monitorización electroencefalográfica con video y radio fuera de salas de cirugía?",
+    "answer": "De acuerdo con el numeral 1.2 del módulo de interdependencia de servicios en la Resolución 3100 de 2019, el prestador de servicios de salud debe tener disponibilidad del servicio de transporte asistencial.",
+    "module": "interdependencia",
+    "chunk_id": "9236341e3b73",
+    "numeral": "1.2",
+    "page": 79,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué elementos deben incluirse en el contrato o acuerdo escrito cuando se contrata un servicio interdependiente que apoya a otro servicio principal según el numeral 11.1.7 del Módulo de Interdependencia de Servicios?",
+    "answer": "Deben incluirse los siguientes elementos: calidad en la entrega de los productos, procedimientos documentados de atención en cada servicio interdependiente y tiempos de entrega de los productos (numeral 11.1.7).",
+    "module": "interdependencia",
+    "chunk_id": "b6f38f3477be",
+    "numeral": "11.1.7",
+    "page": 79,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué servicios deben estar disponibles en un servicio con interdependencia de complejidad baja según el numeral 32.1 del Estándar de Interdependencia?",
+    "answer": "Según el numeral 32 de la Resolución 3100 de 2019, los servicios de complejidad baja en modalidad intramural deben contar adicionalmente con disponibilidad de: 32.1 Servicio de laboratorio clínico, 32.2 Servicio de imágenes diagnósticas, 32.3 Servicio de transporte asistencial, 32.4 Servicio farmacéutico, y 32.5 Servicio de vacunación, entre otros servicios de apoyo.",
+    "module": "interdependencia",
+    "chunk_id": "b4192750ec93",
+    "numeral": "32.1",
+    "page": 230,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los servicios adicionales requeridos según el numeral 55 para un establecimiento que ofrece hospitalización de alta complejidad con cirugía?",
+    "answer": "Adicional a lo requerido para hospitalización de mediana complejidad, cuenta con: Servicio de cirugía. (Página 154, numeral 55)",
+    "module": "interdependencia",
+    "chunk_id": "cabb9af46950",
+    "numeral": "53.4",
+    "page": 154,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los servicios que deben estar disponibles según el numeral 51.1 del requisito de interdependencia de servicios en Resolución 3100 de 2019?",
+    "answer": "Según el numeral 51.1, debe haber disponibilidad de Servicio de laboratorio clínico.",
+    "module": "interdependencia",
+    "chunk_id": "8488b9636004",
+    "numeral": "51.1",
+    "page": 154,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las especificaciones técnicas requeridas para el uso de la firma electrónica o digital según el numeral 15.3 del documento?",
+    "answer": "El método utilizado para el uso de la firma electrónica o digital debe ser conforme a lo definido por el prestador de servicios de salud (numeral 15.3).",
+    "module": "interdependencia",
+    "chunk_id": "567b808c6e3e",
+    "numeral": "15.3",
+    "page": 79,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué servicios adicionales deben estar disponibles en el servicio de interdependencia de servicios con modalidad extramural domiciliaria y complejidad mediana según los requisitos del numeral 51.4?",
+    "answer": "Deben estar disponibles: Servicio de laboratorio clínico (52.1), Servicio de imágenes diagnósticas (52.2), Servicio farmacéutico (52.3) y Servicio de gestión pre transfusional (53.4).",
+    "module": "interdependencia",
+    "chunk_id": "96d5318f4cb4",
+    "numeral": "51.4",
+    "page": 154,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requerimientos de las condiciones técnico administrativas que debo cumplir para habilitar una IPS?",
+    "answer": "Deben cumplir con las condiciones técnico-administrativas establecidas en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud (Artículo 3.1). Esto incluye inscribirse en el REPS, realizar la autoevaluación periódica de las condiciones de habilitación (Artículo 5), presentar documentos como contrato con el prestador remisor, certificación de conexión a internet y certificado de instalaciones eléctricas si corresponde.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requerimientos de las condiciones técnico administrativas que debo cumplir para habilitar un profesional independiente?",
+    "answer": "Deben cumplir con los criterios que le sean aplicables a todos los servicios, incluyendo los de ingreso y egreso al servicio (43.1), plan individualizado de atención según morbilidad (43.3) y permanencia del talento humano en el domicilio cuando se oferte este servicio en telemedicina (43.4). Además, deben estar inscritos en el Registro Especial de Prestadores de Servicios de Salud -REPS.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuántos y cuáles son los estándares que se deben validar para aperturar un servicio de salud?",
+    "answer": "Para aperturar un servicio de salud se deben validar los estándares definidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud según el tipo de servicio ofrecido: talento humano, infraestructura, dotación, medicamentos y dispositivos médicos, procesos prioritarios, historia clínica y registros, e interdependencia de servicios. Además, se requiere cumplir con criterios técnico-administrativos, financieros y científicos, y obtener certificación de conformidad en instalaciones eléctricas cuando aplique.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las definiciones generales para tener en cuenta en la habilitación de un servicio de salud?",
+    "answer": "Las definiciones generales relevantes para la habilitación de servicios de salud, según Resolución 3100 de 2019, incluyen: autoevaluación ( numeral 4.1), disponibilidad y prestador remisor/prestador referencia ( numeral 1.3.3). Estas definen aspectos esenciales para la verificación y habilitación de servicios.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué es el transporte especial de pacientes según la Resolución 3100 de 2019?",
+    "answer": "El transporte especial de pacientes según la Resolución 3100 de 2019 se refiere al servicio de transporte asistencial de pacientes en ambulancias aéreas, fluviales o marítimas habilitado por el departamento o distrito donde esté ubicada la sede del prestador. Este servicio es habilitable en todo el territorio nacional.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las condiciones generales para habilitar un servicio de salud?",
+    "answer": "Las condiciones generales para habilitar un servicio de salud incluyen cumplir con los estándares técnicos, administrativos, financieros y científicos establecidos en el Manual de Inscripción de Prestadores y Habilitación de Servicios de Salud. La secretaría de salud departamental o distrital debe verificar estos requisitos mediante una visita previa que incluye la certificación de instalaciones eléctricas y otros insumos necesarios.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿De acuerdo a su naturaleza jurídica, cómo se clasifican los prestadores de servicios de salud?",
+    "answer": "De acuerdo con la Resolución 3100 de 2019, los prestadores de servicios de salud se clasifican en: 1) Instituciones Prestadoras de Servicios de Salud; 2) Profesionales Independientes de Salud; 3) Servicios de Transporte Especial de Pacientes; 4) Entidades con objeto social diferente a la prestación de servicios de salud; 5) Secretarias de Salud Departamental o Distrital; 6) Entidades Responsables del Pago de Servicios de Salud; y 7) La Superintendencia Nacional de Salud. (Véase numeral 2.1, página 2).",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Qué se debe tener en cuenta en la capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud?",
+    "answer": "La capacidad relacionada con la suficiencia patrimonial de un prestador de servicios de salud se evalúa durante las visitas de verificación para certificar condiciones de habilitación (Numeral 9.3.3, Página 41). Debe demostrar estas condiciones una vez concluidos procesos judiciales o concordatarios (Artículo 4, Página 3).",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los pasos para la inscripción de los prestadores de servicios de salud en el REPS?",
+    "answer": "Para inscribirse como prestador en el REPS, el interesado debe ingresar a la página web de la secretaría departamental o distrital, seleccionar el enlace de inscripción y determinar sede(s), servicio(s) a habilitar, complejidad, modalidad y capacidad instalada. Posteriormente, se diligencia el formulario de inscripción.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los pasos para la habilitación de servicios de salud?",
+    "answer": "La habilitación de servicios de salud requiere que la secretaría departamental o distrital verifique los soportes del formulario de inscripción en el REPS ( numeral 8.2, página 4). Además, el prestador debe cumplir con los estándares y criterios definidos para el servicio a habilitar según su naturaleza (numeral 1.3.3, página 20).",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son las generalidades de las visitas de habilitación?",
+    "answer": "Las visitas de verificación de condiciones de habilitación deben ser comunicadas con un día hábil de antelación y no excluyen las visitas previas ni las que surjan en cumplimiento de funciones de inspección, vigilancia y control (Numeral 17.9, página 9).",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los casos en los que se realiza visita previa de habilitación?",
+    "answer": "Según la Resolución 3100 de 2019, se realiza visita previa de habilitación para prestadores que van a realizar la apertura de nuevos servicios de urgencias ( numeral 3.17.9, página 9).",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con cierre del prestador de servicios de salud?",
+    "answer": "De acuerdo con el numeral 14.1 del Capítulo IV de Resolución 3100 de 2019, para presentar novedades relacionadas con cierre del prestador de servicios de salud, éste debe reportar el registro de la novedad al menos veinte (20) días calendario antes del cierre. Además, es necesario cumplir con el plan que permita la reubicación y prestación de servicios a los pacientes según sus necesidades médicas.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con el cambio de representante legal?",
+    "answer": "Según el numeral 12.1.e de la Resolución 3100 de 2019, para presentar novedades relacionadas con el cambio de representante legal se requiere declarar esta novedad en el sistema RAG.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con cambio de datos de contacto?",
+    "answer": "Según numeral 12.3 de Resolución 3100 de 2019, para presentar novedades relacionadas con el cambio de datos de contacto (teléfono y correo electrónico), no se requieren requisitos adicionales específicos distintos a los establecidos en la presente resolución.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con apertura de nueva sede?",
+    "answer": "Los requisitos para presentar novedades relacionadas con apertura de nueva sede incluyen: 1) Documento de Existencia y Representación Legal; 2) Formulario de Novedad.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  },
+  {
+    "question": "¿Cuáles son los requisitos para presentar novedades relacionadas con cierre de sedes?",
+    "answer": "Para presentar novedades relacionadas con cierre de sedes, el prestador debe informar al menos veinte (20) días calendario antes al responsable de pago y realizar un plan para la reubicación y prestación de servicios a los pacientes según sus necesidades médicas. Esto se establece en el numeral 14.1 del artículo 13 de la Resolución 3100 de 2019.",
+    "module": "general",
+    "chunk_id": null,
+    "numeral": null,
+    "page": null,
+    "source_file": "resolucion-3100-de-2019.pdf"
+  }
+]

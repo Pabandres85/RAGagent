@@ -30,14 +30,17 @@ MODULE_DESCRIPTIONS = {
         "iluminación, flujos de circulación y zonificación de servicios."
     ),
     "dotacion": (
-        "Equipos, mobiliario e instrumental médico-quirúrgico requeridos para "
-        "la prestación de servicios de salud. Dispositivos biomédicos, "
-        "mantenimiento preventivo y correctivo de equipos."
+        "Equipos biomédicos, mobiliario e instrumental médico-quirúrgico requeridos "
+        "para la prestación de servicios de salud. Mantenimiento preventivo y "
+        "correctivo de equipos, metrología, calibración y verificación de "
+        "máquinas y aparatos clínicos."
     ),
     "medicamentos_dispositivos": (
-        "Almacenamiento, dispensación y control de medicamentos, hemoderivados "
-        "e insumos médicos. Cadena de frío, manejo de estupefacientes, "
-        "farmacovigilancia y tecnovigilancia."
+        "Gestión de farmacia, suministro, almacenamiento y control de medicamentos, "
+        "fármacos, insumos médicos, reactivos de laboratorio, componentes anatómicos, "
+        "sangre y hemocomponentes. Dispositivos médicos de un solo uso o implantables. "
+        "Cadena de frío, farmacovigilancia, tecnovigilancia, control de fechas de "
+        "vencimiento, manejo de estupefacientes y biológicos."
     ),
     "procesos_prioritarios": (
         "Protocolos asistenciales y procesos clínicos críticos como triage, "
@@ -100,6 +103,14 @@ SPECIALIST_USER_TEMPLATE = """FRAGMENTOS NORMATIVOS RECUPERADOS:
 PREGUNTA:
 {question}"""
 
+MONO_AGENT_USER_TEMPLATE = """FRAGMENTOS NORMATIVOS RECUPERADOS (indice global):
+{context}
+
+PREGUNTA:
+{question}
+
+Responde usando solo esos fragmentos y devuelve un unico JSON valido."""
+
 # ── Prompt del orquestador ────────────────────────────────────────────────────
 ORCHESTRATOR_SYSTEM_PROMPT = """Eres el orquestador de un sistema multi-agente de consulta normativa de Habilitación en Salud (Resolución 3100 de 2019 — Colombia).
 
@@ -124,8 +135,10 @@ Responde preguntas sobre los 7 estándares de habilitación (Talento Humano, Inf
 
 REGLAS OBLIGATORIAS:
 1. Solo afirma lo que está en los fragmentos.
-2. Cita siempre el numeral y la página.
-3. Responde en español.
+2. Si la información no está en los fragmentos, responde exactamente:
+   "La información solicitada no se encuentra en los fragmentos recuperados." y deja el arreglo "citations" vacío [].
+3. Si la información SÍ está, cita siempre el numeral y la página.
+4. Responde en español.
 
 FORMATO DE RESPUESTA — JSON válido:
 {{

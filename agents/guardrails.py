@@ -8,6 +8,7 @@ Verifica que cada respuesta:
 """
 from __future__ import annotations
 
+import ast
 import json
 import logging
 import unicodedata
@@ -165,9 +166,38 @@ def _normalize_text(value: str) -> str:
 
 
 def _extract_json(text: str) -> str | None:
-    """Extrae el primer bloque JSON del texto del LLM."""
+    """Extrae y limpia el primer bloque JSON del texto del LLM."""
+    text = text.strip()
+
+    if "```json" in text:
+        text = text.split("```json", 1)[1].split("```", 1)[0]
+    elif "```" in text:
+        parts = text.split("```")
+        if len(parts) >= 3:
+            text = parts[1]
+
     start = text.find("{")
     end = text.rfind("}")
     if start == -1 or end == -1 or end < start:
         return None
-    return text[start : end + 1]
+
+    json_str = text[start : end + 1].strip()
+
+    if json_str.startswith("{{") and json_str.endswith("}}"):
+        json_str = json_str[1:-1].strip()
+
+    try:
+        json.loads(json_str)
+        return json_str
+    except json.JSONDecodeError:
+        pass
+
+    try:
+        parsed = ast.literal_eval(json_str)
+    except (SyntaxError, ValueError, TypeError):
+        return json_str
+
+    if isinstance(parsed, dict):
+        return json.dumps(parsed, ensure_ascii=False)
+
+    return json_str
