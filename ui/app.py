@@ -38,6 +38,30 @@ STATUS_ICONS = {
     "pendiente": "...",
 }
 
+_SKELETON_HTML = """
+<div style="padding:4px 0">
+  <div class="sk" style="height:22px;width:38%"></div>
+  <div class="sk" style="height:88px;width:100%"></div>
+  <div class="sk" style="height:20px;width:44%;margin-top:18px"></div>
+  <div class="sk" style="height:13px;width:93%"></div>
+  <div class="sk" style="height:13px;width:77%"></div>
+  <div class="sk" style="height:13px;width:62%"></div>
+  <div class="sk" style="height:13px;width:84%"></div>
+  <div class="sk" style="height:20px;width:40%;margin-top:18px"></div>
+  <div class="sk" style="height:36px;width:100%;border-radius:8px"></div>
+  <div class="sk" style="height:36px;width:100%;border-radius:8px"></div>
+  <div class="sk" style="height:36px;width:100%;border-radius:8px"></div>
+</div>
+"""
+
+_STEP_PILLS_HTML = """
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 14px 0">
+  <span style="background:#fef3c7;color:#92400e;padding:3px 14px;border-radius:20px;font-size:0.78rem;font-weight:600">&#9203; Ruteo sem&aacute;ntico</span>
+  <span style="background:#fef3c7;color:#92400e;padding:3px 14px;border-radius:20px;font-size:0.78rem;font-weight:600">&#9203; B&uacute;squeda FAISS</span>
+  <span style="background:#fef3c7;color:#92400e;padding:3px 14px;border-radius:20px;font-size:0.78rem;font-weight:600">&#9203; Generaci&oacute;n LLM</span>
+</div>
+"""
+
 
 def inject_styles() -> None:
     st.markdown(
@@ -212,6 +236,22 @@ def inject_styles() -> None:
         [data-testid="stHeadingWithActionElements"] a {
             display: none !important;
         }
+
+        /* =========================================
+           7. SKELETON LOADER
+           ========================================= */
+        @keyframes sk-shimmer {
+            0%   { background-position: -600px 0; }
+            100% { background-position:  600px 0; }
+        }
+        .sk {
+            display: block;
+            background: linear-gradient(90deg, #e2e8f0 4%, #eef2f7 25%, #e2e8f0 36%);
+            background-size: 600px 100%;
+            animation: sk-shimmer 1.4s ease-in-out infinite;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
         </style>
         """,
         unsafe_allow_html=True,
@@ -335,6 +375,22 @@ def render_response(payload: dict[str, Any]) -> None:
             for error in errors:
                 st.error(error)
 
+        timings = payload.get("timings", {})
+        if timings:
+            r_s = timings.get("routing_ms", 0) / 1000
+            a_s = timings.get("agents_ms", 0) / 1000
+            tot_s = timings.get("total_ms", 0) / 1000
+            with st.container(border=True):
+                st.markdown("#### Tiempos de Procesamiento")
+                st.markdown(
+                    f"""<div style="font-size:0.82rem;color:#475569;line-height:1.9">
+                    <div>&#128256; <b>Ruteo sem&aacute;ntico:</b> {r_s:.2f}s</div>
+                    <div>&#128269; <b>FAISS + LLM:</b> {a_s:.1f}s</div>
+                    <div>&#9203; <b>Total:</b> {tot_s:.1f}s</div>
+                    </div>""",
+                    unsafe_allow_html=True,
+                )
+
     with col_main:
         if response:
             st.markdown("### Analisis Normativo")
@@ -413,18 +469,21 @@ def main() -> None:
         if not question.strip():
             st.warning("Por favor, escribe una pregunta valida.")
         else:
-            with st.status("Despertando al Orquestador...", expanded=True) as status:
+            t_start = time.time()
+            with st.status("Procesando consulta...", expanded=True) as status:
                 try:
-                    time.sleep(0.5)
-                    st.write("Analizando intencion y definiendo ruteo...")
-                    time.sleep(0.5)
-                    st.write("Buscando fragmentos normativos en FAISS...")
-                    st.write("Construyendo respuesta fundamentada...")
+                    st.markdown(_STEP_PILLS_HTML, unsafe_allow_html=True)
+                    st.markdown(_SKELETON_HTML, unsafe_allow_html=True)
 
                     st.session_state.last_result = call_query(question.strip())
                     current_result = st.session_state.last_result
 
-                    status.update(label="Consulta procesada con exito.", state="complete", expanded=False)
+                    t_elapsed = time.time() - t_start
+                    status.update(
+                        label=f"Consulta procesada en {t_elapsed:.1f}s",
+                        state="complete",
+                        expanded=False,
+                    )
                 except Exception as exc:
                     st.session_state.last_result = None
                     current_result = None

@@ -9,6 +9,7 @@ Mejoras aplicadas:
 from __future__ import annotations
 
 import logging
+import time
 from dataclasses import dataclass
 
 import numpy as np
@@ -478,15 +479,19 @@ class Orchestrator:
         )
 
     def answer(self, question: str) -> dict:
+        t_start = time.time()
         routing = self.route(question)
+        t_routed = time.time()
 
         module_results: list[tuple[str, GuardrailsResult]] = []
         for module in routing.modules:
             agent = self._agents[module]
             result = agent.answer(question)
             module_results.append((module, result))
+        t_agents = time.time()
 
         final_result = self._merge_results(question, routing, module_results)
+        t_end = time.time()
 
         return {
             "routing": {
@@ -501,4 +506,9 @@ class Orchestrator:
             "response": final_result.response.model_dump() if final_result.response else None,
             "errors": final_result.errors,
             "warnings": final_result.warnings,
+            "timings": {
+                "routing_ms": round((t_routed - t_start) * 1000),
+                "agents_ms": round((t_agents - t_routed) * 1000),
+                "total_ms": round((t_end - t_start) * 1000),
+            },
         }

@@ -1,7 +1,7 @@
 # ESTADO DEL PROYECTO — RAG Multi-Agente Resolución 3100 de 2019
 
 > **Actualizar este archivo cada vez que se implemente un componente nuevo o se cambie el estado de algo.**
-> Última actualización: 2026-03-01 (v5 — fix guardrail validators: citations.page + checklist.numeral; limpieza .gitignore)
+> Última actualización: 2026-03-01 (v6 — fix llm_max_tokens 2048→4096; UX skeleton loader + timings en UI)
 
 ---
 
@@ -27,6 +27,7 @@
 | CHUNK_OVERLAP | 128 caracteres |
 | FAISS_TOP_K | 10 |
 | Temperatura LLM | 0.0 |
+| Max tokens LLM | 4096 (subido de 2048 para evitar truncación JSON) |
 
 Configuración en `.env` (no subir al repo). Cambiar proveedor con `LLM_PROVIDER=lmstudio|ollama`.
 
@@ -94,7 +95,7 @@ Pregunta de usuario
 
 | Archivo | Descripción |
 |---------|-------------|
-| `core/config.py` | Pydantic Settings v2, dual-provider helpers |
+| `core/config.py` | Pydantic Settings v2, dual-provider helpers; `llm_max_tokens=4096` |
 | `core/llm_client.py` | Factory OpenAI-compatible, singleton, `ping_llm()` |
 | `core/embeddings.py` | Lazy singleton sentence-transformers |
 | `core/metadata_store.py` | JSON persistence por módulo, `ChunkMetadata` |
@@ -104,7 +105,7 @@ Pregunta de usuario
 | `agents/prompts.py` | `MODULE_DESCRIPTIONS` — descripciones semánticas mejoradas para dotacion y medicamentos_dispositivos |
 | `agents/guardrails.py` | Pydantic schema + cita obligatoria + `_extract_json()` robusto; validators `coerce_page` y `coerce_numeral` para tolerar listas del LLM |
 | `agents/base_specialist.py` | Template method: retrieve→rerank→context→LLM→validate |
-| `agents/orchestrator.py` | Ruteo híbrido coseno+léxico, soporte transversal; keywords corregidos (eliminado "dispositivo" de dotacion) |
+| `agents/orchestrator.py` | Ruteo híbrido coseno+léxico, soporte transversal; mide tiempos por fase (`routing_ms`, `agents_ms`, `total_ms`) en `answer()` |
 | `agents/baseline_mono_agent.py` | Índice global, sin especialización |
 | `agents/specialists/*.py` | 7 especialistas: talento_humano, infraestructura, dotacion, medicamentos_dispositivos, procesos_prioritarios, historia_clinica, interdependencia |
 | `scripts/ingest.py` | PDF→chunks→embeddings→FAISS×8 con filtro de encabezados y normalización de acentos |
@@ -112,8 +113,8 @@ Pregunta de usuario
 | `scripts/add_general_questions.py` | Agrega ~41 preguntas generales/admin con `module="general"` al gold set |
 | `api/app.py` | FastAPI + CORS |
 | `api/routes.py` | `/health` + `/query`, lazy Orchestrator singleton |
-| `ui/app.py` | Streamlit UI principal |
-| `ui/pages/2_Evaluacion.py` | Página de evaluación en UI |
+| `ui/app.py` | Streamlit UI principal; skeleton loader animado + step pills + panel de tiempos de procesamiento |
+| `ui/pages/2_Evaluacion.py` | Página de evaluación; métricas corregidas a variantes `_specific` (n=105) |
 | `ui/pages/3_Auditar_Goldset.py` | Auditoría interactiva del gold set (reasignar/eliminar entradas) |
 | `eval/metrics.py` | `recall_at_k`, `mrr`, `exact_match`, `f1_score`, `routing_accuracy` |
 | `eval/run_eval.py` | Runner offline multi-agente vs mono-agente con checkpoints |
@@ -129,6 +130,9 @@ Pregunta de usuario
 | Análisis de routing failures | ✅ COMPLETO | Matriz de confusión generada. Fix aplicado en medicamentos_dispositivos (+20pp top-1). |
 | Fix bug `citations.page` | ✅ COMPLETO | `field_validator("page", mode="before")` en `Citation` — si LLM devuelve lista, toma el primer elemento. |
 | Fix bug `checklist.numeral` | ✅ COMPLETO | `field_validator("numeral", mode="before")` en `ChecklistItem` y `Citation` — si LLM devuelve lista, une con `", "`. |
+| Fix `llm_max_tokens` insuficiente | ✅ COMPLETO | `config.py`: 2048 → 4096. Respuestas largas (dotación ~5000 chars JSON) se truncaban causando JSON malformado. |
+| Fix métricas UI evaluación | ✅ COMPLETO | `2_Evaluacion.py` usaba `routing_accuracy_top1` (n=122) en vez de `routing_accuracy_top1_specific` (n=105). Corregido. |
+| UX: skeleton loader + timings | ✅ COMPLETO | `ui/app.py`: shimmer CSS, `_SKELETON_HTML`, `_STEP_PILLS_HTML`. Orchestrator devuelve `timings` por fase. Panel de tiempos en UI. |
 | Documentación para tesis | PENDIENTE | Tablas comparativas, gráficas, redacción de capítulo de resultados. |
 
 ### 🗑️ ARCHIVOS HUÉRFANOS
@@ -326,6 +330,8 @@ python scripts/ingest.py
 | Routing medicamentos→dotacion (16/20 fallos) | `"dispositivo"` y `"dispositivos"` estaban en keywords de `dotacion` → removidos. Descripción de `medicamentos_dispositivos` enriquecida con vocabulario farmacológico. Resultado: +20pp top-1 en medicamentos, +3.8pp global |
 | `citations.page` recibe lista en vez de int | `field_validator("page", mode="before")` en `Citation` (`guardrails.py`) — toma el primer elemento si el LLM devuelve `[n, m]` en lugar de `n`. |
 | `checklist.numeral` recibe lista en vez de str | `field_validator("numeral", mode="before")` en `ChecklistItem` y `Citation` — une la lista con `", "` si el LLM devuelve `["20, 21", "23.1"]`. |
+| JSON truncado en respuestas largas | `llm_max_tokens=2048` insuficiente para módulos como dotación (respuesta ~5000 chars, ~14 equipos + citas + checklist). Subido a 4096 en `core/config.py`. |
+| Métricas de ruteo incorrectas en UI | `2_Evaluacion.py` mostraba `routing_accuracy_top1` (31.1%, todos n=122) en vez de `routing_accuracy_top1_specific` (36.2%, solo específicos n=105). Corregido. |
 
 ### Limitaciones actuales
 1. **Contenido tabular**: el extractor PyMuPDF genera tablas como texto plano sin estructura. Las preguntas sobre tablas de requisitos pierden contexto.
@@ -350,6 +356,9 @@ python scripts/ingest.py
 - [x] ~~Fix bug `citations.page`~~ → `field_validator("page", mode="before")` en `Citation.coerce_page()` toma el primer elemento si el LLM devuelve lista
 - [x] ~~Fix bug `checklist.numeral`~~ → `field_validator("numeral", mode="before")` en `ChecklistItem` y `Citation` une lista con `", "`
 - [x] ~~Correr run v4~~ → multi_valid=51.6%, multi_f1=0.276, routing top-1=36.2% — confirma estabilidad del sistema
+- [x] ~~Fix `llm_max_tokens`~~ → 2048→4096 en `config.py`; resuelve JSON truncado en respuestas largas (dotación ~5000 chars)
+- [x] ~~Fix métricas UI evaluación~~ → `2_Evaluacion.py` ahora muestra variantes `_specific` (36.2% / 47.6%)
+- [x] ~~UX skeleton loader + timings~~ → shimmer CSS + step pills + panel tiempos por fase (routing_ms / agents_ms / total_ms)
 - [ ] **procesos_prioritarios routing**: 12.5% top-1 — evaluar si mejorar descripción/keywords o documentar como limitación del enfoque léxico-coseno
 - [ ] Documentar resultados para tesis (tablas comparativas, gráficas)
 - [x] ~~Limpiar archivos huérfanos~~ → ya no existen en el árbol del proyecto
