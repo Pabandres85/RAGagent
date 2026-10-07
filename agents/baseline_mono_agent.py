@@ -57,8 +57,6 @@ class MonoAgent:
             },
         ]
         raw = chat_completion(messages)
-        if raw.startswith("{{") and raw.endswith("}}"):
-            raw = raw[1:-1]
         result = validate_response(raw, expected_module="global")
 
         if not result.valid:

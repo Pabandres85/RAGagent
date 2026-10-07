@@ -1,0 +1,23 @@
+[
+  {
+    "index": 1,
+    "question": "¿Qué tipo de profesional debe estar presente cuando se realiza una telexperticia entre personal de salud no profesional y un especialista?",
+    "reference_answer": "El prestador remisor cuenta con técnico, tecnólogo o auxiliar que atiende presencialmente al usuario (RESOLUCIÓN NÚMERO 0003100 DE 2019, numeral 3.2).",
+    "module_expected": "talento_humano",
+    "module_predicted": null,
+    "module_predicted_all": [],
+    "routing_is_transversal": false,
+    "multi_valid": null,
+    "mono_valid": true,
+    "multi_em": null,
+    "mono_em": 0.0,
+    "multi_f1": null,
+    "mono_f1": 0.742857142857143,
+    "multi_answer": "",
+    "mono_answer": "El prestador remisor cuenta con técnico, tecnólogo o auxiliar que atiende presencialmente al usuario.",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": []
+  }
+]

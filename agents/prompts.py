@@ -141,10 +141,10 @@ REGLAS OBLIGATORIAS:
 4. Responde en español.
 
 FORMATO DE RESPUESTA — JSON válido:
-{{
+{
   "answer": "Respuesta con citas [Numeral X.X, Página Y]",
-  "citations": [{{"text": "...", "numeral": "X.X", "page": 0, "resolution": "Resolución 3100 de 2019", "vigencia": "Vigente"}}],
-  "checklist": [{{"item": "...", "numeral": "X.X", "status": "pendiente"}}],
+  "citations": [{"text": "...", "numeral": "X.X", "page": 0, "resolution": "Resolución 3100 de 2019", "vigencia": "Vigente"}],
+  "checklist": [{"item": "...", "numeral": "X.X", "status": "pendiente"}],
   "module": "global",
   "confidence": 0.0
-}}"""
+}"""

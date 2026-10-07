@@ -478,9 +478,25 @@ class Orchestrator:
             warnings=warnings,
         )
 
-    def answer(self, question: str) -> dict:
+    def answer(self, question: str, forced_module: str | None = None) -> dict:
+        """
+        forced_module: solo para diagnostico ("ruteo oraculo"). Omite el ruteador y
+        envia la pregunta al especialista indicado. Nunca se usa en produccion.
+        """
         t_start = time.time()
-        routing = self.route(question)
+        if forced_module is not None:
+            if forced_module not in self._agents:
+                raise ValueError(f"Modulo desconocido: {forced_module}")
+            routing = RoutingDecision(
+                module=forced_module,
+                confidence=1.0,
+                reasoning=f"Ruteo oraculo (diagnostico): modulo forzado '{forced_module}'.",
+                modules=[forced_module],
+                scores={forced_module: 1.0},
+                is_transversal=False,
+            )
+        else:
+            routing = self.route(question)
         t_routed = time.time()
 
         module_results: list[tuple[str, GuardrailsResult]] = []

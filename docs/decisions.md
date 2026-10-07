@@ -36,7 +36,9 @@
 **Justificación**:
 La Resolución 3100 de 2019 organiza los estándares de habilitación en estándares temáticos independientes (talento humano, infraestructura, dotación, etc.). Un índice único mezcla chunks de módulos distintos en el espacio vectorial, lo que introduce ruido: la pregunta "¿Cuántos metros cuadrados debe tener un quirófano?" recupera fragmentos de dotación y medicamentos que comparten vocabulario quirúrgico pero no responden la pregunta.
 
-La especialización por módulo reduce el espacio de búsqueda a ~180 chunks por módulo (frente a 1.249 globales), lo que mejora precision@k. El agente baseline (índice global) confirma esta hipótesis empíricamente: mono_f1=0.112 vs. multi_f1=0.276 en el gold set.
+La especialización por módulo reduce el espacio de búsqueda (de 1.249 chunks globales a entre 20 y 719 por módulo; la distribución es muy desigual, ver `ESTADO_PROYECTO.md` §3), con la hipótesis de que mejora la precisión de recuperación.
+
+> **⚠️ Actualización 2026-10-06 — hipótesis NO confirmada.** La evidencia que aquí se citaba (mono_f1=0.112 vs. multi_f1=0.276) provenía de un baseline defectuoso (ver §18). Tras corregirlo, con el ruteador actual el mono-agente obtiene F1 0.425 frente a 0.279 del multi-agente (corrida provisional, 122 ítems). Con ruteo oráculo de especialista único el multi-agente alcanza F1 0.409, sin diferencia demostrable frente al mono. Ver §18.
 
 **Alternativas consideradas**:
 - Un único agente con filtrado por metadatos en FAISS → viable pero introduce complejidad en el filtro y pierde la especialización semántica de los prompts.
@@ -178,7 +180,9 @@ Incluirlas en el routing accuracy crearía ruido: ningún módulo es incorrecto,
 
 ## 12. Brecha valid rate: 52 % multi-agente vs. 95 % mono-agente
 
-**Decisión**: La brecha se interpreta como evidencia de rigor del multi-agente, no como fallo.
+> **⚠️ Decisión REVISADA (2026-10-06).** La interpretación original ("el multi-agente es más riguroso") no se sostiene. Dos hechos: (a) `valid` no mide cobertura: ambos sistemas usan el mismo `validate_response()`, que acepta una abstención como `valid=True`; en el run antiguo el 83 % de las respuestas del mono eran abstenciones causadas por el índice desalineado (§18); (b) en el multi-agente, 54 de las 57 respuestas "inválidas" del run provisional son **abstenciones** (el orquestador devuelve "No se encontró evidencia normativa suficiente" cuando el especialista no recupera evidencia, típicamente por ruteo incorrecto), no rechazos por guardrails. En adelante se reportan por separado: *validez de formato*, *abstención* y *respuesta sustantiva*. El texto original se conserva abajo como registro histórico.
+
+**Decisión (original)**: La brecha se interpreta como evidencia de rigor del multi-agente, no como fallo.
 
 **Justificación**:
 El mono-agente tiene un `valid rate ~95 %` estructural porque su prompt acepta cualquier respuesta, incluido el fallback "No se encontró evidencia suficiente". Este fallback cuenta como válido estructuralmente pero genera F1 ≈ 0 (no responde la pregunta).
@@ -222,7 +226,7 @@ Sin un baseline, no es posible cuantificar el valor de la especialización. El m
 
 Esta comparación aísla el efecto de la arquitectura multi-agente, que es la variable independiente de la tesis.
 
-**Resultado**: multi_f1=0.276 vs. mono_f1=0.112 (+146 % relativo) en el gold set de 122 ítems.
+**Resultado (original, INVALIDADO)**: multi_f1=0.276 vs. mono_f1=0.112 (+146 % relativo) en el gold set de 122 ítems. Ese baseline estaba roto (§18). Resultado actual, provisional: ver §18.
 
 ---
 
@@ -233,7 +237,9 @@ Esta comparación aísla el efecto de la arquitectura multi-agente, que es la va
 **Justificación**:
 FAISS `IndexFlatIP.search()` retorna índices enteros (posición en el índice). Si los metadatos no están en el mismo orden que los vectores, el sistema asigna citas incorrectas a los fragmentos recuperados.
 
-Esta invariante se garantiza en `ingest.py`: los chunks se procesan en orden, se añaden al índice FAISS con `index.add()` y se persisten en `metadata_store.json` en el mismo orden. El test de coherencia implícito es que las citas en las respuestas correspondan a los numerales correctos.
+Esta invariante se garantiza en `ingest.py` para los **índices por módulo**: los chunks se procesan en orden, se añaden al índice FAISS con `index.add()` y se persisten en el mismo orden.
+
+> **⚠️ Para el índice GLOBAL la invariante estaba rota hasta 2026-10-06.** `global.faiss` se construía en orden de página, pero el retriever global cargaba los metadatos agrupados por módulo (`MetadataStore.load_all()`); solo ~8 % de las posiciones coincidían. Corrección: el índice global se construye concatenando los bloques de cada módulo en el orden de `MODULES` (`ingest.py`, y `--rebuild-global` para reconstruirlo sin re-embeber, con validación previa de conteos). La invariante ahora se verifica con `tests/test_index_alignment.py`, que compara vector por vector, no solo totales.
 
 ---
 
@@ -247,6 +253,49 @@ Los guardrails requieren deserializar la respuesta completa como JSON antes de v
 La UX mitiga la espera con un skeleton loader y pills de paso que se renderizan antes de la llamada bloqueante, dando feedback visual inmediato.
 
 **Trabajo futuro**: el streaming es viable si se restructura el schema de respuesta para serializar respuesta parcial primero (answer) y metadatos (citations, checklist) al final, permitiendo mostrar el texto mientras se validan las citas.
+
+---
+
+## 18. Corrección del baseline y diagnóstico de ruteo (2026-10-06)
+
+**Qué se encontró**: una auditoría independiente (dos revisiones cruzadas, verificadas contra los artefactos) halló dos defectos en el baseline mono-agente que invalidaban la comparación original:
+
+1. **Índice global desalineado** con sus metadatos (ver §16).
+2. **Prompt del mono con llaves dobles literales** (`{{ }}`): se enviaba sin pasar por `.format()`, por lo que el modelo copiaba `{{` dentro de su JSON y producía JSON malformado.
+
+**Ablación sobre las primeras 20 preguntas del gold set** (no aleatorias; es un diagnóstico del arreglo, no un resultado comparativo):
+
+| Estado del mono | Abstenciones | Sustantivas válidas | F1 |
+|---|---|---|---|
+| Original (índice cruzado + prompt `{{ }}`) | 19/20 | 1/20 | 0.101 |
+| Índice alineado | 2/20 | 12/20 | 0.409 |
+| + prompt corregido | 2/20 | 18/20 | 0.588 |
+
+**Corrida completa provisional** (122 ítems, `--tag provisional_post_fix`; provisional porque el gold set y el corpus aún no están depurados):
+
+| | Mono | Multi (ruteador real) |
+|---|---|---|
+| Respuestas sustantivas válidas | 89 (73 %) | 64 (52 %) |
+| F1 todas las preguntas | 0.425 | 0.279 |
+| F1 solo 105 específicas | 0.433 | 0.284 |
+| F1 en las 52 respondidas sustantivamente por ambos | 0.513 | 0.438 |
+
+**Diagnóstico con ruteo oráculo de especialista único** (105 preguntas específicas; el especialista recibe solo la etiqueta de módulo, nunca la respuesta de referencia; `--oracle-routing`): 84 respuestas sustantivas (80 %), F1 0.409 (0.488 sobre las sustantivas). Diferencias de F1 por pregunta, emparejadas, IC 95 % por bootstrap:
+
+| Comparación | Diferencia | IC 95 % |
+|---|---|---|
+| Oráculo − mono | −0.024 | [−0.078, +0.030] |
+| Ruteador − mono | −0.150 | [−0.216, −0.089] |
+| Oráculo − ruteador | +0.125 | [+0.082, +0.172] |
+
+**Cómo leer esto (y cómo NO)**:
+- El oráculo fuerza **un único especialista**: la mejora combina módulo correcto y eliminación del ruteo transversal. La mejora se concentra en las preguntas donde el ruteador falló (un módulo incorrecto: +0.252; transversal con top-1 incorrecto: +0.134) y es nula donde acertó, lo que apoya, sin demostrarlo causalmente, que el acierto del módulo es el factor decisivo.
+- "Sin diferencia demostrable" **no** es "equivalente": el intervalo oráculo−mono no descarta una desventaja moderada. Afirmar equivalencia exigiría fijar un margen a priori y probarlo.
+- El oráculo es un **techo optimista**: cada pregunta se generó desde un chunk de su módulo, de modo que el especialista siempre busca en el índice que contiene la respuesta.
+- F1 de tokens penaliza la verbosidad (multi: ~57 palabras; mono: ~31; referencia: ~33). No se debe llamar "invención" a las respuestas de casos mal ruteados: F1 y presencia de citas no verifican que la afirmación esté sustentada por el fragmento.
+- Resultado válido para la tesis: *con el ruteador actual (36 % top-1) el multi-agente es peor que el baseline; con ruteo perfecto de especialista único no se demuestra diferencia en F1, y sí mayor cobertura (80 % vs 70 % de respuestas sustantivas, sin intervalo calculado)*. **No** se sostiene que la especialización mejore la calidad de las respuestas.
+
+**Pendiente antes de cualquier resultado final**: depurar corpus y etiquetas (el filtro `page >= 36` documentado nunca existió en el código y, además, el cuerpo administrativo llega hasta la pág. 58; el capítulo normativo "11. Estándares y criterios de habilitación" empieza en la pág. 59), revisar las 17 referencias `general` (se generaron con el índice defectuoso), separar abstención / validez / calidad en las métricas y añadir Recall@k, MRR, faithfulness y una métrica semántica.
 
 ---
 

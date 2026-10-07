@@ -1,0 +1,15 @@
+{
+  "count": 105,
+  "general_count": 0,
+  "specific_count": 105,
+  "multi_valid_rate": 0.8,
+  "mono_valid_rate": null,
+  "multi_em_avg": 0.0,
+  "mono_em_avg": null,
+  "multi_f1_avg": 0.40909463305115074,
+  "mono_f1_avg": null,
+  "routing_accuracy_top1": 1.0,
+  "routing_hit_rate_any": 1.0,
+  "routing_accuracy_top1_specific": 1.0,
+  "routing_hit_rate_any_specific": 1.0
+}

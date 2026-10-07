@@ -225,6 +225,7 @@ def run_ingestion(
         if chunk.module in by_module:
             by_module[chunk.module].append(chunk)
 
+    module_embedding_blocks: List[np.ndarray] = []
     for module in MODULES:
         module_chunks = by_module[module]
         if not module_chunks:
@@ -237,6 +238,7 @@ def run_ingestion(
             len(module_chunks),
         )
         module_embeddings = embed_texts([chunk.text for chunk in module_chunks])
+        module_embedding_blocks.append(module_embeddings)
         module_index = build_faiss_index(module_embeddings)
         module_index_path = settings.faiss_index_dir / f"{module}.faiss"
         faiss.write_index(module_index, str(module_index_path))
@@ -247,8 +249,11 @@ def run_ingestion(
             module_index.ntotal,
         )
 
-    logger.info("Construyendo indice global...")
-    global_embeddings = embed_texts([chunk.text for chunk in all_chunks])
+    # El indice global DEBE seguir el mismo orden que MetadataStore.load_all()
+    # (modulo por modulo, en el orden de MODULES). Si se construyera en orden de
+    # pagina, la posicion FAISS no coincidiria con la posicion del metadato.
+    logger.info("Construyendo indice global (orden por modulo)...")
+    global_embeddings = np.vstack(module_embedding_blocks)
     global_index = build_faiss_index(global_embeddings)
     global_index_path = settings.faiss_index_dir / "global.faiss"
     faiss.write_index(global_index, str(global_index_path))
@@ -261,9 +266,51 @@ def run_ingestion(
     logger.info("Ingesta completada.")
 
 
+def rebuild_global_index() -> int:
+    """
+    Reconstruye global.faiss concatenando los vectores de los indices por modulo
+    (sin recalcular embeddings), en el orden de MODULES = orden de load_all().
+
+    Falla ANTES de escribir si falta algun indice o si algun conteo no coincide
+    con sus metadatos, para no reemplazar un indice correcto por uno incompleto.
+    Devuelve el numero de vectores escritos.
+    """
+    store = MetadataStore()
+    blocks: List[np.ndarray] = []
+    for module in MODULES:
+        path = settings.faiss_index_dir / f"{module}.faiss"
+        if not path.exists():
+            raise FileNotFoundError(f"Falta el indice del modulo '{module}': {path}")
+        index = faiss.read_index(str(path))
+        n_meta = len(store.load(module))
+        if index.ntotal != n_meta:
+            raise ValueError(
+                f"Modulo '{module}': {index.ntotal} vectores != {n_meta} metadatos."
+            )
+        blocks.append(index.reconstruct_n(0, index.ntotal))
+
+    vectors = np.vstack(blocks).astype("float32")
+    total_meta = len(store.load_all())
+    if vectors.shape[0] != total_meta:
+        raise ValueError(f"Global: {vectors.shape[0]} vectores != {total_meta} metadatos.")
+
+    global_index = build_faiss_index(vectors)
+    target = settings.faiss_index_dir / "global.faiss"
+    tmp = target.with_suffix(".faiss.tmp")
+    faiss.write_index(global_index, str(tmp))
+    tmp.replace(target)
+    logger.info("global.faiss reconstruido | vectores=%d", global_index.ntotal)
+    return global_index.ntotal
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Ingesta del corpus normativo de la Resolucion 3100 de 2019."
+    )
+    parser.add_argument(
+        "--rebuild-global",
+        action="store_true",
+        help="Solo reconstruye global.faiss desde los indices por modulo (sin re-embeber).",
     )
     parser.add_argument(
         "--pdf",
@@ -274,6 +321,10 @@ def main() -> None:
     parser.add_argument("--chunk-size", type=int, default=settings.chunk_size)
     parser.add_argument("--chunk-overlap", type=int, default=settings.chunk_overlap)
     args = parser.parse_args()
+
+    if args.rebuild_global:
+        rebuild_global_index()
+        return
 
     pdf_paths = [args.pdf] if args.pdf else sorted(settings.data_raw_dir.glob("*.pdf"))
     if not pdf_paths:

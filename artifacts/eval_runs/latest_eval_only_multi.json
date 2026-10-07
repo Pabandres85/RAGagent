@@ -1,0 +1,53 @@
+[
+  {
+    "index": 1,
+    "question": "¿Qué tipo de profesional debe estar presente cuando se realiza una telexperticia entre personal de salud no profesional y un especialista?",
+    "reference_answer": "El prestador remisor cuenta con técnico, tecnólogo o auxiliar que atiende presencialmente al usuario (RESOLUCIÓN NÚMERO 0003100 DE 2019, numeral 3.2).",
+    "module_expected": "talento_humano",
+    "module_predicted": "talento_humano",
+    "module_predicted_all": [
+      "talento_humano"
+    ],
+    "routing_is_transversal": false,
+    "multi_valid": true,
+    "mono_valid": null,
+    "multi_em": 0.0,
+    "mono_em": null,
+    "multi_f1": 0.32098765432098764,
+    "mono_f1": null,
+    "multi_answer": "De acuerdo con los fragmentos normativos proporcionados, cuando se realiza una telexperticia entre personal de salud no profesional y un profesional de la salud, el prestador remisor debe contar con un técnico, tecnólogo o auxiliar que atiende presencialmente al usuario. Este requisito está especificado en varios fragmentos como los numerales 4.2 (Página 101), 5.2 (Página 80) y 13.2 (Página 156).",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [],
+    "mono_errors": [],
+    "mono_warnings": []
+  },
+  {
+    "index": 2,
+    "question": "¿Qué tipo de inyector de sangre debe contar el equipo de hemodiálisis según los requisitos estipulados en el numeral 11.2.5?",
+    "reference_answer": "De acuerdo con el numeral 11.2.5, el equipo de hemodiálisis debe contar con un 'inyector de sangre variable - (bomba de sangre) con inyector de volumen'.",
+    "module_expected": "dotacion",
+    "module_predicted": "dotacion",
+    "module_predicted_all": [
+      "dotacion",
+      "medicamentos_dispositivos",
+      "procesos_prioritarios"
+    ],
+    "routing_is_transversal": true,
+    "multi_valid": true,
+    "mono_valid": null,
+    "multi_em": 0.0,
+    "mono_em": null,
+    "multi_f1": 0.7169811320754716,
+    "mono_f1": null,
+    "multi_answer": "El equipo de hemodiálisis debe contar con un inyector de sangre variable (bomba de sangre) con inyector de volumen, conforme al numeral 11.2.5 del estándar de dotación.",
+    "mono_answer": "",
+    "multi_errors": [],
+    "multi_warnings": [
+      "Sin evidencia directa en: medicamentos_dispositivos, procesos_prioritarios.",
+      "Consulta transversal parcial: solo hubo respuesta util desde 'dotacion'."
+    ],
+    "mono_errors": [],
+    "mono_warnings": []
+  }
+]

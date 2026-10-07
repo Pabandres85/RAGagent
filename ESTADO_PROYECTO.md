@@ -1,7 +1,10 @@
 # ESTADO DEL PROYECTO — RAG Multi-Agente Resolución 3100 de 2019
 
 > **Actualizar este archivo cada vez que se implemente un componente nuevo o se cambie el estado de algo.**
-> Última actualización: 2026-03-01 (v6 — fix llm_max_tokens 2048→4096; UX skeleton loader + timings en UI)
+> Última actualización: 2026-10-06 (corrección crítica del baseline mono — ver aviso y §8b; antes: 2026-03-01 v6)
+
+> ## ⚠️ AVISO (2026-10-06): resultados v1–v4 invalidados para la comparación multi vs. mono
+> Una auditoría halló que el índice FAISS global estaba desalineado con sus metadatos y que el prompt del mono tenía llaves dobles literales. Las cifras mono de v1–v4 (F1 ≈ 0.11, valid 95 %) **no miden la capacidad del mono-agente** y la conclusión "multi F1 2.5× > mono" **no debe usarse**. Los archivos `artifacts/eval_runs/latest_eval.json` y `latest_eval_summary.json` (versionados) son esa corrida antigua (v4, pre-corrección; etiqueta git `eval-v4-pre-fix`); **no los cite**. Resultados vigentes (provisionales): §8b.
 
 ---
 
@@ -37,7 +40,7 @@ Configuración en `.env` (no subir al repo). Cambiar proveedor con `LLM_PROVIDER
 
 ### PDF fuente
 - `data/raw/resolucion-3100-de-2019.pdf` — documento principal (230 páginas aprox.)
-- **Secciones excluidas en ingesta**: páginas < 36 (encabezados repetitivos), encabezado de página filtrado con `PAGE_HEADER_RE`
+- **Exclusiones en ingesta**: solo el encabezado "Página N de NNN" se filtra (`PAGE_HEADER_RE`). ⚠️ **No existe filtro por página** (versiones anteriores de este documento afirmaban `page >= 36`; era incorrecto). El índice actual incluye 214 chunks de las páginas < 36 y también el articulado/trámites de las págs. 36–58. El capítulo normativo "11. Estándares y criterios de habilitación" empieza en la **pág. 59**. Política de corpus a implementar (ver §11).
 
 ### Chunks por módulo (post-ingesta, CHUNK_SIZE=768)
 | Módulo | Chunks | % |
@@ -172,7 +175,7 @@ Se eliminaron/corrigieron **39 entradas** problemáticas:
 | 3 | Respuestas muy cortas sin contenido normativo | **Expandidas** | 3 |
 | 4 | Respuestas con referencia al fragmento en el answer | **Corregidas** | 4 |
 
-**Criterio de exclusión Grupo 2**: Los capítulos 1-10 (páginas 1-35) no fueron indexados (filtro `page >= 36`). Las preguntas sobre definiciones generales, REPS, visitas que respondían "no se encuentra" no tienen poder discriminante entre los dos sistemas → eliminadas para mantener el gold set enfocado en los 7 estándares normativos comparados.
+**Criterio de exclusión Grupo 2**: se supuso que los capítulos 1-10 (páginas 1-35) no estaban indexados (filtro `page >= 36`); ⚠️ **esa suposición era falsa**: el filtro nunca existió y esas páginas sí están en el índice (ver §3). Las preguntas sobre definiciones generales, REPS, visitas que respondían "no se encuentra" no tienen poder discriminante entre los dos sistemas → eliminadas para mantener el gold set enfocado en los 7 estándares normativos comparados.
 
 ### Problemas conocidos (resueltos)
 - **Contaminación talento_humano**: secciones administrativas sin header propio (numerales 9.x, 10.x) se asignaban por carry-over → corregido en auditoría (muchas eliminadas del Grupo 1/2).
@@ -209,6 +212,8 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 ---
 
 ## 8. RESULTADOS DE EVALUACIÓN
+
+> ⚠️ **Registro histórico (v1–v4).** Las columnas "Mono-Agente" de esta sección provienen del baseline defectuoso y no deben citarse. Resultados vigentes: §8b.
 
 ### Run v1 — pre-fix routing (gold set limpio, 122 ítems)
 | Métrica | Multi-Agente | Mono-Agente |
@@ -265,8 +270,8 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 | procesos_prioritarios | 12.5% | 25.0% | 16 | Crítico — fallos dispersos en 6 módulos |
 
 ### Interpretación
-- **Multi F1 2.5× > Mono F1**: la especialización mejora significativamente la calidad de respuesta.
-- **Valid rate gap (52.5% vs 95.1%)**: el multi-agente tiene guardrails más estrictos (cita obligatoria); el mono-agente acepta respuestas sin evidencia. El gap refleja exigencia de calidad, no falla de cobertura — argumento válido para la tesis.
+- ~~**Multi F1 2.5× > Mono F1**: la especialización mejora significativamente la calidad de respuesta.~~ **INVALIDADO (2026-10-06)**: el baseline estaba defectuoso. Ver §8b.
+- ~~**Valid rate gap (52.5% vs 95.1%)**: refleja exigencia de calidad~~ **REVISADO**: `valid` no mide cobertura (ambos sistemas aceptan la abstención como válida); las "inválidas" del multi son en su mayoría abstenciones. Ver §8b y `docs/decisions.md` §12.
 - **medicamentos_dispositivos: +20pp top-1** gracias a corrección de keywords (`"dispositivo"` removido de `dotacion`).
 - **procesos_prioritarios persistente (12.5% top-1)**: módulo con vocabulario transversal que se solapa con casi todos los demás. Límite del enfoque léxico-coseno — hallazgo relevante para la tesis.
 - **EM = 0**: esperado — las respuestas son texto libre, no citas textuales exactas.
@@ -279,6 +284,30 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 | v2/v3 | Mono-Agente | JSON malformado (comillas en propiedad) — 5-6 veces | Estructural (Qwen 2.5 ocasional) |
 | v3 | Multi-Agente | `checklist.numeral` recibe lista — 1 vez | ✅ Corregido; no reapareció en v4 |
 | v4 | Mono-Agente | "No contiene cita normativa" — 1 vez | Estructural (nuevo tipo vs v2/v3) |
+
+---
+
+## 8b. Corrección del baseline y resultados vigentes (2026-10-06) — PROVISIONALES
+
+**Correcciones aplicadas** (sin cambiar el gold set ni el corpus): (1) `global.faiss` reconstruido en el orden de `load_all()` (`ingest.py --rebuild-global`; test de correspondencia vector–metadato); (2) prompt del mono sin llaves dobles; (3) reintentos del cliente LLM ante `Model unloaded`; (4) runner con `--only`, `--tag`, `--resume` (protegido por huella del dataset y del modo) y `--oracle-routing`; un sistema no ejecutado se registra como `None`, no como 0.
+
+**Ablación (20 primeras preguntas, no aleatorias — solo diagnóstico)**: mono con abstenciones 19→2 y F1 0.101→0.409 (índice) →0.588 (prompt).
+
+**Corrida completa, 122 ítems (`latest_eval_provisional_post_fix.json`)**
+
+| | Mono | Multi (ruteador real) |
+|---|---|---|
+| Respuestas sustantivas válidas | 89 (73 %) | 64 (52 %) |
+| Abstenciones | 31 | ~54 |
+| F1 todas | 0.425 | 0.279 |
+| F1 en las 52 que ambos responden | 0.513 | 0.438 |
+| Routing top-1 (105 específicas) | N/A | 36.2 % |
+
+**Ruteo oráculo de especialista único (105 específicas; `latest_eval_oracle_routing.json`)**: multi con 84 sustantivas (80 %) y F1 0.409. Oráculo−mono = −0.024 [−0.078, +0.030] (sin diferencia demostrable; **no** implica equivalencia); ruteador−mono = −0.150 [−0.216, −0.089]; oráculo−ruteador = +0.125 [+0.082, +0.172].
+
+**Limitaciones de estos resultados** (detalle en `docs/decisions.md` §18): son provisionales (etiquetas del gold set ruidosas, corpus sin depurar, 17 referencias `general` generadas con el índice defectuoso); el oráculo fuerza un solo especialista y es un techo optimista; F1 de tokens penaliza la verbosidad; no hay faithfulness, Recall@k ni MRR; el LLM no es determinista y no se han hecho repeticiones.
+
+**Qué se puede y no se puede afirmar**: con el ruteador actual el multi-agente rinde menos que el baseline; con ruteo perfecto no se demuestra diferencia en F1 y sí mayor cobertura. No se sostiene que la especialización mejore la calidad.
 
 ---
 
@@ -340,7 +369,8 @@ python scripts/ingest.py
 4. **Evaluación sin métricas semánticas**: solo F1 de tokens. Pendiente integrar BERTScore o similitud coseno para evaluar calidad de respuesta.
 5. **procesos_prioritarios — límite del ruteo léxico-coseno**: routing top-1 de solo 12.5% con fallos dispersos en 6 de 7 módulos. El vocabulario de "procesos prioritarios" (urgencias, sepsis, parto, transfusión) se solapa semánticamente con casi todos los demás estándares. El enfoque coseno+léxico no es suficiente para discriminar este módulo sin un clasificador supervisado.
 6. **talento_humano gold set muy reducido (7 entradas)**: la auditoría eliminó la mayoría de entradas contaminadas con contenido administrativo. Con solo 7 preguntas, cada fallo/acierto representa ~14pp — las estadísticas de routing de este módulo (28.6% top-1) no son estadísticamente representativas.
-7. **Mono-agente: valid rate estructuralmente alto**: el 95.1% del mono-agente no refleja mejor calidad sino guardrails más permisivos — está configurado para responder incluso sin evidencia suficiente. La comparación directa de valid rates entre sistemas no es equivalente; el multi-agente penaliza respuestas sin cita normativa mientras el mono-agente las acepta.
+7. **`valid` no es cobertura**: ambos sistemas usan el mismo `validate_response()`, que acepta una abstención reconocida como válida. En v1–v4 el 83 % de las respuestas del mono eran abstenciones (índice desalineado). Reportar siempre por separado validez de formato, abstención y respuesta sustantiva.
+8. **Brechas respecto al anteproyecto**: metas EM ≥ 0.60 / F1 ≥ 0.70 no alcanzadas (EM = 0 con respuestas libres); gold set "validado por expertos" aún sin validación experta (generado con LLM y auditado por el autor); Recall@10, MRR y faithfulness sin medir; sin OCR/visión en la ingesta; evaluación con usuarios (SUS, tiempos) sin realizar.
 
 ---
 
@@ -359,6 +389,11 @@ python scripts/ingest.py
 - [x] ~~Fix `llm_max_tokens`~~ → 2048→4096 en `config.py`; resuelve JSON truncado en respuestas largas (dotación ~5000 chars)
 - [x] ~~Fix métricas UI evaluación~~ → `2_Evaluacion.py` ahora muestra variantes `_specific` (36.2% / 47.6%)
 - [x] ~~UX skeleton loader + timings~~ → shimmer CSS + step pills + panel tiempos por fase (routing_ms / agents_ms / total_ms)
+- [ ] **Política de corpus** (decidido: excluir el cuerpo administrativo y limitarse al cap. 11, desde la pág. 59; módulo = línea que empieza por "Estándar de <módulo>") → implementar en `ingest.py`, re-ingestar, remapear `chunk_id` del gold set
+- [ ] **Revisar las 17 referencias `general`** (generadas con el índice defectuoso) y moverlas a un gold set aparte (fuera de alcance)
+- [ ] **Métricas honestas**: abstención / validez / sustantiva por separado, Recall@10, MRR, faithfulness, métrica semántica con juez de otra familia (candidato: `google/gemma-4-31b`, calibrado con muestra anotada a mano)
+- [ ] **Ruteador supervisado** con partición train/test o validación cruzada
+- [ ] **Validación experta** de una muestra del gold set y evaluación con usuarios (comprometidas en el anteproyecto)
 - [ ] **procesos_prioritarios routing**: 12.5% top-1 — evaluar si mejorar descripción/keywords o documentar como limitación del enfoque léxico-coseno
 - [ ] Documentar resultados para tesis (tablas comparativas, gráficas)
 - [x] ~~Limpiar archivos huérfanos~~ → ya no existen en el árbol del proyecto

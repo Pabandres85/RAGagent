@@ -4,11 +4,13 @@ Runner de evaluacion offline con checkpoints y resumen.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from statistics import mean
 
 from agents.baseline_mono_agent import MonoAgent
+from agents.guardrails import GuardrailsResult
 from agents.orchestrator import Orchestrator
 from core.config import settings
 from eval.metrics import exact_match, f1_score, routing_accuracy
@@ -25,6 +27,20 @@ def _write_json(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as handle:
         json.dump(data, handle, ensure_ascii=False, indent=2)
+
+
+def _avg(items: list[dict], key: str, as_rate: bool = False) -> float | None:
+    """Promedio ignorando valores None (sistema no ejecutado). None si no hay datos."""
+    values = [item[key] for item in items if item.get(key) is not None]
+    if not values:
+        return None
+    return mean(1.0 if v else 0.0 for v in values) if as_rate else mean(values)
+
+
+def _fmt(value: float | None, pct: bool = False) -> str:
+    if value is None:
+        return "n/a"
+    return f"{value:.1%}" if pct else f"{value:.3f}"
 
 
 def _build_summary(results: list[dict]) -> dict:
@@ -62,16 +78,19 @@ def _build_summary(results: list[dict]) -> dict:
         if item.get("module_expected") and item.get("module_expected") in item.get("module_predicted_all", [])
     )
 
-    return {
+    # Sin orquestador ejecutado (--only mono) el routing no aplica: n/a, no 0%.
+    multi_ran = any(item.get("multi_valid") is not None for item in results)
+
+    summary = {
         "count": len(results),
         "general_count": len(results) - len(specific),
         "specific_count": len(specific),
-        "multi_valid_rate": mean(1.0 if item.get("multi_valid") else 0.0 for item in results),
-        "mono_valid_rate": mean(1.0 if item.get("mono_valid") else 0.0 for item in results),
-        "multi_em_avg": mean(item.get("multi_em", 0.0) for item in results),
-        "mono_em_avg": mean(item.get("mono_em", 0.0) for item in results),
-        "multi_f1_avg": mean(item.get("multi_f1", 0.0) for item in results),
-        "mono_f1_avg": mean(item.get("mono_f1", 0.0) for item in results),
+        "multi_valid_rate": _avg(results, "multi_valid", as_rate=True),
+        "mono_valid_rate": _avg(results, "mono_valid", as_rate=True),
+        "multi_em_avg": _avg(results, "multi_em"),
+        "mono_em_avg": _avg(results, "mono_em"),
+        "multi_f1_avg": _avg(results, "multi_f1"),
+        "mono_f1_avg": _avg(results, "mono_f1"),
         # Routing sobre todos los ítems (general siempre falla → métrica penalizada)
         "routing_accuracy_top1": routing_accuracy(predicted_all, expected_all),
         "routing_hit_rate_any": any_hits_all / len(results),
@@ -79,26 +98,107 @@ def _build_summary(results: list[dict]) -> dict:
         "routing_accuracy_top1_specific": routing_accuracy(predicted_specific, expected_specific),
         "routing_hit_rate_any_specific": any_hits_specific / len(specific) if specific else 0.0,
     }
+    if not multi_ran:
+        for key in (
+            "routing_accuracy_top1",
+            "routing_hit_rate_any",
+            "routing_accuracy_top1_specific",
+            "routing_hit_rate_any_specific",
+        ):
+            summary[key] = None
+    return summary
 
 
-def run_eval(limit: int | None = None, checkpoint_every: int = 5) -> tuple[list[dict], dict]:
+def run_fingerprint(gold_set: list[dict], only: str | None, oracle_routing: bool) -> dict:
+    """Identifica una corrida: mismo dataset (preguntas y modulos, en orden) y mismo modo."""
+    payload = json.dumps(
+        [(item.get("question"), item.get("module")) for item in gold_set],
+        ensure_ascii=False,
+    )
+    return {
+        "dataset_sha256": hashlib.sha256(payload.encode("utf-8")).hexdigest(),
+        "n_items": len(gold_set),
+        "only": only,
+        "oracle_routing": oracle_routing,
+    }
+
+
+def load_checkpoint_for_resume(
+    checkpoint_path: Path, meta_path: Path, gold_set: list[dict], fingerprint: dict
+) -> list[dict]:
+    """
+    Carga el checkpoint solo si corresponde EXACTAMENTE a esta corrida. Si el gold set,
+    su orden o el modo cambiaron, se niega a reanudar para no mezclar resultados viejos
+    con preguntas nuevas.
+    """
+    if not checkpoint_path.exists():
+        return []
+    if not meta_path.exists():
+        raise RuntimeError(
+            f"Checkpoint {checkpoint_path.name} sin metadatos de corrida; no se puede "
+            "verificar que corresponda a este dataset. Borralo o corre sin --resume."
+        )
+    with open(meta_path, "r", encoding="utf-8") as handle:
+        saved = json.load(handle)
+    if saved != fingerprint:
+        raise RuntimeError(
+            "El checkpoint no corresponde a esta corrida (dataset, orden o modo "
+            f"distintos). checkpoint={saved} | actual={fingerprint}. "
+            "Corre sin --resume o usa otro --tag."
+        )
+    with open(checkpoint_path, "r", encoding="utf-8") as handle:
+        results = json.load(handle)
+    for position, row in enumerate(results):
+        if position >= len(gold_set) or row.get("question") != gold_set[position]["question"]:
+            raise RuntimeError(f"El checkpoint difiere del gold set en la posicion {position + 1}.")
+    return results
+
+
+def run_eval(
+    limit: int | None = None,
+    checkpoint_every: int = 5,
+    only: str | None = None,
+    tag: str | None = None,
+    resume: bool = False,
+    oracle_routing: bool = False,
+) -> tuple[list[dict], dict]:
     gold_set = load_gold_set(settings.gold_set_path)
+    if oracle_routing:
+        # Diagnostico: solo preguntas con modulo especifico, solo el multi-agente, y el
+        # especialista recibe unicamente la ETIQUETA del modulo (nunca la respuesta).
+        gold_set = [item for item in gold_set if item.get("module") not in (None, "general")]
+        only = "multi"
     if limit is not None:
         gold_set = gold_set[:limit]
 
-    orchestrator = Orchestrator()
-    baseline = MonoAgent()
+    # only="mono"|"multi" evita ejecutar el otro sistema (pruebas de ablacion).
+    orchestrator = Orchestrator() if only != "mono" else None
+    baseline = MonoAgent() if only != "multi" else None
     results: list[dict] = []
 
-    checkpoint_path = settings.eval_output_dir / "latest_eval.partial.json"
+    suffix = f"_{tag}" if tag else ""
+    checkpoint_path = settings.eval_output_dir / f"latest_eval{suffix}.partial.json"
+    meta_path = settings.eval_output_dir / f"latest_eval{suffix}.meta.partial.json"
+    fingerprint = run_fingerprint(gold_set, only, oracle_routing)
+
+    if resume:
+        results = load_checkpoint_for_resume(checkpoint_path, meta_path, gold_set, fingerprint)
+        if results:
+            print(f"Reanudando desde checkpoint: {len(results)} items ya evaluados.")
+    _write_json(meta_path, fingerprint)
 
     total = len(gold_set)
     for index, item in enumerate(gold_set, start=1):
+        if index <= len(results):
+            continue
         question = item["question"]
         reference = item.get("answer", "")
 
-        multi_result = orchestrator.answer(question)
-        mono_result = baseline.answer(question)
+        forced = item.get("module") if oracle_routing else None
+        multi_result = orchestrator.answer(question, forced_module=forced) if orchestrator else {}
+        mono_result = baseline.answer(question) if baseline else GuardrailsResult(valid=False)
+        # Un sistema no ejecutado se registra como None (no como 0 / invalido).
+        ran_multi, ran_mono = orchestrator is not None, baseline is not None
 
         multi_answer = ""
         if multi_result.get("response"):
@@ -116,12 +216,12 @@ def run_eval(limit: int | None = None, checkpoint_every: int = 5) -> tuple[list[
             "module_predicted": multi_result.get("routing", {}).get("module"),
             "module_predicted_all": multi_result.get("routing", {}).get("modules", []),
             "routing_is_transversal": multi_result.get("routing", {}).get("is_transversal", False),
-            "multi_valid": multi_result.get("valid", False),
-            "mono_valid": mono_result.valid,
-            "multi_em": exact_match(multi_answer, reference),
-            "mono_em": exact_match(mono_answer, reference),
-            "multi_f1": f1_score(multi_answer, reference),
-            "mono_f1": f1_score(mono_answer, reference),
+            "multi_valid": multi_result.get("valid", False) if ran_multi else None,
+            "mono_valid": mono_result.valid if ran_mono else None,
+            "multi_em": exact_match(multi_answer, reference) if ran_multi else None,
+            "mono_em": exact_match(mono_answer, reference) if ran_mono else None,
+            "multi_f1": f1_score(multi_answer, reference) if ran_multi else None,
+            "mono_f1": f1_score(mono_answer, reference) if ran_mono else None,
             "multi_answer": multi_answer,
             "mono_answer": mono_answer,
             "multi_errors": multi_result.get("errors", []),
@@ -150,13 +250,39 @@ def main() -> None:
         default=5,
         help="Guardar checkpoint parcial cada N preguntas.",
     )
+    parser.add_argument(
+        "--only",
+        choices=["mono", "multi"],
+        default=None,
+        help="Ejecuta solo un sistema (ablaciones). El otro queda en blanco.",
+    )
+    parser.add_argument(
+        "--tag",
+        default=None,
+        help="Sufijo para los archivos de salida (no pisa latest_eval.json).",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Continua desde el checkpoint parcial del mismo --tag/--only.",
+    )
+    parser.add_argument(
+        "--oracle-routing",
+        action="store_true",
+        help="Diagnostico: usa el modulo etiquetado en lugar del ruteador (solo especificos, solo multi).",
+    )
     args = parser.parse_args()
 
-    results, summary = run_eval(limit=args.limit, checkpoint_every=args.checkpoint_every)
+    # Una corrida parcial (--only) nunca debe pisar los resultados completos.
+    tag = args.tag or ("oracle_routing" if args.oracle_routing else (f"only_{args.only}" if args.only else None))
+    results, summary = run_eval(
+        limit=args.limit, checkpoint_every=args.checkpoint_every, only=args.only, tag=tag, resume=args.resume, oracle_routing=args.oracle_routing
+    )
 
     settings.eval_output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = settings.eval_output_dir / "latest_eval.json"
-    summary_path = settings.eval_output_dir / "latest_eval_summary.json"
+    suffix = f"_{tag}" if tag else ""
+    output_path = settings.eval_output_dir / f"latest_eval{suffix}.json"
+    summary_path = settings.eval_output_dir / f"latest_eval_summary{suffix}.json"
 
     _write_json(output_path, results)
     _write_json(summary_path, summary)
@@ -165,17 +291,17 @@ def main() -> None:
     print(
         "Resumen | "
         f"items={summary['count']} (general={summary['general_count']}, especificos={summary['specific_count']}) | "
-        f"multi_valid={summary['multi_valid_rate']:.1%} | "
-        f"mono_valid={summary['mono_valid_rate']:.1%} | "
-        f"multi_f1={summary['multi_f1_avg']:.3f} | "
-        f"mono_f1={summary['mono_f1_avg']:.3f}"
+        f"multi_valid={_fmt(summary['multi_valid_rate'], pct=True)} | "
+        f"mono_valid={_fmt(summary['mono_valid_rate'], pct=True)} | "
+        f"multi_f1={_fmt(summary['multi_f1_avg'])} | "
+        f"mono_f1={_fmt(summary['mono_f1_avg'])}"
     )
     print(
         "Routing (especificos) | "
-        f"top1={summary['routing_accuracy_top1_specific']:.1%} | "
-        f"any={summary['routing_hit_rate_any_specific']:.1%} | "
-        f"-- Routing (todos, ref.) top1={summary['routing_accuracy_top1']:.1%} | "
-        f"any={summary['routing_hit_rate_any']:.1%}"
+        f"top1={_fmt(summary['routing_accuracy_top1_specific'], pct=True)} | "
+        f"any={_fmt(summary['routing_hit_rate_any_specific'], pct=True)} | "
+        f"-- Routing (todos, ref.) top1={_fmt(summary['routing_accuracy_top1'], pct=True)} | "
+        f"any={_fmt(summary['routing_hit_rate_any'], pct=True)}"
     )
 
 
