@@ -37,6 +37,34 @@ def _avg(items: list[dict], key: str, as_rate: bool = False) -> float | None:
     return mean(1.0 if v else 0.0 for v in values) if as_rate else mean(values)
 
 
+STATUSES = ("answered", "abstained", "rejected", "error")
+
+
+def _status_summary(results: list[dict], system: str) -> dict:
+    """Tasas por estado y F1 calculado SOLO sobre respuestas sustantivas (answered)."""
+    key = f"{system}_status"
+    statuses = [item[key] for item in results if item.get(key) is not None]
+    summary: dict = {f"{system}_status_count": len(statuses)}
+    for status in STATUSES:
+        summary[f"{system}_{status}_rate"] = (statuses.count(status) / len(statuses)) if statuses else None
+    answered = [item for item in results if item.get(key) == "answered" and item.get(f"{system}_f1") is not None]
+    summary[f"{system}_f1_answered_avg"] = mean(item[f"{system}_f1"] for item in answered) if answered else None
+    return summary
+
+
+def _common_answered_summary(results: list[dict]) -> dict:
+    """F1 de ambos sistemas sobre las preguntas que los DOS responden sustantivamente."""
+    both = [
+        item for item in results
+        if item.get("multi_status") == "answered" and item.get("mono_status") == "answered"
+    ]
+    return {
+        "common_answered_count": len(both),
+        "common_answered_multi_f1": mean(i["multi_f1"] for i in both) if both else None,
+        "common_answered_mono_f1": mean(i["mono_f1"] for i in both) if both else None,
+    }
+
+
 def _fmt(value: float | None, pct: bool = False) -> str:
     if value is None:
         return "n/a"
@@ -98,6 +126,10 @@ def _build_summary(results: list[dict]) -> dict:
         "routing_accuracy_top1_specific": routing_accuracy(predicted_specific, expected_specific),
         "routing_hit_rate_any_specific": any_hits_specific / len(specific) if specific else 0.0,
     }
+    summary.update(_status_summary(results, "multi"))
+    summary.update(_status_summary(results, "mono"))
+    summary.update(_common_answered_summary(results))
+
     if not multi_ran:
         for key in (
             "routing_accuracy_top1",
@@ -109,15 +141,22 @@ def _build_summary(results: list[dict]) -> dict:
     return summary
 
 
+# Version del esquema de resultados por fila. Subirla cuando cambien los campos que las
+# metricas necesitan (p. ej. v2 agrego multi_status/mono_status): un checkpoint de otra
+# version no se puede reanudar porque sus filas no serian comparables.
+RESULT_SCHEMA_VERSION = 2
+
+
 def run_fingerprint(gold_set: list[dict], only: str | None, oracle_routing: bool) -> dict:
     """Identifica una corrida: mismo dataset (preguntas y modulos, en orden) y mismo modo."""
     payload = json.dumps(
-        [(item.get("question"), item.get("module")) for item in gold_set],
+        [(item.get("question"), item.get("module"), item.get("answer")) for item in gold_set],
         ensure_ascii=False,
     )
     return {
         "dataset_sha256": hashlib.sha256(payload.encode("utf-8")).hexdigest(),
         "n_items": len(gold_set),
+        "schema_version": RESULT_SCHEMA_VERSION,
         "only": only,
         "oracle_routing": oracle_routing,
     }
@@ -195,8 +234,18 @@ def run_eval(
         reference = item.get("answer", "")
 
         forced = item.get("module") if oracle_routing else None
-        multi_result = orchestrator.answer(question, forced_module=forced) if orchestrator else {}
-        mono_result = baseline.answer(question) if baseline else GuardrailsResult(valid=False)
+        try:
+            multi_result = orchestrator.answer(question, forced_module=forced) if orchestrator else {}
+        except FileNotFoundError:
+            raise
+        except Exception as exc:  # un fallo aislado no debe tirar toda la corrida
+            multi_result = {"valid": False, "status": "error", "errors": [f"{type(exc).__name__}: {exc}"], "response": None}
+        try:
+            mono_result = baseline.answer(question) if baseline else GuardrailsResult(valid=False)
+        except FileNotFoundError:
+            raise
+        except Exception as exc:
+            mono_result = GuardrailsResult(valid=False, status="error", errors=[f"{type(exc).__name__}: {exc}"])
         # Un sistema no ejecutado se registra como None (no como 0 / invalido).
         ran_multi, ran_mono = orchestrator is not None, baseline is not None
 
@@ -216,6 +265,8 @@ def run_eval(
             "module_predicted": multi_result.get("routing", {}).get("module"),
             "module_predicted_all": multi_result.get("routing", {}).get("modules", []),
             "routing_is_transversal": multi_result.get("routing", {}).get("is_transversal", False),
+            "multi_status": multi_result.get("status", "rejected") if ran_multi else None,
+            "mono_status": mono_result.status if ran_mono else None,
             "multi_valid": multi_result.get("valid", False) if ran_multi else None,
             "mono_valid": mono_result.valid if ran_mono else None,
             "multi_em": exact_match(multi_answer, reference) if ran_multi else None,
@@ -296,6 +347,17 @@ def main() -> None:
         f"multi_f1={_fmt(summary['multi_f1_avg'])} | "
         f"mono_f1={_fmt(summary['mono_f1_avg'])}"
     )
+    if summary.get("multi_status_count") or summary.get("mono_status_count"):
+        print(
+            "Estados | "
+            + " | ".join(
+                f"{name}: " + "/".join(f"{st[:3]}={_fmt(summary.get(f'{name}_{st}_rate'), pct=True)}" for st in STATUSES)
+                for name in ("multi", "mono")
+            )
+            + f" | F1 sustantivas: multi={_fmt(summary.get('multi_f1_answered_avg'))} mono={_fmt(summary.get('mono_f1_answered_avg'))}"
+            + f" | ambos responden (n={summary.get('common_answered_count')}): "
+            f"multi={_fmt(summary.get('common_answered_multi_f1'))} mono={_fmt(summary.get('common_answered_mono_f1'))}"
+        )
     print(
         "Routing (especificos) | "
         f"top1={_fmt(summary['routing_accuracy_top1_specific'], pct=True)} | "

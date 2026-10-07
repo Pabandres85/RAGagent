@@ -12,7 +12,7 @@ import ast
 import json
 import logging
 import unicodedata
-from typing import List, Optional
+from typing import List, Literal, Optional
 
 from pydantic import BaseModel, ValidationError, field_validator
 
@@ -78,8 +78,18 @@ class AgentResponse(BaseModel):
     confidence: float = 0.0
 
 
+# Estado del resultado (independiente de `valid`, que es validez estructural):
+#   answered  - respuesta sustantiva con al menos una cita
+#   abstained - el sistema declaro que no tiene evidencia (formato correcto, sin cita)
+#   rejected  - el LLM respondio pero los guardrails la rechazan (JSON malformado,
+#               esquema invalido, sin cita normativa)
+#   error     - fallo de infraestructura/ejecucion (excepcion), no del contenido
+ResultStatus = Literal["answered", "abstained", "rejected", "error"]
+
+
 class GuardrailsResult(BaseModel):
     valid: bool
+    status: ResultStatus = "rejected"
     response: Optional[AgentResponse] = None
     errors: List[str] = []
     warnings: List[str] = []
@@ -151,6 +161,7 @@ def validate_response(raw: str, expected_module: str = "") -> GuardrailsResult:
                 warnings=warnings,
                 raw=raw,
                 no_evidence=True,
+                status="abstained",
             )
         errors.append("La respuesta no contiene ninguna cita normativa.")
 
@@ -172,7 +183,7 @@ def validate_response(raw: str, expected_module: str = "") -> GuardrailsResult:
             raw=raw,
         )
 
-    return GuardrailsResult(valid=True, response=response, warnings=warnings, raw=raw)
+    return GuardrailsResult(valid=True, status="answered", response=response, warnings=warnings, raw=raw)
 
 
 def _is_no_evidence_response(response: AgentResponse) -> bool:

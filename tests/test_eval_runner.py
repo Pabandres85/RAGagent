@@ -127,3 +127,26 @@ def test_resume_refuses_checkpoint_without_metadata(tmp_path):
     meta.unlink()
     with pytest.raises(RuntimeError):
         load_checkpoint_for_resume(cp, meta, gold, fp)
+
+
+def test_fingerprint_changes_with_reference_answers_and_schema_version():
+    from eval import run_eval
+    from eval.run_eval import run_fingerprint
+
+    gold = [{"question": "q", "module": "dotacion", "answer": "A"}]
+    other_answer = [{"question": "q", "module": "dotacion", "answer": "B"}]
+    assert run_fingerprint(gold, None, False) != run_fingerprint(other_answer, None, False)
+    assert run_fingerprint(gold, None, False)["schema_version"] == run_eval.RESULT_SCHEMA_VERSION
+
+
+def test_resume_refuses_checkpoint_from_older_result_schema(tmp_path):
+    from eval.run_eval import _write_json, load_checkpoint_for_resume, run_fingerprint
+
+    gold = [{"question": "q0", "module": "dotacion", "answer": "A"}]
+    fp = run_fingerprint(gold, None, False)
+    cp, meta = tmp_path / "x.partial.json", tmp_path / "x.meta.partial.json"
+    _write_json(cp, [{"question": "q0"}])
+    old_meta = {k: v for k, v in fp.items() if k != "schema_version"}  # checkpoint previo a los estados
+    _write_json(meta, old_meta)
+    with pytest.raises(RuntimeError):
+        load_checkpoint_for_resume(cp, meta, gold, fp)

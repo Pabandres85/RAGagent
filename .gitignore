@@ -35,3 +35,6 @@ eval/datasets/*.backup.json
 
 # Temporales
 scripts/test_write.txt
+
+# Copias de seguridad de la hoja de auditoria (no versionar)
+eval/datasets/*.bak-*

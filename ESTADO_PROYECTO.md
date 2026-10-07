@@ -1,7 +1,7 @@
 # ESTADO DEL PROYECTO — RAG Multi-Agente Resolución 3100 de 2019
 
 > **Actualizar este archivo cada vez que se implemente un componente nuevo o se cambie el estado de algo.**
-> Última actualización: 2026-10-06 (corrección crítica del baseline mono — ver aviso y §8b; antes: 2026-03-01 v6)
+> Última actualización: 2026-10-07 (corrección del baseline mono §8b; estados de respuesta y hoja de auditoría del gold v2 §8c; nueva política de corpus en staging; antes: 2026-03-01 v6)
 
 > ## ⚠️ AVISO (2026-10-06): resultados v1–v4 invalidados para la comparación multi vs. mono
 > Una auditoría halló que el índice FAISS global estaba desalineado con sus metadatos y que el prompt del mono tenía llaves dobles literales. Las cifras mono de v1–v4 (F1 ≈ 0.11, valid 95 %) **no miden la capacidad del mono-agente** y la conclusión "multi F1 2.5× > mono" **no debe usarse**. Los archivos `artifacts/eval_runs/latest_eval.json` y `latest_eval_summary.json` (versionados) son esa corrida antigua (v4, pre-corrección; etiqueta git `eval-v4-pre-fix`); **no los cite**. Resultados vigentes (provisionales): §8b.
@@ -122,6 +122,9 @@ Pregunta de usuario
 | `eval/metrics.py` | `recall_at_k`, `mrr`, `exact_match`, `f1_score`, `routing_accuracy` |
 | `eval/run_eval.py` | Runner offline multi-agente vs mono-agente con checkpoints |
 | `main.py` | CLI: `--ingest`, `--ping`, default uvicorn |
+| `scripts/ingest.py` (reescrito 2026-10-07) | Política de corpus del cap. 11 (desde la pág. 59, detectada), módulo por línea "Estándar de X", servicio por "11.x.y SERVICIO", filtro de ruido de encabezado, `--out-dir` (staging), `--start-page`, `--rebuild-global`. **Staging validado, NO activado** (ver §8c) |
+| `scripts/build_gold_v2_audit.py` | Hoja de auditoría del gold v2 (JSON fuente de verdad + CSV, `--import-csv`, huella de evidencia) |
+| `tests/` | 81 tests efectivos (alineación de índices, ingesta, prompts, runner, estados, hoja de auditoría); 23 siguen en `skip` (placeholders originales) |
 
 ### ⏳ PENDIENTE / EN PROCESO
 
@@ -311,6 +314,34 @@ Se implementó la **Opción A**: preguntas con `module="general"` excluidas del 
 
 ---
 
+## 8c. Estados de respuesta, política de corpus y auditoría del gold v2 (2026-10-07)
+
+### Estados de respuesta (`GuardrailsResult.status`)
+| Estado | Significado |
+|---|---|
+| `answered` | Respuesta sustantiva con al menos una cita |
+| `abstained` | El sistema no tiene evidencia: la abstención declarada por el LLM (JSON válido, sin cita) **o** ningún fragmento recuperado |
+| `rejected` | El LLM respondió pero los guardrails la rechazan (JSON malformado, esquema inválido, sin cita normativa) |
+| `error` | Fallo de ejecución (excepción: LLM, red…), no del contenido |
+
+`valid` se conserva aparte como **validez estructural**, y **no coincide siempre con el estado**: una abstención JSON validada es `abstained` con `valid=True`, pero la falta de fragmentos recuperados es `abstained` con `valid=False`. Por eso las métricas se calculan sobre `status`, no sobre `valid`. El orquestador agrega el estado de varios especialistas con la precedencia answered > error > rejected > abstained. Un fallo de un especialista pasa a `error` sin tumbar la corrida (los índices ausentes, `FileNotFoundError`, siguen propagándose para que la API responda 503). `run_eval` reporta tasas por estado, F1 solo sobre `answered` y F1 sobre las preguntas que ambos sistemas responden sustantivamente. Los checkpoints llevan huella del dataset (preguntas, módulos y respuestas de referencia), del modo y de la **versión del esquema de resultados** (`RESULT_SCHEMA_VERSION`): un checkpoint de otra versión no se reanuda. **No existen resultados completos con estados todavía**: el próximo run debe usar un tag nuevo.
+
+### Política de corpus (implementada en staging, sin activar)
+- Alcance: capítulo 11 "Estándares y criterios de habilitación" (desde la pág. 59). El articulado y los capítulos 1–10 (trámites, autoevaluación, novedades) quedan fuera; las 17 preguntas `general` salen del alcance.
+- Staging `artifacts/staging_v2/` (no versionado): **848 chunks** (talento_humano 159, infraestructura 201, dotación 135, medicamentos_dispositivos 74, procesos_prioritarios 148, historia_clínica 72, interdependencia 59), 38 servicios detectados (el 11.4.9 sin numeral por el OCR), sin ruido de encabezado. **La descripción de cada servicio (texto previo al primer "Estándar de …") no tiene módulo y queda fuera**: una versión anterior la asignaba a `talento_humano` por defecto (≈67 chunks espurios; error detectado en la preauditoría, caso v1-061). Un numeral por sí solo no demuestra el estándar, tampoco en los dos servicios cuyo primer encabezado se perdió (medicina nuclear, transporte asistencial). Índices vigentes (1.249 chunks) **sin tocar**.
+- Impacto en el gold set (corpus de 848 chunks): de 105 preguntas específicas, 96 se emparejan con un chunk del corpus nuevo (39 cambian de módulo, 57 coinciden); 3 salen del corpus y 6 no tienen equivalente (tres de ellas eran descripciones de servicio). 20 preguntas nombran su módulo en el texto (detector estricto: solo cuenta "módulo/estándar/requisito de X"; mencionar el tema, p. ej. "dispositivos médicos", no es nombrar el módulo): las generó el prompt `MODULO: X`, así que reetiquetar sin reescribir crea contradicciones.
+- **Activación pendiente**: se activan juntos corpus, índices, metadatos y gold v2 solo después de la auditoría humana.
+
+### Hoja de auditoría del gold v2
+`scripts/build_gold_v2_audit.py` → `eval/datasets/gold_v2_audit.json` (fuente de verdad) y `.csv` (vista para Excel). 122 registros: P1 obligatoria 67 (cambios de módulo, excepciones, contradicciones con el nombre de módulo, 17 `general` y toda decisión previa obsoleta sin decisión nueva), P2 recomendada 24, P3 sin banderas 31. **Esquema v2** (una sola decisión por registro): `conservar` | `corregir` | `retirar`. `corregir` admite correcciones **combinadas** (`new_module`, `rewritten_question`, `rewritten_answer`, `evidence_chunk_id_v2`; al menos una) y se valida contra el corpus candidato (el módulo final debe ser compatible con la evidencia: la explícita o, si no hay, el candidato mostrado en la hoja cuando el emparejamiento es confiable; si la pregunta nombra otro módulo exige reescribirla). **`conservar` solo se acepta en registros `modulo_coincide`** (etiqueta v1 igual al módulo del candidato, dentro del corpus); para mantener una etiqueta discutida hay que usar `corregir` con `new_module` y `evidence_chunk_id_v2` de un fragmento válido, y si no hay evidencia, `retirar`. Sin candidato fiable (`sin_correspondencia`, `fuera_de_corpus`, `general`), `corregir` exige `evidence_chunk_id_v2`. `review_level` = `preaudit` (propuesta técnica) | `author` | `expert`: author/expert exigen `reviewer` **y** `reviewed_at` (fecha ISO) y solo ellos cuentan para activar el gold v2; el campo por sí solo no constituye validación experta. `retirar` usa `retire_category` (fuera_de_alcance | sin_evidencia | pregunta_defectuosa | referencia_incorrecta | otro) para distinguir una decisión de alcance de "no existe en el anexo". `history` conserva cada cambio y la migración desde el esquema v1. El revisor edita el CSV y ejecuta `--import-csv`, que valida todo antes de guardar. **Atribución**: promover una propuesta `preaudit` a `author`/`expert`, o cambiarla, exige escribir **explícitamente un `reviewer` distinto del de la propuesta** (nunca se hereda; no autentica a la persona, solo evita una atribución errónea por herencia), además de nivel y fecha. **Reglas de edición del CSV**: una celda vacía conserva el valor guardado; `<borrar>` limpia una celda sin cambiar la decisión; **cambiar la decisión** (p. ej. rechazar una propuesta `corregir` con `retirar`) es una revisión nueva y completa: las celdas vacías se limpian, hay que registrar el propio `reviewer`/`review_level`/`reviewed_at` (si siguen siendo los de la propuesta anterior se rechaza) y la propuesta previa queda en `history` junto con los campos limpiados. Salvaguardas: regenerar nunca borra decisiones; una huella de **toda** la evidencia visible invalida la decisión previa si cambia (pasa a `stale_review` y a P1); un campo vacío del CSV no borra decisiones; IDs duplicados o CSV desactualizado se rechazan; `stale_review` solo se cierra con una decisión nueva y válida. `answer_lexical_overlap_v2` es solo solapamiento de palabras, **no** valida la respuesta. El gold v1 de 122 preguntas se conserva intacto.
+
+**Preauditoría técnica (Codex, 2026-10-07) — estado tras la corrección de la ingesta y la migración a v2:** la preauditoría importó 66 propuestas (31 `retirar`, 14 `reetiquetar`, 1 `conservar` y 20 con observación pero sin decisión). Al corregir la ingesta cambió la evidencia de 43 registros: esas decisiones **no se descartaron**, quedaron en `stale_review` (y en `history`) marcadas para nueva revisión; **23 se conservan vigentes** (20 `retirar`, 3 `corregir`) y todas pasaron a `review_level=preaudit`, es decir, **propuestas técnicas, no revisión del autor ni de un experto**. Los 14 `reetiquetar` compartían un motivo plantilla y deben tratarse como propuestas sin verificación individual (v1-006, con margen de 0,05 entre candidatos, merece revisión caso a caso). Los `retirar` de los 3 `sin_correspondencia` no equivalen a decir que el contenido no exista en el anexo (v1-016 es una descripción de servicio, v1-082 una enumeración de grupo): es una decisión de alcance (siete estándares), a registrar con `retire_category=fuera_de_alcance`. **0 decisiones de nivel author/expert.** No equivale a validación experta ni autoriza activar el gold v2.
+
+### Recall@k y MRR
+Las funciones existen en `eval/metrics.py` pero **no se publican cifras** hasta validar qué fragmentos son evidencia relevante en el gold v2 (los `chunk_id` antiguos y los emparejamientos propuestos aún no son verdad de referencia).
+
+---
+
 ## 9. CÓMO EJECUTAR EL SISTEMA
 
 ```bash
@@ -389,9 +420,12 @@ python scripts/ingest.py
 - [x] ~~Fix `llm_max_tokens`~~ → 2048→4096 en `config.py`; resuelve JSON truncado en respuestas largas (dotación ~5000 chars)
 - [x] ~~Fix métricas UI evaluación~~ → `2_Evaluacion.py` ahora muestra variantes `_specific` (36.2% / 47.6%)
 - [x] ~~UX skeleton loader + timings~~ → shimmer CSS + step pills + panel tiempos por fase (routing_ms / agents_ms / total_ms)
-- [ ] **Política de corpus** (decidido: excluir el cuerpo administrativo y limitarse al cap. 11, desde la pág. 59; módulo = línea que empieza por "Estándar de <módulo>") → implementar en `ingest.py`, re-ingestar, remapear `chunk_id` del gold set
+- [x] **Política de corpus implementada en staging** (cap. 11 desde la pág. 59; módulo = línea "Estándar de X") — ver §8c
+- [ ] **Activar la política de corpus** (índices + metadatos + gold v2 juntos) tras la auditoría humana del gold v2; remapear `chunk_id`
 - [ ] **Revisar las 17 referencias `general`** (generadas con el índice defectuoso) y moverlas a un gold set aparte (fuera de alcance)
-- [ ] **Métricas honestas**: abstención / validez / sustantiva por separado, Recall@10, MRR, faithfulness, métrica semántica con juez de otra familia (candidato: `google/gemma-4-31b`, calibrado con muestra anotada a mano)
+- [ ] **Cerrar la auditoría del gold v2**: el autor revisa la P1 (43 decisiones obsoletas por la corrección de la ingesta, 23 propuestas vigentes `preaudit`, y los registros aún sin decisión) con `review_level=author`, y se muestrean P2/P3, antes de activar corpus, índices y gold v2 juntos
+- [x] Estados explícitos y métricas separadas por estado (§8c) — falta correr un run completo con ellos
+- [ ] **Métricas restantes**: Recall@10 y MRR (cifras tras validar evidencia del gold v2), faithfulness, métrica semántica con juez de otra familia (candidato: `google/gemma-4-31b`, calibrado con muestra anotada a mano)
 - [ ] **Ruteador supervisado** con partición train/test o validación cruzada
 - [ ] **Validación experta** de una muestra del gold set y evaluación con usuarios (comprometidas en el anteproyecto)
 - [ ] **procesos_prioritarios routing**: 12.5% top-1 — evaluar si mejorar descripción/keywords o documentar como limitación del enfoque léxico-coseno

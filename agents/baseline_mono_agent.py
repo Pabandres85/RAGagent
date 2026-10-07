@@ -41,6 +41,7 @@ class MonoAgent:
         if not results:
             return GuardrailsResult(
                 valid=False,
+                status="abstained",
                 errors=["No se encontraron fragmentos para la consulta."],
             )
 

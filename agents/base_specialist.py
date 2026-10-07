@@ -70,6 +70,7 @@ class BaseSpecialist:
         if not results:
             return GuardrailsResult(
                 valid=False,
+                status="abstained",
                 errors=[f"No se encontraron fragmentos para la consulta en módulo '{self.MODULE}'."],
             )
 

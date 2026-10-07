@@ -346,6 +346,18 @@ class Orchestrator:
             is_transversal=is_transversal,
         )
 
+    @staticmethod
+    def _aggregate_status(module_results: list[tuple[str, GuardrailsResult]]) -> str:
+        """answered si alguno respondio; si no: error > rejected > abstained."""
+        statuses = [result.status for _, result in module_results]
+        if "answered" in statuses:
+            return "answered"
+        if "error" in statuses:
+            return "error"
+        if "rejected" in statuses:
+            return "rejected"
+        return "abstained"
+
     def _merge_results(
         self,
         question: str,
@@ -393,6 +405,7 @@ class Orchestrator:
                 )
                 return GuardrailsResult(
                     valid=False,
+                    status=self._aggregate_status(module_results),
                     response=fallback_response,
                     errors=errors,
                     warnings=warnings,
@@ -400,6 +413,7 @@ class Orchestrator:
 
             return GuardrailsResult(
                 valid=False,
+                status=self._aggregate_status(module_results),
                 errors=errors or ["Ningun especialista produjo una respuesta valida."],
                 warnings=warnings,
             )
@@ -415,6 +429,7 @@ class Orchestrator:
             )
             return GuardrailsResult(
                 valid=result.valid,
+                status="answered",
                 response=result.response,
                 errors=errors,
                 warnings=warnings,
@@ -473,6 +488,7 @@ class Orchestrator:
 
         return GuardrailsResult(
             valid=True,
+            status="answered",
             response=merged_response,
             errors=errors,
             warnings=warnings,
@@ -502,7 +518,15 @@ class Orchestrator:
         module_results: list[tuple[str, GuardrailsResult]] = []
         for module in routing.modules:
             agent = self._agents[module]
-            result = agent.answer(question)
+            try:
+                result = agent.answer(question)
+            except FileNotFoundError:
+                raise  # indices ausentes: la API responde 503
+            except Exception as exc:  # fallo de ejecucion de un especialista (LLM, red, ...)
+                logger.exception("[%s] Error ejecutando el especialista", module)
+                result = GuardrailsResult(
+                    valid=False, status="error", errors=[f"{type(exc).__name__}: {exc}"]
+                )
             module_results.append((module, result))
         t_agents = time.time()
 
@@ -519,6 +543,7 @@ class Orchestrator:
                 "scores": routing.scores,
             },
             "valid": final_result.valid,
+            "status": final_result.status,
             "response": final_result.response.model_dump() if final_result.response else None,
             "errors": final_result.errors,
             "warnings": final_result.warnings,
